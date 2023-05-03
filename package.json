@@ -1,4 +1,11 @@
 {
+  "author": "Gonzalo Diaz <devel@gon.cl>",
+  "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
+  "license": "MIT",
+  "main": "src/problem0000-template.ts",
+  "name": "projecteuler.net",
+  "type": "module",
+  "version": "1.0.0",
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
