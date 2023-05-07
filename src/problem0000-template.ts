@@ -12,8 +12,12 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger';
+
 export function problem0000template() {
   const result = null;
+
+  logger.info(`result ${String(result)}`);
 
   return result;
 }
