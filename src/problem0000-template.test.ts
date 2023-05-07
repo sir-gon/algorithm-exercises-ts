@@ -12,6 +12,8 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+import logger from './logger';
+
 import { problem0000template } from './problem0000-template';
 
 describe('problem 00XX', () => {
@@ -21,6 +23,8 @@ describe('problem 00XX', () => {
     const solutionFound = null;
 
     const calculated = problem0000template();
+
+    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
