@@ -15,10 +15,11 @@ export const divisors = (target: number): number[] => {
   // fast divisors finding loop
   let i = 2;
   while (i <= top) {
-    if (top > 2 && target % i === 0) {
-      top = target / i;
+    top = target / i;
 
+    if (top > 2 && target % i === 0) {
       divs.push(i);
+
       if (i < top) {
         divs.push(target / i);
       }
