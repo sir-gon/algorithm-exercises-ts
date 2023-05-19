@@ -11,7 +11,7 @@
 
 import logger from './logger';
 
-function problem0001(_top: number) {
+function problem0001(_top: number): number {
   let total = 0;
 
   for (let i = 0; i < _top; i++) {

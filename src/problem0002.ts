@@ -14,7 +14,7 @@
 
 import logger from './logger';
 
-export function problem0002(_top: number) {
+export function problem0002(_top: number): number {
   let i = 0;
   let last1 = 1;
   let last2 = 0;
