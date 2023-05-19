@@ -3,7 +3,10 @@
  * https://jestjs.io/docs/configuration
  */
 
-export default {
+const BRUTEFORCE =
+  process.env.BRUTEFORCE && process.env.BRUTEFORCE.toUpperCase() === 'TRUE';
+
+const jestConfig = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -153,10 +156,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -177,13 +177,13 @@ export default {
     '^.+\\.ts?$': 'ts-jest'
   },
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: ['<rootDir>/node_modules/']
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  // verbose: undefined,
+  verbose: true
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],
@@ -191,3 +191,9 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+if (BRUTEFORCE) {
+  jestConfig.testMatch.push('**/?(*.)+(bruteforce-test).ts?(x)');
+}
+
+export default jestConfig;
