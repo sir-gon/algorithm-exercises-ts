@@ -10,3 +10,4 @@ export {
 export { isPrime } from './prime';
 export { isPalindrome } from './isPalindrome';
 export { nullable };
+export { product } from './product';
