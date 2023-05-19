@@ -14,7 +14,7 @@
 
 import logger from './logger';
 
-export function problem0000template() {
+export function problem0000template(): null {
   const result = null;
 
   logger.info(`result ${String(result)}`);

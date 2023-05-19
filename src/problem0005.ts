@@ -26,7 +26,10 @@
 import logger from './logger';
 import { primeFactors } from './helpers/index';
 
-function _increase(_element: number, _group: Map<number, number>) {
+function _increase(
+  _element: number,
+  _group: Map<number, number>
+): Map<number, number> {
   const element = _group.get(_element);
 
   if (element) {
@@ -42,7 +45,7 @@ function _replaceMaximum(
   _element: number,
   count: number,
   _group: Map<number, number>
-) {
+): Map<number, number> {
   const element = _group.get(_element);
 
   if (element) {
@@ -64,7 +67,7 @@ function _primeFactorsCollection(_factors: number[]): Map<number, number> {
   return collection;
 }
 
-function problem0005(_bottom: number, _top: number) {
+function problem0005(_bottom: number, _top: number): number {
   let minimumPrimeFactors = new Map<number, number>();
   let result = 1;
   let cycles = 0;
