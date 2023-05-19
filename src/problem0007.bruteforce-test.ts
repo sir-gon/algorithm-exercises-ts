@@ -11,9 +11,9 @@
  *
  */
 
-import logger from './logger.js';
+import logger from './logger';
 
-import { problem0007 } from './problem0007.js';
+import { problem0007 } from './problem0007';
 
 describe('problem 0007 BRUTEFORCE', () => {
   it('problem 0007 BRUTEFORCE large', () => {
