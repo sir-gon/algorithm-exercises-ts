@@ -23,7 +23,7 @@ describe('divisors of a number', () => {
     expect(nextPrimeFactor(1)).toStrictEqual({
       factor: 1,
       carry: 1,
-      cycles: 0
+      cycles: 1
     });
     expect(nextPrimeFactor(2)).toStrictEqual({
       factor: 2,

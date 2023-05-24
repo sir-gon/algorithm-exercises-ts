@@ -46,33 +46,29 @@ export interface PrimeFactor {
 
 export const nextPrimeFactor = (_target: number): PrimeFactor => {
   const top = Math.abs(_target);
-  let cycles = 0;
 
-  if (top === 1) {
-    return {
-      factor: 1,
-      carry: 1,
-      cycles: cycles
-    };
-  }
+  // default
+  let found = null;
+  let factor = top;
+  let carry = 1;
 
-  let i = 2;
-  while (i < top) {
-    cycles += 1;
+  const init = 2;
+  let i = init;
+  while (i <= top && !found) {
     if (top % i === 0) {
-      return {
-        factor: i,
-        carry: top / i,
-        cycles: cycles
-      };
+      found = true;
+      factor = i;
+      carry = top / i;
+
+      break;
     }
     i += 1;
   }
 
   return {
-    factor: i,
-    carry: top / i,
-    cycles: cycles + 1
+    factor: factor,
+    carry: carry,
+    cycles: i - init + 1
   };
 };
 
