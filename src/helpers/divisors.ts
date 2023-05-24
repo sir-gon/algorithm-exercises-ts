@@ -48,27 +48,24 @@ export const nextPrimeFactor = (_target: number): PrimeFactor => {
   const top = Math.abs(_target);
 
   // default
-  let found = null;
   let factor = top;
   let carry = 1;
 
-  const init = 2;
+  const init = 1;
   let i = init;
-  while (i <= top && !found) {
-    if (top % i === 0) {
-      found = true;
+
+  if (top != 1) {
+    do {
+      i += 1;
       factor = i;
       carry = top / i;
-
-      break;
-    }
-    i += 1;
+    } while (i <= top && top % i !== 0);
   }
 
   return {
     factor: factor,
     carry: carry,
-    cycles: i - init + 1
+    cycles: i - init
   };
 };
 
@@ -83,7 +80,7 @@ export const primeFactors = (target: number): PrimeFactors => {
   let cycles = 0;
 
   if (target === 1) {
-    return { factors: [1], cycles: 1 };
+    return { factors: [1], cycles: 0 };
   }
 
   let factor = target;

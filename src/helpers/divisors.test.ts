@@ -23,7 +23,7 @@ describe('divisors of a number', () => {
     expect(nextPrimeFactor(1)).toStrictEqual({
       factor: 1,
       carry: 1,
-      cycles: 1
+      cycles: 0
     });
     expect(nextPrimeFactor(2)).toStrictEqual({
       factor: 2,
@@ -50,7 +50,7 @@ describe('divisors of a number', () => {
   it('prime factors of number', () => {
     expect.assertions(5);
 
-    expect(primeFactors(1)).toStrictEqual({ factors: [1], cycles: 1 });
+    expect(primeFactors(1)).toStrictEqual({ factors: [1], cycles: 0 });
     expect(primeFactors(2)).toStrictEqual({ factors: [2], cycles: 1 });
     expect(primeFactors(6)).toStrictEqual({ factors: [2, 3], cycles: 3 });
     expect(primeFactors(12)).toStrictEqual({
