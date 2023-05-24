@@ -4,10 +4,10 @@ export {
   divisors,
   primeFactors,
   nextPrimeFactor,
+  isPrime,
   PrimeFactor,
   PrimeFactors
 } from './divisors';
-export { isPrime } from './prime';
 export { isPalindrome } from './isPalindrome';
 export { nullable };
 export { product } from './product';

@@ -95,6 +95,10 @@ export const primeFactors = (target: number): PrimeFactors => {
   return { factors: factors, cycles: cycles };
 };
 
+export const isPrime = (target: number): boolean => {
+  return target != 1 && target === nextPrimeFactor(target).factor;
+};
+
 export default {
   divisors,
   primeFactors,
