@@ -1,4 +1,4 @@
-import { divisors, nextPrimeFactor, primeFactors } from './divisors';
+import { divisors, nextPrimeFactor, primeFactors, isPrime } from './divisors';
 
 describe('divisors of a number', () => {
   it('divisors of one', () => {
@@ -61,5 +61,23 @@ describe('divisors of a number', () => {
       factors: [2, 2, 2, 3, 5],
       cycles: 9
     });
+  });
+
+  it('some numbers are prime', () => {
+    expect.assertions(4);
+
+    expect(isPrime(1)).toBe(false);
+    expect(isPrime(2)).toBe(true);
+    expect(isPrime(7)).toBe(true);
+    expect(isPrime(13)).toBe(true);
+  });
+
+  it('some numbers are not prime', () => {
+    expect.assertions(4);
+
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(10)).toBe(false);
+    expect(isPrime(100)).toBe(false);
+    expect(isPrime(3000)).toBe(false);
   });
 });
