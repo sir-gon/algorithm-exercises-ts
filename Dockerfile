@@ -9,10 +9,11 @@ FROM base as development
 
 FROM development as builder
 
-COPY ./src ${WORKDIR}/src
+COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
-COPY ./Makefile ${WORKDIR}/
+COPY ./src ${WORKDIR}/src
+COPY ./tsconfig.json ${WORKDIR}/tsconfig.json
 
 RUN npm ci --verbose
 
