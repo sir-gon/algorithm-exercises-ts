@@ -9,6 +9,7 @@ export {
   PrimeFactors
 } from './divisors';
 export { isPalindrome } from './isPalindrome';
+export { maximum, minimum } from './minmax';
 export { nullable };
 export { product } from './product';
 export { sum } from './sum';
