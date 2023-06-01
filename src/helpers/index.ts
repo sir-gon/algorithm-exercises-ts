@@ -11,6 +11,7 @@ export {
   PrimeFactors
 } from './divisors';
 export { isPalindrome } from './isPalindrome';
+export { matrix } from './matrix';
 export { maximum, minimum } from './minmax';
 export { nullable };
 export { product } from './product';
