@@ -1,6 +1,14 @@
 type nullable<T> = T | null | undefined;
 
-export { bigNum, bigSum, bigSumMany } from './bigNumbers';
+export {
+  bigNum,
+  bigSum,
+  bigSumMany,
+  bigMultiplyRowToBigNum,
+  bigMultiplyRowToString,
+  bigMultiply,
+  bigPower
+} from './bigNumbers';
 export { collatz } from './collatz';
 export {
   divisors,

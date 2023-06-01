@@ -1,4 +1,12 @@
-import { bigNum, bigSum, bigSumMany } from './bigNumbers';
+import {
+  bigMultiply,
+  bigMultiplyRowToString,
+  bigMultiplyRowToBigNum,
+  bigNum,
+  bigSum,
+  bigSumMany,
+  bigPower
+} from './bigNumbers';
 
 describe('bigNumber operations', () => {
   it('bigNum examples', () => {
@@ -50,5 +58,46 @@ describe('bigNumber operations', () => {
         '12345678901234567890'
       ])
     ).toBe('49382715604938271560');
+  });
+
+  it('bigMultiplyRowToBigNum examples', () => {
+    expect.assertions(4);
+
+    expect(bigMultiplyRowToBigNum('2', 2)).toStrictEqual([4]);
+    expect(bigMultiplyRowToBigNum('12', 2)).toStrictEqual([2, 4]);
+    expect(bigMultiplyRowToBigNum('12', 4)).toStrictEqual([4, 8]);
+    expect(bigMultiplyRowToBigNum('999', 9)).toStrictEqual([8, 9, 9, 1]);
+  });
+
+  it('bigMultiplyRowToString examples', () => {
+    expect.assertions(4);
+
+    expect(bigMultiplyRowToString('2', 2)).toBe('4');
+    expect(bigMultiplyRowToString('12', 2)).toBe('24');
+    expect(bigMultiplyRowToString('12', 4)).toBe('48');
+    expect(bigMultiplyRowToString('999', 9)).toBe('8991');
+  });
+
+  it('bigMultiply examples', () => {
+    expect.assertions(4);
+
+    expect(bigMultiply('2', '2')).toBe('4');
+    expect(bigMultiply('2', '22')).toBe('44');
+
+    expect(bigMultiply('999', '999')).toBe('998001');
+    expect(bigMultiply('12345678901234567890', '12345678901234567890')).toBe(
+      '152415787532388367501905199875019052100'
+    );
+  });
+
+  it('bigPower examples', () => {
+    expect.assertions(4);
+
+    expect(bigPower('2', 2)).toBe('4');
+    expect(bigPower('2', 4)).toBe('16');
+    expect(bigPower('2', 5)).toBe('32');
+    expect(bigPower('2', 1000)).toBe(
+      '10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376'
+    );
   });
 });

@@ -61,8 +61,92 @@ export const bigSumMany = (strNumberArr: string[]): string => {
   return result;
 };
 
+export const bigMultiplyRowToBigNum = (
+  strNumber: string,
+  multiplierDigit: number
+): number[] => {
+  const number = bigNum(strNumber).reverse();
+  const result = [];
+
+  let mul = 0;
+  let carry = 0;
+  let digit = 0;
+
+  for (let i = 0; i < number.length; i++) {
+    mul = number[i] * multiplierDigit + carry;
+
+    if (mul < 10) {
+      digit = mul;
+      carry = 0;
+    } else {
+      digit = Math.floor(mul % 10);
+      carry = Math.floor(mul / 10);
+    }
+
+    result.push(digit);
+  }
+  if (carry > 0) result.push(carry);
+
+  return result.reverse();
+};
+
+export const bigMultiplyRowToString = (
+  strNumber: string,
+  multiplierDigit: number
+): string =>
+  bigMultiplyRowToBigNum(strNumber, multiplierDigit).reduce(
+    (previous, current) => `${previous}${current}`,
+    ''
+  );
+
+export const bigMultiply = (
+  strMultiply: string,
+  strNumMultiplier: string
+): string => {
+  const result: string[] = [];
+  const collector: number[][] = [];
+
+  // const bigNumMultiply = bigNum(strMultiply).reverse();
+  const bigNumMultiplier = bigNum(strNumMultiplier).reverse();
+
+  for (let i = 0; i < bigNumMultiplier.length; i++) {
+    collector.push([]);
+    collector[i] = [];
+
+    // padding position by row
+    for (let j = 0; j < i; j++) {
+      collector[i].push(0);
+    }
+
+    // Product of miltiply digits as rows by every multiplier digit
+    collector[i] = collector[i].concat(
+      bigMultiplyRowToBigNum(strMultiply, bigNumMultiplier[i]).reverse()
+    );
+
+    // Transform row of digits to string
+    result[i] = collector[i]
+      .reverse()
+      .reduce((previous, current) => `${previous}${current}`, '');
+  }
+  return bigSumMany(result);
+};
+
+export const bigPower = (strBase: string, intExp: number): string => {
+  let result = '1';
+
+  for (let i = 0; i < intExp; i++) {
+    result = bigMultiply(result, strBase);
+  }
+
+  return result;
+};
+
 export default {
   bigNum,
   bigSum,
-  bigSumMany
+  bigSumMany,
+  bigMultiplyRowToBigNum,
+  bigMultiplyRowToString,
+  bigMultiply,
+  bigPower
 };
