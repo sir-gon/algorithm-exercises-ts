@@ -21,6 +21,7 @@ export {
 export { isPalindrome } from './isPalindrome';
 export { matrix } from './matrix';
 export { maximum, minimum } from './minmax';
+export { numberToWord } from './numberToWord';
 export { nullable };
 export { product } from './product';
 export { sum } from './sum';
