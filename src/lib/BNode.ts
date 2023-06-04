@@ -7,8 +7,8 @@ export default class BNode<T> {
 
   constructor(
     value: nullable<T | BNode<T>> = null,
-    l: nullable<T> = null,
-    r: nullable<T> = null
+    l: nullable<T | BNode<T>> = null,
+    r: nullable<T | BNode<T>> = null
   ) {
     this.value = null;
     this.l = null;
