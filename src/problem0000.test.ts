@@ -14,7 +14,7 @@
 
 import logger from './logger';
 
-import { problem0000template } from './problem0000-template';
+import { problem0000 } from './problem0000';
 
 describe('problem 00XX', () => {
   it('problem 00XX solution found', () => {
@@ -22,7 +22,7 @@ describe('problem 00XX', () => {
 
     const solutionFound = null;
 
-    const calculated = problem0000template();
+    const calculated = problem0000();
 
     logger.info(`PROBLEM 00XX solution found: ${calculated}`);
 
