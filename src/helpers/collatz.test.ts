@@ -1,4 +1,4 @@
-import { collatz } from './collatz';
+import { collatz } from './';
 
 // 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
 

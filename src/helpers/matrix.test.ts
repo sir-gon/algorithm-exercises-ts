@@ -1,4 +1,4 @@
-import { matrix } from './matrix';
+import { matrix } from './';
 
 describe('matrix generator', () => {
   it('matrix 3 × 3 with initial value of 1', () => {
