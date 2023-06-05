@@ -20,7 +20,7 @@ export default class BNode<T> {
   }
 
   setValue(value: nullable<T | BNode<T>>): BNode<T> {
-    if (value instanceof BNode<T>) {
+    if (value instanceof BNode) {
       this.value = value.getValue();
     } else {
       this.value = value;
