@@ -7,7 +7,8 @@ export {
   bigMultiplyRowToBigNum,
   bigMultiplyRowToString,
   bigMultiply,
-  bigPower
+  bigPower,
+  bigFactorial
 } from './bigNumbers';
 export { collatz } from './collatz';
 export {

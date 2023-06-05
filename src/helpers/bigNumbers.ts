@@ -141,6 +141,18 @@ export const bigPower = (strBase: string, intExp: number): string => {
   return result;
 };
 
+export const bigFactorial = (number: number): string => {
+  // check number as int
+
+  let acum = '1';
+
+  for (let multiplier = 1; multiplier <= number; multiplier++) {
+    acum = bigMultiply(acum, `${multiplier}`);
+  }
+
+  return acum;
+};
+
 export default {
   bigNum,
   bigSum,
@@ -148,5 +160,6 @@ export default {
   bigMultiplyRowToBigNum,
   bigMultiplyRowToString,
   bigMultiply,
-  bigPower
+  bigPower,
+  bigFactorial
 };
