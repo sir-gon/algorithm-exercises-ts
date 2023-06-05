@@ -1,4 +1,4 @@
-import { product } from './product';
+import { product } from './';
 
 describe('product of all numbers in array', () => {
   it('product of some positive, negative or zero integers', () => {

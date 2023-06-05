@@ -1,4 +1,4 @@
-import { divisors, nextPrimeFactor, primeFactors, isPrime } from './divisors';
+import { divisors, nextPrimeFactor, primeFactors, isPrime } from './';
 
 describe('divisors of a number', () => {
   it('divisors of one', () => {

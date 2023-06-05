@@ -1,4 +1,4 @@
-import { minimum, maximum } from './minmax';
+import { minimum, maximum } from './';
 
 describe('maximum and minimum', () => {
   it('minimum', () => {

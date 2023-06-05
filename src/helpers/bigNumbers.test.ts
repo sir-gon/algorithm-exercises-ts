@@ -6,7 +6,7 @@ import {
   bigSum,
   bigSumMany,
   bigPower
-} from './bigNumbers';
+} from './';
 
 describe('bigNumber operations', () => {
   it('bigNum examples', () => {

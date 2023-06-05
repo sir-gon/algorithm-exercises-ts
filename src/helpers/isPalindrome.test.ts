@@ -1,4 +1,4 @@
-import { isPalindrome } from './isPalindrome';
+import { isPalindrome } from './';
 
 describe('number is Palindrome', () => {
   it('some numbers are palindrome', () => {

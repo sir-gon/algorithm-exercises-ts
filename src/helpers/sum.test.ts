@@ -1,4 +1,4 @@
-import { sum } from './sum';
+import { sum } from './';
 
 describe('sum all numbers in array', () => {
   it('sum of some consecutives positive integers', () => {
