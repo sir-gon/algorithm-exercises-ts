@@ -1,9 +1,14 @@
 import {
+  abundance,
   divisors,
-  properDivisors,
+  isPrime,
   nextPrimeFactor,
   primeFactors,
-  isPrime
+  properDivisors,
+  ___DIVISORS_ABUNDANCE___,
+  ___DIVISORS_DEFICIENT___,
+  ___DIVISORS_PERFECT___,
+  ___DIVISORS_ABUNDANT___
 } from './';
 
 describe('divisors of a number', () => {
@@ -95,5 +100,37 @@ describe('divisors of a number', () => {
     expect(isPrime(10)).toBe(false);
     expect(isPrime(100)).toBe(false);
     expect(isPrime(3000)).toBe(false);
+  });
+
+  it('abundance of a integer number compared to enum', () => {
+    expect.assertions(3);
+
+    expect(abundance(10)).toStrictEqual(___DIVISORS_DEFICIENT___);
+    expect(abundance(12)).toStrictEqual(___DIVISORS_ABUNDANT___);
+    expect(abundance(28)).toStrictEqual(___DIVISORS_PERFECT___);
+  });
+
+  it('abundance of a integer number compared to constants', () => {
+    expect.assertions(3);
+
+    expect(abundance(10)).toStrictEqual(
+      ___DIVISORS_ABUNDANCE___.DIVISORS_DEFICIENT
+    );
+    expect(abundance(12)).toStrictEqual(
+      ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
+    );
+    expect(abundance(28)).toStrictEqual(
+      ___DIVISORS_ABUNDANCE___.DIVISORS_PERFECT
+    );
+  });
+
+  it('abundance of first 12 numbers', () => {
+    expect.assertions(11);
+
+    for (let i = 1; i < 12; i++) {
+      expect(abundance(28)).not.toEqual(
+        ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
+      );
+    }
   });
 });

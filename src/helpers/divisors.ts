@@ -1,4 +1,5 @@
 import logger from '../logger';
+import { sum } from './';
 
 export const divisors = (target: number): number[] => {
   let top = Math.abs(target);
@@ -106,8 +107,38 @@ export const isPrime = (target: number): boolean => {
   return target != 1 && target === nextPrimeFactor(target).factor;
 };
 
+export const ___DIVISORS_ABUNDANT___ = 'abundant';
+export const ___DIVISORS_PERFECT___ = 'perfect';
+export const ___DIVISORS_DEFICIENT___ = 'deficient';
+
+export enum ___DIVISORS_ABUNDANCE___ {
+  DIVISORS_ABUNDANT = ___DIVISORS_ABUNDANT___,
+  DIVISORS_PERFECT = ___DIVISORS_PERFECT___,
+  DIVISORS_DEFICIENT = ___DIVISORS_DEFICIENT___
+}
+
+export const abundance = (target: number): ___DIVISORS_ABUNDANCE___ => {
+  const divisors = properDivisors(target);
+  const divSum = sum(divisors);
+
+  if (divSum > target) {
+    return ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT;
+  }
+
+  if (divSum < target) {
+    return ___DIVISORS_ABUNDANCE___.DIVISORS_DEFICIENT;
+  }
+
+  return ___DIVISORS_ABUNDANCE___.DIVISORS_PERFECT;
+};
+
 export default {
+  abundance,
   divisors,
   primeFactors,
-  nextPrimeFactor
+  nextPrimeFactor,
+  ___DIVISORS_ABUNDANCE___,
+  ___DIVISORS_DEFICIENT___,
+  ___DIVISORS_PERFECT___,
+  ___DIVISORS_ABUNDANT___
 };
