@@ -13,6 +13,7 @@ export {
 export { collatz } from './collatz';
 export {
   divisors,
+  properDivisors,
   primeFactors,
   nextPrimeFactor,
   isPrime,

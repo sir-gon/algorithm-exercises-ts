@@ -38,6 +38,13 @@ export const divisors = (target: number): number[] => {
   return divs;
 };
 
+export const properDivisors = (target: number): number[] => {
+  const theDivisors: number[] = divisors(target);
+  theDivisors.pop();
+
+  return theDivisors;
+};
+
 export interface PrimeFactor {
   factor: number;
   carry: number;
