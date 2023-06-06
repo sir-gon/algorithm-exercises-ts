@@ -1,4 +1,10 @@
-import { divisors, nextPrimeFactor, primeFactors, isPrime } from './';
+import {
+  divisors,
+  properDivisors,
+  nextPrimeFactor,
+  primeFactors,
+  isPrime
+} from './';
 
 describe('divisors of a number', () => {
   it('divisors of one', () => {
@@ -15,6 +21,16 @@ describe('divisors of a number', () => {
     expect(divisors(8)).toStrictEqual([1, 2, 4, 8]);
     expect(divisors(9)).toStrictEqual([1, 3, 9]);
     expect(divisors(16)).toStrictEqual([1, 2, 4, 8, 16]);
+  });
+
+  it('proper divisors of a number', () => {
+    expect.assertions(5);
+
+    expect(properDivisors(1)).toStrictEqual([]);
+    expect(properDivisors(2)).toStrictEqual([1]);
+    expect(properDivisors(8)).toStrictEqual([1, 2, 4]);
+    expect(properDivisors(9)).toStrictEqual([1, 3]);
+    expect(properDivisors(16)).toStrictEqual([1, 2, 4, 8]);
   });
 
   it('next prime factor of a target number', () => {
