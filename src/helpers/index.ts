@@ -27,3 +27,4 @@ export { numberToWord } from './numberToWord';
 export { nullable };
 export { product } from './product';
 export { sum } from './sum';
+export { wordScore } from './wordScore';
