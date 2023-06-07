@@ -12,13 +12,18 @@ export {
 } from './bigNumbers';
 export { collatz } from './collatz';
 export {
+  abundance,
   divisors,
-  properDivisors,
-  primeFactors,
-  nextPrimeFactor,
   isPrime,
+  nextPrimeFactor,
+  primeFactors,
+  properDivisors,
   PrimeFactor,
-  PrimeFactors
+  PrimeFactors,
+  ___DIVISORS_ABUNDANCE___,
+  ___DIVISORS_DEFICIENT___,
+  ___DIVISORS_PERFECT___,
+  ___DIVISORS_ABUNDANT___
 } from './divisors';
 export { isPalindrome } from './isPalindrome';
 export { matrix } from './matrix';
