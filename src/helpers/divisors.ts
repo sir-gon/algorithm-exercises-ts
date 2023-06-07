@@ -17,12 +17,15 @@ export const divisors = (target: number): number[] => {
   let i = 2;
   while (i <= top) {
     top = target / i;
+    const remainder = target % i;
 
-    if (top > 2 && target % i === 0) {
-      divs.push(i);
+    if (top > 2 && remainder === 0) {
+      if (i <= top) {
+        divs.push(i);
+      }
 
       if (i < top) {
-        divs.push(target / i);
+        divs.push(top);
       }
     }
     i += 1;

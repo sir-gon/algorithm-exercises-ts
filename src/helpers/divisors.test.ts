@@ -28,6 +28,15 @@ describe('divisors of a number', () => {
     expect(divisors(16)).toStrictEqual([1, 2, 4, 8, 16]);
   });
 
+  it('divisors of a number border cases', () => {
+    expect.assertions(2);
+
+    expect(divisors(110)).toStrictEqual([1, 2, 5, 10, 11, 22, 55, 110]);
+    expect(divisors(18632)).toStrictEqual([
+      1, 2, 4, 8, 17, 34, 68, 136, 137, 274, 548, 1096, 2329, 4658, 9316, 18632
+    ]);
+  });
+
   it('proper divisors of a number', () => {
     expect.assertions(5);
 
@@ -132,5 +141,12 @@ describe('divisors of a number', () => {
         ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
       );
     }
+  });
+
+  it('conflict abundance', () => {
+    expect.assertions(2);
+
+    expect(abundance(110)).not.toEqual(___DIVISORS_ABUNDANT___);
+    expect(abundance(18632)).not.toEqual(___DIVISORS_ABUNDANT___);
   });
 });
