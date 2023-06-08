@@ -14,8 +14,14 @@
 
 import logger from './logger';
 
+type counter = {
+  count: number;
+};
+
 const permutations = (
   inputElements: string[] = [],
+  stopAtCycle: number,
+  resultCycle: counter,
   branchCollector: string[] = [],
   resultCollector: string[][] = []
 ): string[][] => {
@@ -38,9 +44,18 @@ const permutations = (
     if (restOfElements.length > 0) {
       logger.debug(`REST: ${restOfElements}`);
 
-      permutations(restOfElements, newBranchCollector, resultCollector);
+      permutations(
+        restOfElements,
+        stopAtCycle,
+        resultCycle,
+        newBranchCollector,
+        resultCollector
+      );
     } else {
-      logger.debug(`FINISH BRANCH: ${newBranchCollector}`);
+      resultCycle.count += 1;
+      logger.debug(
+        `FINISH BRANCH: ${resultCycle.count} -> ${newBranchCollector}`
+      );
 
       resultCollector.push(newBranchCollector);
     }
@@ -53,8 +68,14 @@ export function problem0024(): null {
   const result = null;
 
   const inputElements = 'ABCD'.split('');
+  const counter = { count: 0 };
+  const permutationToFind = 12;
 
-  const totalPermutations = permutations(inputElements);
+  const totalPermutations = permutations(
+    inputElements,
+    permutationToFind,
+    counter
+  );
 
   logger.debug(`result ${String(result)}`);
 
