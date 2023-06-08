@@ -1,85 +1,101 @@
 /**
+ * Lexicographic Permutations
  *
- * <TITLE>
+ * https://projecteuler.net/problem=24
  *
- * https://projecteuler.net/problem=XX
+ * A permutation is an ordered arrangement of objects.
+ * For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4.
+ * If all of the permutations are listed numerically or alphabetically,
+ * we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
  *
- * <DESCRIPTION>
+ * 012   021   102   120   201   210
  *
- * ////////////////////////////////////////////////////////////////////////////
- *
- * Result found:
- * ////////////////////////////////////////////////////////////////////////////
+ * What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
  */
 
 import logger from './logger';
 
-type counter = {
-  count: number;
-};
+export const lexicographicPermutationFind = (
+  inputElements: string[],
+  permutationToFind: number
+): string[] => {
+  type counter = {
+    count: number;
+  };
 
-const permutations = (
-  inputElements: string[] = [],
-  stopAtCycle: number,
-  resultCycle: counter,
-  branchCollector: string[] = [],
-  resultCollector: string[][] = []
-): string[][] => {
-  for (let i = 0; i < inputElements.length; i++) {
-    const rootElement = inputElements[i];
-    const restOfElements: string[] = [];
+  // "inner global variable" to catch the result shared acroos recursive branch calls.
+  let lastBranchCollector: string[] = [];
 
-    logger.debug(`root element: ${i} -> ${rootElement}`);
+  const computePermutations = (
+    inputElements: string[] = [],
+    stopAtCycle: number,
+    resultCycle: counter,
+    branchCollector: string[] = []
+  ): undefined => {
+    if (resultCycle.count >= stopAtCycle) {
+      return;
+    }
 
-    for (let j = 0; j < inputElements.length; j++) {
-      if (i != j) {
-        restOfElements.push(inputElements[j]);
+    for (let i = 0; i < inputElements.length; i++) {
+      const rootElement = inputElements[i];
+      const restOfElements: string[] = [];
+
+      logger.debug(`root element: ${i} -> ${rootElement}`);
+
+      for (let j = 0; j < inputElements.length; j++) {
+        if (i != j) {
+          restOfElements.push(inputElements[j]);
+        }
+      }
+
+      const [...newBranchCollector] = branchCollector;
+      newBranchCollector.push(rootElement);
+
+      // finally...
+      if (restOfElements.length > 0) {
+        logger.debug(`REST: ${restOfElements}`);
+
+        computePermutations(
+          restOfElements,
+          stopAtCycle,
+          resultCycle,
+          newBranchCollector
+        );
+      } else {
+        resultCycle.count += 1;
+        lastBranchCollector = newBranchCollector;
+
+        logger.debug(
+          `FINISH BRANCH: ${resultCycle.count} -> ${lastBranchCollector}`
+        );
       }
     }
-
-    const [...newBranchCollector] = branchCollector;
-    newBranchCollector.push(rootElement);
-
-    // finally...
-    if (restOfElements.length > 0) {
-      logger.debug(`REST: ${restOfElements}`);
-
-      permutations(
-        restOfElements,
-        stopAtCycle,
-        resultCycle,
-        newBranchCollector,
-        resultCollector
-      );
-    } else {
-      resultCycle.count += 1;
-      logger.debug(
-        `FINISH BRANCH: ${resultCycle.count} -> ${newBranchCollector}`
-      );
-
-      resultCollector.push(newBranchCollector);
-    }
-  }
-
-  return resultCollector;
-};
-
-export function problem0024(): null {
-  const result = null;
-
-  const inputElements = 'ABCD'.split('');
+  };
   const counter = { count: 0 };
-  const permutationToFind = 12;
+  const branchCollector: string[] = [];
 
-  const totalPermutations = permutations(
+  computePermutations(
     inputElements,
     permutationToFind,
-    counter
+    counter,
+    branchCollector
   );
 
-  logger.debug(`result ${String(result)}`);
+  return lastBranchCollector;
+};
 
-  return result;
+export function problem0024(
+  inputElements: string[],
+  inputPermutationToFind: number
+): string[] {
+  const permutationFound = lexicographicPermutationFind(
+    inputElements,
+    inputPermutationToFind
+  );
+
+  logger.debug(`result ${String(permutationFound)}`);
+
+  return permutationFound;
 }
 
 export default { problem0024 };
