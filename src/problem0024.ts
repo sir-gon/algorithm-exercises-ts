@@ -19,20 +19,20 @@ export const lexicographicPermutationFind = (
   inputElements: string[],
   permutationToFind: number
 ): string[] => {
-  type counter = {
-    count: number;
-  };
-
-  // "inner global variable" to catch the result shared acroos recursive branch calls.
+  // "inner global variables" to catch the results shared across recursive branch calls.
   let lastBranchCollector: string[] = [];
+  let currentCycle = 0;
 
+  // Initial values
+  const branchCollector: string[] = [];
+
+  // Recursive way to compute permutations
   const computePermutations = (
-    inputElements: string[] = [],
     stopAtCycle: number,
-    resultCycle: counter,
+    inputElements: string[] = [],
     branchCollector: string[] = []
   ): undefined => {
-    if (resultCycle.count >= stopAtCycle) {
+    if (currentCycle >= stopAtCycle) {
       return;
     }
 
@@ -55,31 +55,19 @@ export const lexicographicPermutationFind = (
       if (restOfElements.length > 0) {
         logger.debug(`REST: ${restOfElements}`);
 
-        computePermutations(
-          restOfElements,
-          stopAtCycle,
-          resultCycle,
-          newBranchCollector
-        );
+        computePermutations(stopAtCycle, restOfElements, newBranchCollector);
       } else {
-        resultCycle.count += 1;
         lastBranchCollector = newBranchCollector;
+        currentCycle += 1;
 
         logger.debug(
-          `FINISH BRANCH: ${resultCycle.count} -> ${lastBranchCollector}`
+          `FINISH BRANCH: ${currentCycle} -> ${lastBranchCollector}`
         );
       }
     }
   };
-  const counter = { count: 0 };
-  const branchCollector: string[] = [];
 
-  computePermutations(
-    inputElements,
-    permutationToFind,
-    counter,
-    branchCollector
-  );
+  computePermutations(permutationToFind, inputElements, branchCollector);
 
   return lastBranchCollector;
 };
