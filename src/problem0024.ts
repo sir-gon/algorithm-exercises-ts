@@ -16,7 +16,7 @@
 import logger from './logger';
 
 export const lexicographicPermutationFind = (
-  inputElements: string[],
+  elements: string[],
   permutationToFind: number
 ): string[] => {
   // "inner global variables" to catch the results shared across recursive branch calls.
@@ -24,7 +24,7 @@ export const lexicographicPermutationFind = (
   let currentCycle = 0;
 
   // Initial values
-  const branchCollector: string[] = [];
+  const initBranchCollector: string[] = [];
 
   // Recursive way to compute permutations
   const computePermutations = (
@@ -67,7 +67,7 @@ export const lexicographicPermutationFind = (
     }
   };
 
-  computePermutations(permutationToFind, inputElements, branchCollector);
+  computePermutations(permutationToFind, elements, initBranchCollector);
 
   return lastBranchCollector;
 };
