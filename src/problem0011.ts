@@ -45,7 +45,7 @@ function problem0011(_squareMatrix: number[][], _interval: number): number {
     for (let j = 0; j < top; j++) {
       acum = 1;
 
-      if (i < top - (_interval - 1) && j < top) {
+      if (i < top - (_interval - 1)) {
         logger.debug(
           `---- VERTICAL ------------------------------------------`
         );
@@ -64,7 +64,7 @@ function problem0011(_squareMatrix: number[][], _interval: number): number {
       }
 
       acum = 1;
-      if (i < top && j < top - (_interval - 1)) {
+      if (j < top - (_interval - 1)) {
         logger.debug(
           `---- HORIZONTAL ----------------------------------------`
         );
