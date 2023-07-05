@@ -118,7 +118,7 @@ export const bigMultiply = (
       collector[i].push(0);
     }
 
-    // Product of miltiply digits as rows by every multiplier digit
+    // Product of multiply digits as rows by every multiplier digit
     collector[i] = collector[i].concat(
       bigMultiplyRowToBigNum(strMultiply, bigNumMultiplier[i]).reverse()
     );
