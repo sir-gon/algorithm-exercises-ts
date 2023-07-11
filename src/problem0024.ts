@@ -16,9 +16,11 @@
 import logger from './logger';
 
 const factorial = (n: number): number => {
+  let i = n;
   let out = 1;
-  while (n > 1) {
-    out *= n--;
+  while (i > 1) {
+    out *= i;
+    i -= 1;
   }
   return out;
 };
