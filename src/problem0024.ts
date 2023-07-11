@@ -15,71 +15,39 @@
 
 import logger from './logger';
 
-export const lexicographicPermutationFind = (
-  elements: string[],
-  permutationToFind: number
-): string[] => {
-  // "inner global variables" to catch the results shared across recursive branch calls.
-  let lastBranchCollector: string[] = [];
-  let currentCycle = 0;
+const factorial = (n: number): number => {
+  let out = 1;
+  while (n > 1) {
+    out *= n--;
+  }
+  return out;
+};
 
-  // Initial values
-  const initBranchCollector: string[] = [];
+const permute = (symbols: string, target: number): string => {
+  const choices: string[] = symbols.split('');
+  let answer = '';
+  let min = 0;
 
-  // Recursive way to compute permutations
-  const computePermutations = (
-    stopAtCycle: number,
-    inputElements: string[] = [],
-    branchCollector: string[] = []
-  ): undefined => {
-    if (currentCycle >= stopAtCycle) {
-      return;
+  while (choices.length > 0) {
+    let index = 0;
+    const combos = factorial(choices.length - 1);
+    min += combos;
+    while (target > min) {
+      index += 1;
+      min += combos;
     }
+    answer += choices.splice(index, 1);
+    min -= combos;
+  }
 
-    for (let i = 0; i < inputElements.length; i++) {
-      const rootElement = inputElements[i];
-      const restOfElements: string[] = [];
-
-      logger.debug(`root element: ${i} -> ${rootElement}`);
-
-      for (let j = 0; j < inputElements.length; j++) {
-        if (i != j) {
-          restOfElements.push(inputElements[j]);
-        }
-      }
-
-      const [...newBranchCollector] = branchCollector;
-      newBranchCollector.push(rootElement);
-
-      // finally...
-      if (restOfElements.length > 0) {
-        logger.debug(`REST: ${restOfElements}`);
-
-        computePermutations(stopAtCycle, restOfElements, newBranchCollector);
-      } else {
-        lastBranchCollector = newBranchCollector;
-        currentCycle += 1;
-
-        logger.debug(
-          `FINISH BRANCH: ${currentCycle} -> ${lastBranchCollector}`
-        );
-      }
-    }
-  };
-
-  computePermutations(permutationToFind, elements, initBranchCollector);
-
-  return lastBranchCollector;
+  return answer;
 };
 
 export function problem0024(
-  inputElements: string[],
+  inputElements: string,
   inputPermutationToFind: number
-): string[] {
-  const permutationFound = lexicographicPermutationFind(
-    inputElements,
-    inputPermutationToFind
-  );
+): string {
+  const permutationFound = permute(inputElements, inputPermutationToFind);
 
   logger.debug(`result ${String(permutationFound)}`);
 
