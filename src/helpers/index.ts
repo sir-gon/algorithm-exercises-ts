@@ -2,6 +2,7 @@ type nullable<T> = T | null | undefined;
 
 export {
   bigNum,
+  bigNumToString,
   bigSum,
   bigSumMany,
   bigMultiplyRowToBigNum,
