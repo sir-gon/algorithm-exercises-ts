@@ -1,8 +1,7 @@
 /**
- *
  * <TITLE>
  *
- * https://projecteuler.net/problem=XX
+ * https://purl/to/problem/source
  *
  * <DESCRIPTION>
  *
@@ -12,7 +11,7 @@
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-import logger from '../logger';
+import logger from './logger';
 
 export function problem0000(): null {
   const result = null;
