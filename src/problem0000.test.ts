@@ -1,18 +1,4 @@
-/**
- *
- * <TITLE>
- *
- * https://projecteuler.net/problem=XX
- *
- * <DESCRIPTION>
- *
- * ////////////////////////////////////////////////////////////////////////////
- *
- * Result found:
- * ////////////////////////////////////////////////////////////////////////////
- */
-
-import logger from '../logger';
+import logger from './logger';
 
 import { problem0000 } from './problem0000';
 
