@@ -3,7 +3,7 @@ import logger from '../logger';
 import { aVeryBigSum } from './aVeryBigSum';
 
 describe('aVeryBigSum', () => {
-  it('aVeryBigSum solution found', () => {
+  it('aVeryBigSum Test case 0', () => {
     expect.assertions(1);
 
     const input = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005];
