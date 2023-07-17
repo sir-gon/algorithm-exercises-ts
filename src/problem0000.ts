@@ -1,7 +1,7 @@
 /**
  * <TITLE>
  *
- * https://purl/to/problem/source
+ * https://url/to/problem/source
  *
  * <DESCRIPTION>
  *
