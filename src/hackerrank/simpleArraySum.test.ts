@@ -11,7 +11,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = simpleArraySum(input);
 
-    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
+    logger.info(`simpleArraySum(${input}) solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

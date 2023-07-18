@@ -11,7 +11,7 @@ describe('aVeryBigSum', () => {
 
     const calculated = aVeryBigSum(input);
 
-    logger.info(`aVeryBigSum solution found: ${calculated}`);
+    logger.info(`aVeryBigSum(${input}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
