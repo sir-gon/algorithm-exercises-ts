@@ -23,7 +23,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = compareTriplets(a, b);
 
-    logger.info(`compareTriplets solution found: ${calculated}`);
+    logger.info(`compareTriplets(${a}, ${b}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

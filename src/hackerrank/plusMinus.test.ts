@@ -11,7 +11,7 @@ describe('Plus Minus', () => {
 
     const calculated = plusMinus(input);
 
-    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
+    logger.info(`plusMinus(${input}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

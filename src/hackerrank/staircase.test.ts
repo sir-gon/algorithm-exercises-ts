@@ -18,7 +18,7 @@ describe('staircase', () => {
 
     const calculated = staircase(input);
 
-    logger.info(`staircase solution found: ${calculated}`);
+    logger.info(`staircase(${input}) solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

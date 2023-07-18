@@ -15,7 +15,7 @@ describe('diagonalDifference Test Case 0', () => {
 
     const calculated = diagonalDifference(input);
 
-    logger.info(`diagonalDifference solution found: ${calculated}`);
+    logger.info(`diagonalDifference(${input}) solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

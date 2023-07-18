@@ -11,12 +11,12 @@ describe('problem simpleArraySum', () => {
 
     const calculated = solveMeFirst(input);
 
-    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
+    logger.info(`simpleArraySum solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
 
-  it('problem simpleArraySum Test case 1', () => {
+  it('simpleArraySum Test case 1', () => {
     expect.assertions(1);
 
     const input = ['100', '1000'];
@@ -24,7 +24,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = solveMeFirst(input);
 
-    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
+    logger.info(`simpleArraySum solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

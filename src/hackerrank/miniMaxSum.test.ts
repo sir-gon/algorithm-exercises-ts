@@ -1,3 +1,5 @@
+import logger from '../logger';
+
 import { miniMaxSum } from './miniMaxSum';
 
 describe('miniMaxSum', () => {
@@ -18,7 +20,10 @@ describe('miniMaxSum', () => {
     ];
 
     for (const test of tests) {
-      expect(miniMaxSum(test.input)).toBe(test.answer);
+      const solutionFound = miniMaxSum(test.input);
+      logger.info(`miniMaxSum(${test.input}) solution found: ${solutionFound}`);
+
+      expect(solutionFound).toBe(test.answer);
     }
   });
 });
