@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/time-conversion
  *
+ * Difficulty: #easy
+ * Category: #warmup
+ *
  * Given a time in
  * 12-[hour AM/PM format](https://en.wikipedia.org/wiki/12-hour_clock),
  * convert it to military (24-hour) time.

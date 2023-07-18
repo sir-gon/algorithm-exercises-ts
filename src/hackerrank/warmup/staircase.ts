@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/staircase
  *
+ * Difficulty: #easy
+ * Category: #warmup
+ *
  * Staircase detail
  * This is a staircase of size n = 4:
  * ```
