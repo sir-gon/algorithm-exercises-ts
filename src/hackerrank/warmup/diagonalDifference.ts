@@ -81,7 +81,7 @@
  * of x
  */
 
-import logger from '../logger';
+import logger from '../../logger';
 
 export function diagonalDifference(arr: number[][]): number {
   let diag1 = 0;
