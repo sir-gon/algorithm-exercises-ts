@@ -23,4 +23,17 @@ describe('Migratory Birds', () => {
 
     expect(calculated).toBe(solutionFound);
   });
+
+  it('Migratory Birds Test case 5', () => {
+    expect.assertions(1);
+
+    const input = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4];
+    const solutionFound = 3;
+
+    const calculated = migratoryBirds(input);
+
+    logger.info(`Migratory Birds Test case 5: ${calculated}`);
+
+    expect(calculated).toBe(solutionFound);
+  });
 });
