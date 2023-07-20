@@ -1,7 +1,10 @@
 /**
- * <TITLE>
+ * Counting Valleys
  *
- * https://url/to/problem/source
+ * https://www.hackerrank.com/challenges/counting-valleys
+ *
+ * Difficulty: #easy
+ * Category: #implementation
  *
  * An avid hiker keeps meticulous records of their hikes. During the last hike
  * that took exactly _steps_ steps, for every step it was noted if it was an

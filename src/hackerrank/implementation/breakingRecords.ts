@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/breaking-best-and-worst-records
  *
+ * Difficulty: #easy
+ * Category: #implementation
+ *
  * Maria plays college basketball and wants to go pro. Each season she
  * maintains a record of her play. She tabulates the number of times she breaks
  * her season record for most points and least points in a game. Points scored
