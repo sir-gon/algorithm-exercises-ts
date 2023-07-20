@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/grading
  *
+ * Difficulty: #easy
+ * Category: #implementation
+ *
  * HackerLand University has the following grading policy:
  *
  * * Every student receives a grade in the inclusive range 0 from to 100.

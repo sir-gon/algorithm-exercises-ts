@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/divisible-sum-pairs
  *
+ * Difficulty: #easy
+ * Category: #implementation
+ *
  * Given an array of integers and a positive integer k, determine the number
  * of (i, j) pairs where i < j and and ar[i] + ar[j] is divisible by k.
  *

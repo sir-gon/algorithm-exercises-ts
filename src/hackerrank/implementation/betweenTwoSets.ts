@@ -3,6 +3,9 @@
  *
  * https://www.hackerrank.com/challenges/between-two-sets
  *
+ * Difficulty: #easy
+ * Category: #implementation
+ *
  * There will be two arrays of integers. Determine all integers that satisfy
  * the following two conditions:
  *
