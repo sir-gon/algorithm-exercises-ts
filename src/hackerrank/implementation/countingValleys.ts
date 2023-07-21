@@ -71,14 +71,14 @@
  * The hiker enters and leaves one valley.
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 export function countingValleys(steps: number, path: string): number {
   const stepList = path.split('');
   let altitude = 0;
   let valleys = 0;
 
-  logger.debug(stepList);
+  console.debug(stepList);
 
   stepList.forEach((step) => {
     if (step === 'D') {

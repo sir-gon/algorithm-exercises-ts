@@ -58,14 +58,14 @@
  * (4,5) -> ar[4] + ar[5] = 1 + 2 = 3
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 export function divisibleSumPairs(n: number, k: number, ar: number[]): number {
   let pairs = 0;
   for (let i = 0; i < ar.length; i++) {
     for (let j = i + 1; j < ar.length; j++) {
       if ((ar[i] + ar[j]) % k === 0) {
-        logger.debug(`i: ${i} => ${ar[i]} | j: ${j} => ${ar[j]}`);
+        console.debug(`i: ${i} => ${ar[i]} | j: ${j} => ${ar[j]}`);
         pairs += 1;
       }
     }
