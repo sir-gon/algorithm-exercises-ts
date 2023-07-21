@@ -111,20 +111,20 @@
  * constraint, we print 1 as our answer.
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 export function birthday(s: number[], d: number, m: number): number {
   let result = 0;
-  logger.debug(`s: ${s}`);
+  console.debug(`s: ${s}`);
 
   for (let i = 0; i <= s.length - m; i++) {
     let sum = 0;
-    logger.debug('-------------------------------');
+    console.debug('-------------------------------');
     for (let j = i; j < i + m; j++) {
-      logger.debug(`j: s[${j}] => ${s[j]}`);
+      console.debug(`j: s[${j}] => ${s[j]}`);
       sum += s[j];
     }
-    logger.debug('-------------------------------');
+    console.debug('-------------------------------');
     if (sum === d) result += 1;
   }
 

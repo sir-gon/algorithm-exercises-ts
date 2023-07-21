@@ -21,3 +21,4 @@ logger.info('LOG: INFO LEVEL ENABLED');
 logger.info(`LOG LEVEL: ${logger.levelVal}`);
 
 export default logger;
+export { logger };

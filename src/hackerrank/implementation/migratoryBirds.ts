@@ -81,7 +81,7 @@
  * Two types have a frequency of 3, and the lower of those is type 3.
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 interface Birds {
   [name: string]: number;
@@ -96,7 +96,7 @@ export function migratoryBirds(arr: number[]): number {
   let max = arr[0];
 
   for (const bird of arr) {
-    logger.debug(`bird ${bird}`);
+    console.debug(`bird ${bird}`);
 
     if (!map[bird]) {
       map[bird] = 1;
@@ -104,14 +104,14 @@ export function migratoryBirds(arr: number[]): number {
       map[bird] += 1;
     }
 
-    logger.debug(`bird = ${bird} ~> map[bird] = ${map[bird]}`);
-    logger.debug(`max = ${max} ~> map[max] = ${map[max]}`);
+    console.debug(`bird = ${bird} ~> map[bird] = ${map[bird]}`);
+    console.debug(`max = ${max} ~> map[max] = ${map[max]}`);
 
     if (map[bird] > map[max] || (map[bird] == map[max] && bird < max))
       max = bird;
   }
 
-  logger.debug(`map: ${map}`);
+  console.debug(`map: ${map}`);
 
   return max;
 }

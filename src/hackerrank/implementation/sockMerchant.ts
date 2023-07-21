@@ -65,7 +65,7 @@
  * There are three pairs of socks.
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 export function sockMerchant(n: number, ar: number[]): number {
   let result = 0;
@@ -80,11 +80,11 @@ export function sockMerchant(n: number, ar: number[]): number {
     matches[v] = matches?.[v] ? matches[v] + 1 : 1;
   });
 
-  logger.debug(matches);
+  console.debug(matches);
 
   let k: keyof Matches;
   for (k in matches) {
-    logger.debug(matches[k]);
+    console.debug(matches[k]);
 
     result += Math.floor(matches[k] / 2);
   }

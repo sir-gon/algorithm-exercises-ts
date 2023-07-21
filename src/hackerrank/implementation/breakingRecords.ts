@@ -104,7 +104,7 @@
  * she earned during her first game), so we print 4 0 as our answer.
  */
 
-// import logger from '../../logger';
+// import { logger as console } from '../../logger';
 
 export function breakingRecords(scores: number[]): number[] {
   if (scores.length == 0) {
