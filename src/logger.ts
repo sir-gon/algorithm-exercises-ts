@@ -2,6 +2,9 @@
 import pino from 'pino';
 
 const logger = pino({
+  customLevels: {
+    log: 30
+  },
   transport: {
     target: 'pino-pretty',
     options: {
