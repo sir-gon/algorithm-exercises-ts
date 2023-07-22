@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { sockMerchant } from './sockMerchant';
 
@@ -11,7 +11,7 @@ describe('Sales by Match', () => {
 
     const calculated = sockMerchant(input.length, input);
 
-    logger.info(`Sales by Match solution found: ${calculated}`);
+    console.log(`Sales by Match solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

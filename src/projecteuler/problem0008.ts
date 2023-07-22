@@ -48,7 +48,7 @@
 /// ///////////////////////////////////////////////////////////////////////////
 
 import { product } from './helpers/index';
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 function problem0008(_number: string, _interval: number): number {
   const digits = _number.toString().split('');
@@ -65,7 +65,7 @@ function problem0008(_number: string, _interval: number): number {
     }
 
     const currentProduct = product(digitsSet);
-    logger.debug(
+    console.debug(
       `Product beetwen ${i} and ${i + _interval} is: ${currentProduct}`
     );
 
@@ -74,7 +74,7 @@ function problem0008(_number: string, _interval: number): number {
     }
   }
 
-  logger.info(
+  console.log(
     `The the greatest product of ${_interval} consecutive digits is: ${max}`
   );
 

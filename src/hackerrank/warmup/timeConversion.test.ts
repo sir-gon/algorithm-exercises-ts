@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { timeConversion } from './timeConversion';
 
@@ -12,7 +12,7 @@ describe('timeConversion', () => {
 
     for (const test of tests) {
       const calculated = timeConversion(test.input);
-      logger.info(`timeConversion(${test.input}) Test case 0: ${calculated}`);
+      console.log(`timeConversion(${test.input}) Test case 0: ${calculated}`);
       expect(calculated).toBe(test.answer);
     }
   });
@@ -25,7 +25,7 @@ describe('timeConversion', () => {
 
     const calculated = timeConversion(input);
 
-    logger.info(`timeConversion solution found: ${calculated}`);
+    console.log(`timeConversion solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { diagonalDifference } from './diagonalDifference';
 
@@ -15,7 +15,7 @@ describe('diagonalDifference Test Case 0', () => {
 
     const calculated = diagonalDifference(input);
 
-    logger.info(`diagonalDifference(${input}) solution found: ${calculated}`);
+    console.log(`diagonalDifference(${input}) solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

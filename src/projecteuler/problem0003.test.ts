@@ -8,7 +8,7 @@
  * What is the largest prime factor of the number 600851475143 ?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { problem0003 } from './problem0003';
 
@@ -21,7 +21,7 @@ describe('problem 0003', () => {
 
     const calculated = problem0003(top);
 
-    logger.info(`PROBLEM 0003 solution found: ${calculated}`);
+    console.log(`PROBLEM 0003 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -34,7 +34,7 @@ describe('problem 0003', () => {
 
     const calculated = problem0003(top);
 
-    logger.info(`PROBLEM 0003 border case: ${calculated}`);
+    console.log(`PROBLEM 0003 border case: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

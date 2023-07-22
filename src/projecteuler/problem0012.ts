@@ -24,7 +24,7 @@
  * five hundred divisors?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { divisors } from './helpers';
 
@@ -37,7 +37,7 @@ function problem0012(_top: number): number {
     triangular += i;
     const d = divisors(triangular);
 
-    logger.debug(`Triangular number: ${triangular} has ${d.length} divisors`);
+    console.debug(`Triangular number: ${triangular} has ${d.length} divisors`);
 
     if (d.length > count) {
       count = d.length;
@@ -46,7 +46,7 @@ function problem0012(_top: number): number {
     i += 1;
   }
 
-  logger.info(`FOUND: ${count}`);
+  console.log(`FOUND: ${count}`);
 
   return count;
 }

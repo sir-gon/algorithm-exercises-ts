@@ -84,7 +84,7 @@
  * of x
  */
 
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 export function diagonalDifference(arr: number[][]): number {
   let diag1 = 0;
@@ -97,7 +97,7 @@ export function diagonalDifference(arr: number[][]): number {
       }
     }
   }
-  logger.info(`diag1 ${String(diag1)}`);
+  console.log(`diag1 ${String(diag1)}`);
 
   let diag2 = 0;
 
@@ -108,7 +108,7 @@ export function diagonalDifference(arr: number[][]): number {
       }
     }
   }
-  logger.info(`diag2 ${String(diag2)}`);
+  console.log(`diag2 ${String(diag2)}`);
 
   return Math.abs(diag1 - diag2);
 }

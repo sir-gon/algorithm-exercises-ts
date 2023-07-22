@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { countingValleys } from './countingValleys';
 
@@ -11,7 +11,7 @@ describe('Counting Valleys', () => {
 
     const calculated = countingValleys(input.length, input);
 
-    logger.info(`Counting Valleys Test case 0: ${calculated}`);
+    console.log(`Counting Valleys Test case 0: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -24,7 +24,7 @@ describe('Counting Valleys', () => {
 
     const calculated = countingValleys(input.length, input);
 
-    logger.info(`Counting Valleys Test case 1: ${calculated}`);
+    console.log(`Counting Valleys Test case 1: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

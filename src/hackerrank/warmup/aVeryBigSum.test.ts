@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { aVeryBigSum } from './aVeryBigSum';
 
@@ -11,7 +11,7 @@ describe('aVeryBigSum', () => {
 
     const calculated = aVeryBigSum(input);
 
-    logger.info(`aVeryBigSum(${input}) solution found: ${calculated}`);
+    console.log(`aVeryBigSum(${input}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

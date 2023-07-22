@@ -13,7 +13,7 @@
  * What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 const factorial = (n: number): number => {
   let i = n;
@@ -51,7 +51,7 @@ export function problem0024(
 ): string {
   const permutationFound = permute(inputElements, inputPermutationToFind);
 
-  logger.debug(`result ${String(permutationFound)}`);
+  console.debug(`result ${String(permutationFound)}`);
 
   return permutationFound;
 }

@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { birthdayCakeCandles } from './birthdayCakeCandles';
 
@@ -20,7 +20,7 @@ describe('birthdayCakeCandles', () => {
 
     for (const test of tests) {
       const calculated = birthdayCakeCandles(test.input);
-      logger.info(
+      console.log(
         `birthdayCakeCandles(${test.input}) Test case 0: ${calculated}`
       );
       expect(calculated).toBe(test.answer);

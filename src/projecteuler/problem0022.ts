@@ -26,7 +26,7 @@
 //    - src/data/p022_listOfNames.json
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 import { wordScore } from './helpers/wordScore';
 
 export function problem0022(listOfNames: string[]): number {
@@ -39,7 +39,7 @@ export function problem0022(listOfNames: string[]): number {
     result += (i + 1) * wordScore(listOfNames[i]);
   }
 
-  logger.info(`result`, result);
+  console.log(`result`, result);
 
   return result;
 }

@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { countApplesAndOranges } from './countApplesAndOranges';
 
@@ -16,7 +16,7 @@ describe('countApplesAndOranges', () => {
 
     const calculated = countApplesAndOranges(s, t, a, b, apples, oranges);
 
-    logger.info(`countApplesAndOranges test case 0: ${calculated}`);
+    console.log(`countApplesAndOranges test case 0: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { jumpingOnClouds } from './jumpingOnClouds';
 
@@ -11,7 +11,7 @@ describe('Jumping on the Clouds', () => {
 
     const calculated = jumpingOnClouds(input);
 
-    logger.info(`Jumping on the Clouds Test case 0: ${calculated}`);
+    console.log(`Jumping on the Clouds Test case 0: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -24,7 +24,7 @@ describe('Jumping on the Clouds', () => {
 
     const calculated = jumpingOnClouds(input);
 
-    logger.info(`Jumping on the Clouds Test case 1: ${calculated}`);
+    console.log(`Jumping on the Clouds Test case 1: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

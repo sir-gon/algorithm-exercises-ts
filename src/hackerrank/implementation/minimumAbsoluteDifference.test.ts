@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { minimumAbsoluteDifference } from './minimumAbsoluteDifference';
 
@@ -19,7 +19,7 @@ describe('Minimum Absolute Difference in an Array', () => {
 
     const calculated = minimumAbsoluteDifference(input);
 
-    logger.info(
+    console.log(
       `Minimum Absolute Difference in an Array Test case 0: ${calculated}`
     );
 
@@ -34,7 +34,7 @@ describe('Minimum Absolute Difference in an Array', () => {
 
     const calculated = minimumAbsoluteDifference(input);
 
-    logger.info(
+    console.log(
       `Minimum Absolute Difference in an Array Test case 1: ${calculated}`
     );
 

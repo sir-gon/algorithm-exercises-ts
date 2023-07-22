@@ -23,7 +23,7 @@
 // FOUND: 232792560 divisible by any element beetwen 1 and 20
 /// ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 import { primeFactors } from './helpers/index';
 
 function _increase(
@@ -79,8 +79,8 @@ function problem0005(_bottom: number, _top: number): number {
     const factors = _primeFactorsCollection(primes.factors);
     cycles += primes.factors.length;
 
-    logger.debug('Prime Factors of %d list    => %o', i, primes);
-    logger.debug('Prime Factors of %d grouped => %o', i, factors);
+    console.debug('Prime Factors of %d list    => %o', i, primes);
+    console.debug('Prime Factors of %d grouped => %o', i, factors);
 
     for (const [factor, quantity] of factors) {
       cycles += 1;
@@ -91,7 +91,7 @@ function problem0005(_bottom: number, _top: number): number {
       );
     }
 
-    logger.debug('Prime Factors of %d grouped => %o', i, minimumPrimeFactors);
+    console.debug('Prime Factors of %d grouped => %o', i, minimumPrimeFactors);
   }
 
   for (const [factor, quantity] of minimumPrimeFactors) {
@@ -99,7 +99,7 @@ function problem0005(_bottom: number, _top: number): number {
     result *= factor ** quantity;
   }
 
-  logger.info('Problem 0005: %d in %d cycles', result, cycles);
+  console.log('Problem 0005: %d in %d cycles', result, cycles);
   return result;
 }
 
