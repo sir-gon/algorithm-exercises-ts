@@ -1,4 +1,4 @@
-import logger from './logger';
+import { logger as console } from './logger';
 
 import { problem0000 } from './problem0000';
 
@@ -10,8 +10,8 @@ describe('problem 00XX', () => {
 
     const calculated = problem0000();
 
-    logger.info(`PROBLEM 00XX solution found: ${calculated}`);
+    console.log(`PROBLEM 00XX solution found: ${calculated}`);
 
-    expect(calculated).toBe(solutionFound);
+    expect(calculated).toStrictEqual(solutionFound);
   });
 });
