@@ -22,7 +22,7 @@
 
 import { logger as console } from '../logger';
 
-import { __SUNDAY__ } from './constants';
+import { __SUNDAY__ } from '../constants';
 import { problem0019 } from './problem0019';
 
 describe('problem 0019', () => {
