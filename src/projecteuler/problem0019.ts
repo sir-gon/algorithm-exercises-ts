@@ -22,7 +22,7 @@
 
 import { logger as console } from '../logger';
 
-import { daysInMonth, __SUNDAY__ } from './constants';
+import { daysInMonth, __SUNDAY__ } from '../constants';
 
 export function problem0019(
   _dayOfWeek = __SUNDAY__,
