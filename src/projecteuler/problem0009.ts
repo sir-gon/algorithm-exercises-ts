@@ -19,7 +19,7 @@
 // ////////////////////////////////////////////////////////////////////////////
 
 import { nullable } from './helpers/index';
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 interface Triplet {
   a: number;
@@ -37,7 +37,7 @@ function problem0009(_limit: number): nullable<number> {
   let b = 2;
   let c = 997;
 
-  logger.info(`a = ${a} | b = ${b} | c = ${c}`);
+  console.log(`a = ${a} | b = ${b} | c = ${c}`);
 
   let found: nullable<Triplet>;
 
@@ -46,11 +46,11 @@ function problem0009(_limit: number): nullable<number> {
 
     while (a < b && b < c && !found) {
       // TESTING
-      logger.debug(`TESTING: a = ${a} b = ${b} c = ${c}`);
+      console.debug(`TESTING: a = ${a} b = ${b} c = ${c}`);
 
       if (isPythagoreanTriplet(a, b, c)) {
         found = { a, b, c };
-        logger.debug(`FOUND: a = ${a} b = ${b} c = ${c}`);
+        console.debug(`FOUND: a = ${a} b = ${b} c = ${c}`);
       }
 
       // INCREASE
@@ -65,8 +65,8 @@ function problem0009(_limit: number): nullable<number> {
     return null;
   }
 
-  logger.info(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`);
-  logger.info(`PRODUCT: a * b * c = ${found.a * found.b * found.c}`);
+  console.log(`FOUND: a = ${found.a} b = ${found.b} c = ${found.c}`);
+  console.log(`PRODUCT: a * b * c = ${found.a * found.b * found.c}`);
 
   return found.a * found.b * found.c;
 }

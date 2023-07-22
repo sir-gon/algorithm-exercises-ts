@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { gradingStudents } from './gradingStudents';
 
@@ -11,7 +11,7 @@ describe('gradingStudents', () => {
 
     const calculated = gradingStudents(input);
 
-    logger.info(`gradingStudents Test case 0: ${calculated}`);
+    console.log(`gradingStudents Test case 0: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

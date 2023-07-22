@@ -20,7 +20,7 @@
  * twentieth century (1 Jan 1901 to 31 Dec 2000)?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { daysInMonth, __SUNDAY__ } from './constants';
 
@@ -38,7 +38,7 @@ export function problem0019(
     daysInMonth['FEBRUARY'] = 28 + leap;
 
     Object.entries(daysInMonth).forEach(([month, days], index) => {
-      logger.debug(`Month(${index}): ${month} | days: ${days}`);
+      console.debug(`Month(${index}): ${month} | days: ${days}`);
 
       accumulatedRemainder += days % 7;
       if (accumulatedRemainder % 7 === _dayOfWeek) {
@@ -50,7 +50,7 @@ export function problem0019(
     });
   }
 
-  logger.info(`result ${String(resultCount)}`);
+  console.log(`result ${String(resultCount)}`);
 
   return resultCount - excess;
 }

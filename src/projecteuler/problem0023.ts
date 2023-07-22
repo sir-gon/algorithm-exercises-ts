@@ -24,7 +24,7 @@
  * the sum of two abundant numbers.
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { abundance, sum, ___DIVISORS_ABUNDANCE___ } from './helpers';
 
@@ -41,7 +41,7 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
     }
   }
 
-  logger.debug(
+  console.debug(
     `abundant nums list: ${abundantNumberList.length} => ${abundantNumberList}`
   );
 
@@ -62,7 +62,7 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
   // filter duplicates
   sumsAbundantNums = [...new Set(sumsAbundantNums)];
 
-  logger.debug(
+  console.debug(
     `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums}`
   );
 
@@ -75,11 +75,11 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
     }
   }
 
-  logger.debug(`found size: ${found.length}, found => ${found}`);
+  console.debug(`found size: ${found.length}, found => ${found}`);
 
   const result = sum(found);
 
-  logger.info(`result ${result}`);
+  console.log(`result ${result}`);
 
   return result;
 }

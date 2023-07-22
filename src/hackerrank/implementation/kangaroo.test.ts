@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { kangaroo } from './kangaroo';
 
@@ -14,7 +14,7 @@ describe('Number Line Jumps', () => {
 
     const calculated = kangaroo(x1, v1, x2, v2);
 
-    logger.info(
+    console.log(
       `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
@@ -31,7 +31,7 @@ describe('Number Line Jumps', () => {
 
     const calculated = kangaroo(x1, v1, x2, v2);
 
-    logger.info(
+    console.log(
       `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
@@ -48,7 +48,7 @@ describe('Number Line Jumps', () => {
 
     const calculated = kangaroo(x1, v1, x2, v2);
 
-    logger.info(
+    console.log(
       `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 0: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
@@ -65,7 +65,7 @@ describe('Number Line Jumps', () => {
 
     const calculated = kangaroo(x1, v1, x2, v2);
 
-    logger.info(
+    console.log(
       `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 1: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);

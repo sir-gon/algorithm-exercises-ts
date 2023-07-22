@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { birthday } from './birthday';
 
@@ -13,7 +13,7 @@ describe('Subarray Division', () => {
 
     const calculated = birthday(s, d, m);
 
-    logger.info(`Subarray Division test case 0: ${calculated}`);
+    console.log(`Subarray Division test case 0: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -28,7 +28,7 @@ describe('Subarray Division', () => {
 
     const calculated = birthday(s, d, m);
 
-    logger.info(`Subarray Division test case 1: ${calculated}`);
+    console.log(`Subarray Division test case 1: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -43,7 +43,7 @@ describe('Subarray Division', () => {
 
     const calculated = birthday(s, d, m);
 
-    logger.info(`Subarray Division test case 2: ${calculated}`);
+    console.log(`Subarray Division test case 2: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

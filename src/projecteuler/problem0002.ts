@@ -12,7 +12,7 @@
  * find the sum of the even-valued terms.
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 export function problem0002(_top: number): number {
   let i = 0;
@@ -24,7 +24,7 @@ export function problem0002(_top: number): number {
   do {
     fibo = last2 + last1;
 
-    logger.debug(`Fibonacci (${i}) = ${fibo}`);
+    console.debug(`Fibonacci (${i}) = ${fibo}`);
 
     if (fibo % 2 === 0) {
       evenSum += fibo;
@@ -36,7 +36,7 @@ export function problem0002(_top: number): number {
     i += 1;
   } while (fibo < _top);
 
-  logger.info(`RESULT = ${evenSum}`);
+  console.log(`RESULT = ${evenSum}`);
   return evenSum;
 }
 

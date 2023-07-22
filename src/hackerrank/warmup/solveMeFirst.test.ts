@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { solveMeFirst } from './solveMeFirst';
 
@@ -11,7 +11,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = solveMeFirst(input);
 
-    logger.info(`simpleArraySum solution found: ${calculated}`);
+    console.log(`simpleArraySum solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -24,7 +24,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = solveMeFirst(input);
 
-    logger.info(`simpleArraySum solution found: ${calculated}`);
+    console.log(`simpleArraySum solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

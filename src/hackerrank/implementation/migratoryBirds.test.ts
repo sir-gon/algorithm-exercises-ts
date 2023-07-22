@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { migratoryBirds } from './migratoryBirds';
 
@@ -19,7 +19,7 @@ describe('Migratory Birds', () => {
 
     const calculated = migratoryBirds(input);
 
-    logger.info(`Migratory Birds Test case 0: ${calculated}`);
+    console.log(`Migratory Birds Test case 0: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -32,7 +32,7 @@ describe('Migratory Birds', () => {
 
     const calculated = migratoryBirds(input);
 
-    logger.info(`Migratory Birds Test case 5: ${calculated}`);
+    console.log(`Migratory Birds Test case 5: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

@@ -23,7 +23,7 @@
 // FOUND: 232792560 divisible by any element beetwen 1 and 20
 /// ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 function problem0005Simple(
   _bottom: number,
@@ -43,9 +43,9 @@ function problem0005Simple(
       fail = test % i !== 0;
 
       if (fail) {
-        logger.debug(`Fail ${test} not divisible by ${i}`);
+        console.debug(`Fail ${test} not divisible by ${i}`);
       } else {
-        logger.debug(`Testing: ${test} divisible by ${i}`);
+        console.debug(`Testing: ${test} divisible by ${i}`);
       }
 
       i += 1;
@@ -59,7 +59,7 @@ function problem0005Simple(
     test += 1;
   } while (!found);
 
-  logger.info(
+  console.log(
     `FOUND: ${found} divisible by any element beetwen ${_bottom} and ${_top}`
   );
 

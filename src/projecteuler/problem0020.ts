@@ -19,13 +19,13 @@
 //            7920827223758251185210916864000000000000000000000000
 // ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 import { bigFactorial, bigSumMany } from './helpers';
 
 export function problem0020(_limit: number): string {
   const strFactorial = bigFactorial(_limit);
 
-  logger.info(`Factorial of ${_limit}!:`, strFactorial);
+  console.log(`Factorial of ${_limit}!:`, strFactorial);
 
   const digits = strFactorial.split('');
 

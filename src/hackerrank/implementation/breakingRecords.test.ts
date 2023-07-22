@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { breakingRecords } from './breakingRecords';
 
@@ -19,7 +19,7 @@ describe('Breaking the Records', () => {
 
     const calculated = breakingRecords(input);
 
-    logger.info(`breakingRecords(${input}) Test case 0: ${calculated}`);
+    console.log(`breakingRecords(${input}) Test case 0: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -32,7 +32,7 @@ describe('Breaking the Records', () => {
 
     const calculated = breakingRecords(input);
 
-    logger.info(`breakingRecords(${input}) Test case 1: ${calculated}`);
+    console.log(`breakingRecords(${input}) Test case 1: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

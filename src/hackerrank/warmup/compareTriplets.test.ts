@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { compareTriplets } from './compareTriplets';
 
@@ -23,7 +23,7 @@ describe('problem simpleArraySum', () => {
 
     const calculated = compareTriplets(a, b);
 
-    logger.info(`compareTriplets(${a}, ${b}) solution found: ${calculated}`);
+    console.log(`compareTriplets(${a}, ${b}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

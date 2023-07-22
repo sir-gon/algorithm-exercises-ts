@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { repeatedString } from './repeatedString';
 
@@ -12,7 +12,7 @@ describe('Repeated String', () => {
 
     const calculated = repeatedString(word, n);
 
-    logger.info(`Repeated String Test case 0: ${calculated}`);
+    console.log(`Repeated String Test case 0: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -26,7 +26,7 @@ describe('Repeated String', () => {
 
     const calculated = repeatedString(word, n);
 
-    logger.info(`Repeated String Test case 1: ${calculated}`);
+    console.log(`Repeated String Test case 1: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

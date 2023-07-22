@@ -21,7 +21,7 @@
  * NOTE: Once the chain starts the terms are allowed to go above one million.
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { problem0014 } from './problem0014';
 
@@ -34,7 +34,7 @@ describe('problem 0014', () => {
 
     const calculated = problem0014(solutionFound, top);
 
-    logger.info(`PROBLEM 0014 solution found: ${calculated}`);
+    console.log(`PROBLEM 0014 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -65,7 +65,7 @@ describe('problem 0014', () => {
 
     const calculated = problem0014();
 
-    logger.info(`PROBLEM 0014 solution found: ${calculated}`);
+    console.log(`PROBLEM 0014 solution found: ${calculated}`);
 
     expect(calculated).toBe(9);
   });

@@ -28,7 +28,7 @@
  * sequence to contain 1000 digits?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { problem0025 } from './problem0025';
 
@@ -40,7 +40,7 @@ describe('problem 0025', () => {
 
     const calculated = problem0025(3);
 
-    logger.info(`PROBLEM 0025 solution found: ${calculated}`);
+    console.log(`PROBLEM 0025 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
@@ -52,7 +52,7 @@ describe('problem 0025', () => {
 
     const calculated = problem0025(1000);
 
-    logger.info(`PROBLEM 0025 solution found: ${calculated}`);
+    console.log(`PROBLEM 0025 solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

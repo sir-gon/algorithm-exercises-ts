@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { staircase } from './staircase';
 
@@ -18,7 +18,7 @@ describe('staircase', () => {
 
     const calculated = staircase(input);
 
-    logger.info(`staircase(${input}) solution found: ${calculated}`);
+    console.log(`staircase(${input}) solution found: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

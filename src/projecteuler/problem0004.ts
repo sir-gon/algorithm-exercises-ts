@@ -20,7 +20,7 @@
 
 /// ////////////////////////////////////////////////////////////////////////////
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 
 import { nullable, isPalindrome } from './helpers/index';
 
@@ -41,7 +41,7 @@ function problem0004(_bottom: number, _top: number): nullable<number> {
       cycles += 1;
 
       if (isPalindrome(j * i)) {
-        logger.debug(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
+        console.debug(`FOUND: ${i} x ${j} = ${j * i} is Palindrome`);
 
         if (!foundPalindrome || i * j > foundPalindrome) {
           foundi = i;
@@ -58,7 +58,7 @@ function problem0004(_bottom: number, _top: number): nullable<number> {
     i -= 1;
   }
 
-  logger.info(
+  console.log(
     `Problem 0004 Largest Palindrome  => ${foundi} 𝗑 ${foundj} = ${foundPalindrome} in ${cycles} cycles`
   );
 

@@ -1,4 +1,4 @@
-import logger from '../../logger';
+import { logger as console } from '../../logger';
 
 import { divisibleSumPairs } from './divisibleSumPairs';
 
@@ -13,7 +13,7 @@ describe('Divisible Sum Pairs', () => {
 
     const calculated = divisibleSumPairs(n, k, ar);
 
-    logger.info(`Divisible Sum Pairs Test case 0: ${calculated}`);
+    console.log(`Divisible Sum Pairs Test case 0: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

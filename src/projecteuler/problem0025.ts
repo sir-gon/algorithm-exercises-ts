@@ -28,7 +28,7 @@
  * sequence to contain 1000 digits?
  */
 
-import logger from '../logger';
+import { logger as console } from '../logger';
 import { bigNum, bigSum, bigNumToString } from './helpers';
 
 export function problem0025(_top: number): number {
@@ -39,7 +39,7 @@ export function problem0025(_top: number): number {
 
   do {
     fibo = bigSum(bigNumToString(last1), bigNumToString(last2));
-    logger.debug(`Fibonacci (${counter}) = ${fibo}`);
+    console.debug(`Fibonacci (${counter}) = ${fibo}`);
 
     // next keys:
     last2 = last1;
@@ -47,7 +47,7 @@ export function problem0025(_top: number): number {
     counter += 1;
   } while (fibo.length < _top);
 
-  logger.info(`RESULT ${counter} => ${fibo}`);
+  console.log(`RESULT ${counter} => ${fibo}`);
   return counter;
 }
 
