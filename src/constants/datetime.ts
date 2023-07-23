@@ -38,7 +38,7 @@ export const daysInMonth: MonthNames = {
   DECEMBER: 31
 };
 
-interface MonthNumbers {
+export interface MonthNumbers {
   [key: string]: number;
 }
 
