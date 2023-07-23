@@ -1,1 +1,6 @@
-export { daysInMonth, daysInMonthNumber, __SUNDAY__ } from './datetime';
+export {
+  MonthNumbers,
+  daysInMonth,
+  daysInMonthNumber,
+  __SUNDAY__
+} from './datetime';
