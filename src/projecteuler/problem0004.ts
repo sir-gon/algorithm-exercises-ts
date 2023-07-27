@@ -1,24 +1,11 @@
-/**
- * Largest palindrome product
- *
- * https://projecteuler.net/problem=4
- *
- * A palindromic number reads the same both ways.
- * The largest palindrome made from the product of two 2-digit
- * numbers is 9009 = 91 × 99.
- *
- * Find the largest palindrome made from the product of two 3-digit numbers.
- */
-
-/// ////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////
 // NOTES ABOUT THE SOLUTION:
-// This solution cycles to test all pairs of factors between 111 and 999 that meet the condition of generating a palindrome and saves the largest found.
+// This solution cycles to test all pairs of factors between 111 and 999 that
+// meet the condition of generating a palindrome and saves the largest found.
 // I think there must be another optimal solution to avoid testing all cases
 // cutting the loop around the largest factor pair
 // That's why I thought about doing the loop from highest to lowest.
-/// ////////////////////////////////////////////////////////////////////////////
-
-/// ////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////
 
 import { logger as console } from '../logger';
 
