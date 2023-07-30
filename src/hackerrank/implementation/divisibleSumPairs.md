@@ -4,7 +4,8 @@ Difficulty: #easy
 Category: #implementation
 
 Given an array of integers and a positive integer $ k $, determine the number
-of $ (i, j) $ pairs where $ i < j $ and and $ ar[i] + ar[j] $ is divisible by $ k $.
+of $ (i, j) $ pairs where $ i < j $ and and $ ar[i] + ar[j] $ is divisible
+by $ k $.
 
 ## Example
 
@@ -30,7 +31,8 @@ divisibleSumPairs has the following parameter(s):
 ## Input Format
 
 The first line contains 2 space-separated integers, $ n $ and $ k $.
-The second line contains $ n $ space-separated integers, each a value of $ arr[i] $.
+The second line contains $ n $ space-separated integers, each a value
+of $ arr[i] $.
 
 ## Constraints
 
