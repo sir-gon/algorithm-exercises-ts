@@ -56,6 +56,11 @@ dependencies:
 	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
+mdlint:
+	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
+
+lint: test/static mdlint
+
 test/static: dependencies
 	npm run lint
 
@@ -74,7 +79,17 @@ compose/build: env
 compose/rebuild: env
 	docker-compose --profile testing build --no-cache
 
+compose/mdlint: env
+	docker-compose --profile lint build
+	docker-compose --profile lint run --rm algorithm-exercises-ts-mdlint make mdlint
+
+compose/test/static: compose/build
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
+
+compose/lint: compose/test/static compose/mdlint
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
+
 compose/run: compose/build
-	docker-compose --profile testing run --rm projecteuler-ts make test
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test
 
 all: env dependencies test

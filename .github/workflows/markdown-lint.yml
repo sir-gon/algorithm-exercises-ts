@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Markdown Lint
 
 on:
   push:
@@ -13,12 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [
-            "windows-latest",
-            "ubuntu-latest",
-            "macOS-latest"
-          ]
-        node-version: [18.x, 19.x, 20.x]
+        os: ["ubuntu-latest"]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -31,13 +27,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: npm install
+      run: npm install -g markdownlint-cli
 
     - name: Lint
-      run: npm run lint
+      run: markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
 
-    - name: Run the tests
-      run: npm test -- --coverage
-
-    - name: Upload coverage reports to Codecov with GitHub Action
-      uses: codecov/codecov-action@v3
