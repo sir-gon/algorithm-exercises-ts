@@ -81,15 +81,15 @@ compose/rebuild: env
 
 compose/mdlint: env
 	docker-compose --profile lint build
-	docker-compose --profile lint run --rm projecteuler-ts-mdlint make mdlint
+	docker-compose --profile lint run --rm algorithm-exercises-ts-mdlint make mdlint
 
 compose/test/static: compose/build
-	docker-compose --profile testing run --rm projecteuler-ts make test/static
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
 
 compose/lint: compose/test/static compose/mdlint
-	docker-compose --profile testing run --rm projecteuler-ts make test/static
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
 
 compose/run: compose/build
-	docker-compose --profile testing run --rm projecteuler-ts make test
+	docker-compose --profile testing run --rm algorithm-exercises-ts make test
 
 all: env dependencies test

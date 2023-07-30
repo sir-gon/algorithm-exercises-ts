@@ -1,6 +1,6 @@
 services:
-  projecteuler-ts:
-    image: projecteuler-ts:latest
+  algorithm-exercises-ts:
+    image: algorithm-exercises-ts:latest
     build:
       context: .
       target: testing
@@ -11,8 +11,8 @@ services:
       - ./coverage:/app/coverage
     profiles: ["testing"]
 
-  projecteuler-ts-mdlint:
-    image: projecteuler-ts:mdlint
+  algorithm-exercises-ts-mdlint:
+    image: algorithm-exercises-ts:mdlint
     build:
       context: .
       target: lint
@@ -23,8 +23,8 @@ services:
       - ./:/app
     profiles: ["lint"]
 
-  projecteuler-ts-dev:
-    image: projecteuler-ts:dev
+  algorithm-exercises-ts-dev:
+    image: algorithm-exercises-ts:dev
     build:
       context: .
       target: development
