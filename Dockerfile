@@ -5,6 +5,15 @@ RUN apk add --update --no-cache make
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
+FROM node:20.2.0-alpine3.16 as lint
+
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
+
+COPY ./src ${WORKDIR}/src
+RUN apk add --update --no-cache make
+RUN npm install -g markdownlint-cli
+
 FROM base as development
 
 FROM development as builder
