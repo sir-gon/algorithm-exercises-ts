@@ -67,11 +67,17 @@ test/static: dependencies
 test: env dependencies test/static
 	npm run test
 
+coverage: test
+
+coverage/html: coverage
+
 outdated:
 	-npm outdated
 
 update: dependencies outdated
 	npm install $(NPM_UPDATABLE_MODULES)
+
+upgrade: update
 
 compose/build: env
 	docker-compose --profile testing build
@@ -87,7 +93,6 @@ compose/test/static: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
 
 compose/lint: compose/test/static compose/mdlint
-	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
 
 compose/run: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-ts make test
