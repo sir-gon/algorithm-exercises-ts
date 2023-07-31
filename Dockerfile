@@ -1,11 +1,11 @@
-FROM node:20.2.0-alpine3.16 as base
+FROM node:20.2.0-alpine3.16 AS base
 
 RUN apk add --update --no-cache make
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-FROM node:20.2.0-alpine3.16 as lint
+FROM node:20.2.0-alpine3.16 AS lint
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
@@ -14,9 +14,9 @@ COPY ./src ${WORKDIR}/src
 RUN apk add --update --no-cache make
 RUN npm install -g markdownlint-cli
 
-FROM base as development
+FROM base AS development
 
-FROM development as builder
+FROM development AS builder
 
 COPY ./Makefile ${WORKDIR}/
 COPY ./package.json ${WORKDIR}/package.json
@@ -31,7 +31,7 @@ RUN npm ci --verbose
 ##
 ## https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
 ##
-FROM builder as testing
+FROM builder AS testing
 
 ENV LOG_LEVEL=info
 ENV BRUTEFORCE=false
@@ -50,7 +50,7 @@ CMD ["npm", "run", "test"]
 ## in the production phase, "good practices" such as
 ## WORKSPACE and USER are maintained
 ##
-FROM builder as production
+FROM builder AS production
 
 ENV LOG_LEVEL=info
 ENV BRUTEFORCE=false
