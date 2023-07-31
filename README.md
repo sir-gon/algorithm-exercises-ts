@@ -1,4 +1,4 @@
-# Algorithm Exercises
+# Algorithm Exercises (Typescript)
 
 [![Node.js CI](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
@@ -159,7 +159,7 @@ Developed with runtime:
 
 ```text
 node --version
-v18.2.0
+v20.5.0
 ```
 
 ### License
