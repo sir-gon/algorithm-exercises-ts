@@ -15,8 +15,7 @@ export function sockMerchant(n: number, ar: number[]): number {
 
   console.debug(matches);
 
-  let k: keyof Matches;
-  for (k in matches) {
+  for (const k in matches) {
     console.debug(matches[k]);
 
     result += Math.floor(matches[k] / 2);
