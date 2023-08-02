@@ -5,7 +5,7 @@ export function minimumAbsoluteDifference(arr: number[]): number {
     throw new Error('Empty input');
   }
 
-  const sortedNums = arr.splice(0).sort();
+  const sortedNums = [...arr].sort((a: number, b: number) => a - b);
   console.log(`sortedNums: ${sortedNums}`);
 
   let result: number = Math.abs(sortedNums[0] - sortedNums[1]);
