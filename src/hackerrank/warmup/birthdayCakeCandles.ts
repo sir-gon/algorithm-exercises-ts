@@ -6,11 +6,11 @@ export function birthdayCakeCandles(ar: number[]): number {
   let counter = 0;
   let max = ar[0];
 
-  for (let i = 0; i < ar.length; i++) {
-    if (ar[i] > max) {
-      max = ar[i];
+  for (const num of ar) {
+    if (num > max) {
+      max = num;
       counter = 1;
-    } else if (ar[i] === max) {
+    } else if (num === max) {
       counter += 1;
     }
   }
