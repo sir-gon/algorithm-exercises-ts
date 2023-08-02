@@ -76,8 +76,8 @@ export const bigMultiplyRowToBigNum = (
   let carry = 0;
   let digit = 0;
 
-  for (let i = 0; i < number.length; i++) {
-    mul = number[i] * multiplierDigit + carry;
+  for (const multiplicand of number) {
+    mul = multiplicand * multiplierDigit + carry;
 
     if (mul < 10) {
       digit = mul;
@@ -110,7 +110,6 @@ export const bigMultiply = (
   const result: string[] = [];
   const collector: number[][] = [];
 
-  // const bigNumMultiply = bigNum(strMultiply).reverse();
   const bigNumMultiplier = bigNum(strNumMultiplier).reverse();
 
   for (let i = 0; i < bigNumMultiplier.length; i++) {
