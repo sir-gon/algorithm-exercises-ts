@@ -110,14 +110,10 @@ export const isPrime = (target: number): boolean => {
   return target != 1 && target === nextPrimeFactor(target).factor;
 };
 
-export const ___DIVISORS_ABUNDANT___ = 'abundant';
-export const ___DIVISORS_PERFECT___ = 'perfect';
-export const ___DIVISORS_DEFICIENT___ = 'deficient';
-
 export enum ___DIVISORS_ABUNDANCE___ {
-  DIVISORS_ABUNDANT = ___DIVISORS_ABUNDANT___,
-  DIVISORS_PERFECT = ___DIVISORS_PERFECT___,
-  DIVISORS_DEFICIENT = ___DIVISORS_DEFICIENT___
+  DIVISORS_ABUNDANT = 'abundant',
+  DIVISORS_PERFECT = 'perfect',
+  DIVISORS_DEFICIENT = 'deficient'
 }
 
 export const abundance = (target: number): ___DIVISORS_ABUNDANCE___ => {
@@ -140,8 +136,5 @@ export default {
   divisors,
   primeFactors,
   nextPrimeFactor,
-  ___DIVISORS_ABUNDANCE___,
-  ___DIVISORS_DEFICIENT___,
-  ___DIVISORS_PERFECT___,
-  ___DIVISORS_ABUNDANT___
+  ___DIVISORS_ABUNDANCE___
 };

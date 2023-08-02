@@ -21,10 +21,7 @@ export {
   properDivisors,
   PrimeFactor,
   PrimeFactors,
-  ___DIVISORS_ABUNDANCE___,
-  ___DIVISORS_DEFICIENT___,
-  ___DIVISORS_PERFECT___,
-  ___DIVISORS_ABUNDANT___
+  ___DIVISORS_ABUNDANCE___
 } from './divisors';
 export { isPalindrome } from './isPalindrome';
 export { matrix } from './matrix';

@@ -44,7 +44,6 @@ function problem0005Simple(
       found = test;
     }
 
-    fail = false;
     test += 1;
   } while (!found);
 
