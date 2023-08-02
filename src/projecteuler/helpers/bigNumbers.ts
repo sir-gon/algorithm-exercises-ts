@@ -50,7 +50,7 @@ export const bigSum = (strNumberA: string, strNumberB: string): string => {
   }
   if (carry > 0) result.push(carry);
 
-  return result
+  return [...result]
     .reverse()
     .reduce((previous, current) => `${previous}${current}`, '');
 };
@@ -128,7 +128,7 @@ export const bigMultiply = (
     );
 
     // Transform row of digits to string
-    result[i] = collector[i]
+    result[i] = [...collector[i]]
       .reverse()
       .reduce((previous, current) => `${previous}${current}`, '');
   }
