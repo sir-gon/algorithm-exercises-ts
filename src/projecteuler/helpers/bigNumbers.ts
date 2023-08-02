@@ -58,8 +58,8 @@ export const bigSum = (strNumberA: string, strNumberB: string): string => {
 export const bigSumMany = (strNumberArr: string[]): string => {
   let result = '0';
 
-  for (let i = 0; i < strNumberArr.length; i++) {
-    result = bigSum(result, strNumberArr[i]);
+  for (const number of strNumberArr) {
+    result = bigSum(result, number);
   }
 
   return result;
