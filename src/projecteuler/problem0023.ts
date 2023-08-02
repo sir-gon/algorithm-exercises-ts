@@ -3,7 +3,6 @@ import { logger as console } from '../logger';
 import { abundance, sum, ___DIVISORS_ABUNDANCE___ } from './helpers';
 
 export function problem0023(_underLimit: number, _superLimit: number): number {
-  // const allNumsList = [];
   const abundantNumberList = [];
 
   // Produce a list of abundant numbers below limit
@@ -22,14 +21,14 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
   let sumsAbundantNums = [];
 
   // Produce a list of sums of pair of abundant numbers below limit
-  for (let i = 0; i < abundantNumberList.length; i++) {
+  for (const abundantNumber of abundantNumberList) {
     for (
       let j = 0;
-      abundantNumberList[i] + abundantNumberList[j] <= _superLimit &&
+      abundantNumber + abundantNumberList[j] <= _superLimit &&
       j < abundantNumberList.length;
       j++
     ) {
-      sumsAbundantNums.push(abundantNumberList[i] + abundantNumberList[j]);
+      sumsAbundantNums.push(abundantNumber + abundantNumberList[j]);
     }
   }
 

@@ -7,6 +7,5 @@ export function solveMeFirst(inputLines: string[]): number {
     result += parseInt(v);
   });
 
-  // console.log(result);
   return result;
 }

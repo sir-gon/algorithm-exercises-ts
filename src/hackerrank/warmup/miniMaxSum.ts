@@ -7,15 +7,15 @@ export function miniMaxSum(arr: number[]): string {
   let min = arr[0];
   let max = arr[1];
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+  for (const num of arr) {
+    sum += num;
 
-    if (arr[i] < min) {
-      min = arr[i];
+    if (num < min) {
+      min = num;
     }
 
-    if (arr[i] > max) {
-      max = arr[i];
+    if (num > max) {
+      max = num;
     }
   }
 

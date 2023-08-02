@@ -35,7 +35,6 @@ export function factorOf(n: number, group: number[]): boolean {
 export function getTotalX(a: number[], b: number[]): number {
   let max = 0;
   for (const j of b) {
-    // console.log('b:', j);
     if (j > max) max = j;
   }
 

@@ -9,7 +9,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
   ): nullable<BNode<T>> {
     if (!dataTree) return null;
 
-    if (dataTree[i] && dataTree[i][j]) {
+    if (dataTree[i]?.[j]) {
       const resultNode = new BNode(dataTree[i][j]);
 
       if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
@@ -36,8 +36,8 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
   ): nullable<BNode<number>> {
     if (!dataTree) return null;
 
-    if (dataTree[i] && dataTree[i][j]) {
-      const resultNode = new BNode<number>(dataTree[i][j] + (rootValue || 0));
+    if (dataTree[i]?.[j]) {
+      const resultNode = new BNode<number>(dataTree[i][j] + (rootValue ?? 0));
 
       if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
         // Next left coordinates: [i + 1][j]

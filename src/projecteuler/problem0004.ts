@@ -35,8 +35,6 @@ function problem0004(_bottom: number, _top: number): nullable<number> {
           foundj = j;
           foundPalindrome = i * j;
         }
-      } else {
-        // console.log(`FOUND: ${i} x ${j} = ${j * i} is NOT Palindrome`);
       }
 
       j -= 1;

@@ -24,7 +24,7 @@ export function repeatedString(s: string, n: number): number {
 
   console.debug(`countBlocks: ${countBlocks} + rest: ${restSize}`);
 
-  result = countAs(s) * countBlocks + countAs(s.substr(0, restSize));
+  result = countAs(s) * countBlocks + countAs(s.slice(0, restSize));
   return result;
 }
 
