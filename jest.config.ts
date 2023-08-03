@@ -193,6 +193,7 @@ const jestConfig = {
 };
 
 if (BRUTEFORCE) {
+  jestConfig.testMatch = [...jestConfig.testMatch];
   jestConfig.testMatch.push('**/?(*.)+(bruteforce-test).ts?(x)');
 }
 
