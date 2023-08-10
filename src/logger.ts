@@ -18,15 +18,5 @@ const logger = pino({
   level: process.env.LOG_LEVEL?.toLowerCase() ?? 'fatal'
 });
 
-((): void => {
-  const console = logger;
-  logger.debug('LOG: DEBUG LEVEL ENABLED');
-  logger.error('LOG: ERROR LEVEL ENABLED');
-  logger.warn('LOG: WARN ENABLED');
-  logger.info('LOG: INFO LEVEL ENABLED');
-  console.info(`LOG: Instantiated at: ${new Date().toLocaleString()}`);
-  console.info(`LOG LEVEL: ${logger.levelVal}`);
-})();
-
 export default logger;
 export { logger };
