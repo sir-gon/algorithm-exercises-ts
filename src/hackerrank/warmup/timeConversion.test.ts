@@ -4,11 +4,12 @@ import { timeConversion } from './timeConversion';
 
 describe('timeConversion', () => {
   it('timeConversion example', () => {
+    expect.assertions(2);
+
     const tests = [
       { input: '12:01:00PM', answer: '12:01:00' },
       { input: '12:01:00AM', answer: '00:01:00' }
     ];
-    expect.assertions(tests.length);
 
     for (const test of tests) {
       const calculated = timeConversion(test.input);

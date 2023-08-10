@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { bonAppetit } from './bonAppetit';
 
-describe('Bill Division', () => {
-  it('Bill Division Test case 0', () => {
+describe('bill Division', () => {
+  it('bill Division Test case 0', () => {
     expect.assertions(1);
 
     const bill = [3, 10, 2, 9];
@@ -18,7 +18,7 @@ describe('Bill Division', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Bill Division Test case 6', () => {
+  it('bill Division Test case 6', () => {
     expect.assertions(1);
 
     const bill = [3, 10, 2, 9];

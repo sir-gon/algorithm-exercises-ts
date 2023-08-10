@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { divisibleSumPairs } from './divisibleSumPairs';
 
-describe('Divisible Sum Pairs', () => {
-  it('Divisible Sum Pairs Test case 0', () => {
+describe('divisible Sum Pairs', () => {
+  it('divisible Sum Pairs Test case 0', () => {
     expect.assertions(1);
 
     const n = 6;

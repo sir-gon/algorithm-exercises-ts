@@ -9,7 +9,7 @@ export function isFactor(n: number, group: number[]): boolean {
       result = false;
     }
 
-    i++;
+    i += 1;
   } while (i < group.length && result);
 
   return result;
@@ -26,7 +26,7 @@ export function factorOf(n: number, group: number[]): boolean {
       result = false;
     }
 
-    i++;
+    i += 1;
   } while (i < group.length && result);
 
   return result;

@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { jumpingOnClouds } from './jumpingOnClouds';
 
-describe('Jumping on the Clouds', () => {
-  it('Jumping on the Clouds Test case 0', () => {
+describe('jumping on the Clouds', () => {
+  it('jumping on the Clouds Test case 0', () => {
     expect.assertions(1);
 
     const input = [0, 0, 1, 0, 0, 1, 0];
@@ -16,7 +16,7 @@ describe('Jumping on the Clouds', () => {
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Jumping on the Clouds Test case 1', () => {
+  it('jumping on the Clouds Test case 1', () => {
     expect.assertions(1);
 
     const input = [0, 0, 0, 1, 0, 0];

@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { repeatedString } from './repeatedString';
 
-describe('Repeated String', () => {
-  it('Repeated String Test case 0', () => {
+describe('repeated String', () => {
+  it('repeated String Test case 0', () => {
     expect.assertions(1);
 
     const word = 'aba';
@@ -17,7 +17,7 @@ describe('Repeated String', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Repeated String Test case 1', () => {
+  it('repeated String Test case 1', () => {
     expect.assertions(1);
 
     const word = 'a';

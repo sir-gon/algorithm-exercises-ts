@@ -140,7 +140,7 @@ describe('divisors of a number', () => {
     expect.assertions(11);
 
     for (let i = 1; i < 12; i++) {
-      expect(abundance(28)).not.toEqual(
+      expect(abundance(28)).not.toStrictEqual(
         ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
       );
     }
@@ -149,10 +149,10 @@ describe('divisors of a number', () => {
   it('conflict abundance', () => {
     expect.assertions(2);
 
-    expect(abundance(110)).not.toEqual(
+    expect(abundance(110)).not.toStrictEqual(
       ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
     );
-    expect(abundance(18632)).not.toEqual(
+    expect(abundance(18632)).not.toStrictEqual(
       ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
     );
   });
