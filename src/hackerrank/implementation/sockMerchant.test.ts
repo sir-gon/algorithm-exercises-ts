@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { sockMerchant } from './sockMerchant';
 
-describe('Sales by Match', () => {
-  it('Sales by Match solution found', () => {
+describe('sales by Match', () => {
+  it('sales by Match solution found', () => {
     expect.assertions(1);
 
     const input = [10, 20, 20, 10, 10, 30, 50, 10, 20];

@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { countingValleys } from './countingValleys';
 
-describe('Counting Valleys', () => {
-  it('Counting Valleys Test case 0', () => {
+describe('counting Valleys', () => {
+  it('counting Valleys Test case 0', () => {
     expect.assertions(1);
 
     const input = 'UDDDUDUU';
@@ -16,7 +16,7 @@ describe('Counting Valleys', () => {
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Counting Valleys Test case 1', () => {
+  it('counting Valleys Test case 1', () => {
     expect.assertions(1);
 
     const input = 'DDUUDDUDUUUD';

@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { plusMinus } from './plusMinus';
 
-describe('Plus Minus', () => {
-  it('Plus Minus Test case 1', () => {
+describe('plus Minus', () => {
+  it('plus Minus Test case 1', () => {
     expect.assertions(1);
 
     const input = [-4, 3, -9, 0, 4, 1];

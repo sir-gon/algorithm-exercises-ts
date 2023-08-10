@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { birthday } from './birthday';
 
-describe('Subarray Division', () => {
-  it('Subarray Division test case 0', () => {
+describe('subarray Division', () => {
+  it('subarray Division test case 0', () => {
     expect.assertions(1);
 
     const s = [1, 2, 1, 3, 2];
@@ -18,7 +18,7 @@ describe('Subarray Division', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Subarray Division test case 1', () => {
+  it('subarray Division test case 1', () => {
     expect.assertions(1);
 
     const s = [1, 1, 1, 1, 1, 1];
@@ -33,7 +33,7 @@ describe('Subarray Division', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Subarray Division test case 2', () => {
+  it('subarray Division test case 2', () => {
     expect.assertions(1);
 
     const s = [4];

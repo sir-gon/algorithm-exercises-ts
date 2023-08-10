@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { kangaroo } from './kangaroo';
 
-describe('Number Line Jumps', () => {
-  it('Number Line Jumps Border case 1', () => {
+describe('number Line Jumps', () => {
+  it('number Line Jumps Border case 1', () => {
     expect.assertions(1);
 
     const x1 = 0;
@@ -15,12 +15,12 @@ describe('Number Line Jumps', () => {
     const calculated = kangaroo(x1, v1, x2, v2);
 
     console.log(
-      `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
+      `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Number Line Jumps Border case 2', () => {
+  it('number Line Jumps Border case 2', () => {
     expect.assertions(1);
 
     const x1 = 0;
@@ -32,12 +32,12 @@ describe('Number Line Jumps', () => {
     const calculated = kangaroo(x1, v1, x2, v2);
 
     console.log(
-      `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
+      `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Border case: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Number Line Jump Test case 0', () => {
+  it('number Line Jump Test case 0', () => {
     expect.assertions(1);
 
     const x1 = 0;
@@ -49,12 +49,12 @@ describe('Number Line Jumps', () => {
     const calculated = kangaroo(x1, v1, x2, v2);
 
     console.log(
-      `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 0: ${calculated}`
+      `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 0: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Number Line Jump Test case 1', () => {
+  it('number Line Jump Test case 1', () => {
     expect.assertions(1);
 
     const x1 = 0;
@@ -66,7 +66,7 @@ describe('Number Line Jumps', () => {
     const calculated = kangaroo(x1, v1, x2, v2);
 
     console.log(
-      `Number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 1: ${calculated}`
+      `number Line Jumps(${x1}, ${v1}, ${x2}, ${v2}) Test case 1: ${calculated}`
     );
     expect(calculated).toBe(solutionFound);
   });

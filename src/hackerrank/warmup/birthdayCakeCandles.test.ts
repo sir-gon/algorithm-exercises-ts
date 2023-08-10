@@ -12,11 +12,12 @@ describe('birthdayCakeCandles', () => {
   });
 
   it('birthdayCakeCandles Test case 0', () => {
+    expect.assertions(2);
+
     const tests = [
       { input: [3, 2, 1, 3], answer: 2 },
       { input: [1, 2, 3, 3], answer: 2 }
     ];
-    expect.assertions(tests.length);
 
     for (const test of tests) {
       const calculated = birthdayCakeCandles(test.input);

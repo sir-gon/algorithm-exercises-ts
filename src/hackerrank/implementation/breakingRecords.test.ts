@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { breakingRecords } from './breakingRecords';
 
-describe('Breaking the Records', () => {
-  it('Breaking the Records Border case', () => {
+describe('breaking the Records', () => {
+  it('breaking the Records Border case', () => {
     expect.assertions(1);
 
     expect(() => {
@@ -11,7 +11,7 @@ describe('Breaking the Records', () => {
     }).toThrow('Empty input');
   });
 
-  it('Breaking the Records Test case 0', () => {
+  it('breaking the Records Test case 0', () => {
     expect.assertions(1);
 
     const input = [10, 5, 20, 20, 4, 5, 2, 25, 1];
@@ -24,7 +24,7 @@ describe('Breaking the Records', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Breaking the Records Test case 1', () => {
+  it('breaking the Records Test case 1', () => {
     expect.assertions(1);
 
     const input = [10, 5, 20, 20, 4, 5, 2, 25, 1];

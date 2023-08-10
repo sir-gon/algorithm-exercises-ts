@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { migratoryBirds } from './migratoryBirds';
 
-describe('Migratory Birds', () => {
-  it('Migratory Birds border case', () => {
+describe('migratory Birds', () => {
+  it('migratory Birds border case', () => {
     expect.assertions(1);
 
     expect(() => {
@@ -11,7 +11,7 @@ describe('Migratory Birds', () => {
     }).toThrow('Empty input');
   });
 
-  it('Migratory Birds Test case 0', () => {
+  it('migratory Birds Test case 0', () => {
     expect.assertions(1);
 
     const input = [1, 4, 4, 4, 5, 3];
@@ -19,12 +19,12 @@ describe('Migratory Birds', () => {
 
     const calculated = migratoryBirds(input);
 
-    console.log(`Migratory Birds Test case 0: ${calculated}`);
+    console.log(`migratory Birds Test case 0: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });
 
-  it('Migratory Birds Test case 5', () => {
+  it('migratory Birds Test case 5', () => {
     expect.assertions(1);
 
     const input = [1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4];
@@ -32,7 +32,7 @@ describe('Migratory Birds', () => {
 
     const calculated = migratoryBirds(input);
 
-    console.log(`Migratory Birds Test case 5: ${calculated}`);
+    console.log(`migratory Birds Test case 5: ${calculated}`);
 
     expect(calculated).toBe(solutionFound);
   });

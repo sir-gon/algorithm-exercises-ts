@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { dayOfProgrammer } from './dayOfProgrammer';
 
-describe('Day of the Programmer', () => {
-  it('Day of the Programmer border case', () => {
+describe('day of the Programmer', () => {
+  it('day of the Programmer border case', () => {
     expect.assertions(1);
 
     const input = 1801;
@@ -16,7 +16,7 @@ describe('Day of the Programmer', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Day of the Programmer Test case 0', () => {
+  it('day of the Programmer Test case 0', () => {
     expect.assertions(1);
 
     const input = 2017;
@@ -29,7 +29,7 @@ describe('Day of the Programmer', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Day of the Programmer Test case 1', () => {
+  it('day of the Programmer Test case 1', () => {
     expect.assertions(1);
 
     const input = 2016;
@@ -42,7 +42,7 @@ describe('Day of the Programmer', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Day of the Programmer Test case 48', () => {
+  it('day of the Programmer Test case 48', () => {
     expect.assertions(1);
 
     const input = 1700;
@@ -55,7 +55,7 @@ describe('Day of the Programmer', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Day of the Programmer Test case 59', () => {
+  it('day of the Programmer Test case 59', () => {
     expect.assertions(1);
 
     const input = 1918;
@@ -68,7 +68,7 @@ describe('Day of the Programmer', () => {
     expect(calculated).toStrictEqual(solutionFound);
   });
 
-  it('Day of the Programmer Test case 60', () => {
+  it('day of the Programmer Test case 60', () => {
     expect.assertions(1);
 
     const input = 1800;

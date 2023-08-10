@@ -2,8 +2,8 @@ import { logger as console } from '../../logger';
 
 import { getTotalX, factorOf, isFactor } from './betweenTwoSets';
 
-describe('Between Two Sets', () => {
-  it('Between Two Sets Border cases', () => {
+describe('between Two Sets', () => {
+  it('between Two Sets Border cases', () => {
     expect.assertions(5);
 
     const input = [16, 32, 96];
@@ -30,7 +30,7 @@ describe('Between Two Sets', () => {
     expect(calculatedE).toBe(false);
   });
 
-  it('Between Two Sets Test case 0', () => {
+  it('between Two Sets Test case 0', () => {
     expect.assertions(1);
 
     const a = [2, 4];
