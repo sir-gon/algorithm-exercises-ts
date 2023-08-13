@@ -1,5 +1,7 @@
 /* istanbul ignore file */
-
+/**
+ * @link Problem definition [[docs/projecteuler/problem0007.md]]
+ */
 import { logger as console } from '../logger';
 
 import { problem0007 } from './problem0007';

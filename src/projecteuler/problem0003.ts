@@ -1,5 +1,8 @@
-import { logger as console } from '../logger';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0003.md]]
+ */
 
+import { logger as console } from '../logger';
 import { divisors, isPrime } from './helpers/index';
 
 type nullable<T> = T | null | undefined;

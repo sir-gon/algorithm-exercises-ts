@@ -1,5 +1,8 @@
-import { logger as console } from '../logger';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0019.md]]
+ */
 
+import { logger as console } from '../logger';
 import { daysInMonth, __SUNDAY__ } from '../constants';
 
 export function problem0019(

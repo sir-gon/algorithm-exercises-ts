@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/compareTriplets.md]]
+ */
+
 'use strict';
 
 export function compareTriplets(a: number[], b: number[]): number[] {

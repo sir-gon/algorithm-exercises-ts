@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/countingValleys.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function countingValleys(steps: number, path: string): number {

@@ -1,5 +1,8 @@
-import { logger as console } from '../logger';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0014.md]]
+ */
 
+import { logger as console } from '../logger';
 import { nullable, collatz } from './helpers';
 
 function problem0014(bottom = 1, top = 10): nullable<number> {

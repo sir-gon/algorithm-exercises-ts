@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/jumpingOnClouds.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function jumpingOnClouds(c: number[]): number {

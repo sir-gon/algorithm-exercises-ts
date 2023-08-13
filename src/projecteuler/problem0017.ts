@@ -1,5 +1,8 @@
-import { logger as console } from '../logger';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0017.md]]
+ */
 
+import { logger as console } from '../logger';
 import { numberToWord } from './helpers';
 
 export default function problem0017(init: number, last: number): number {

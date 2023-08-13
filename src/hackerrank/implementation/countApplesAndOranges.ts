@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/countApplesAndOranges.md]]
+ */
+
 export function countApplesAndOranges(
   s: number,
   t: number,

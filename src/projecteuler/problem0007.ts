@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0007.md]]
+ */
 import { logger as console } from '../logger';
 import { isPrime } from './helpers/index';
 

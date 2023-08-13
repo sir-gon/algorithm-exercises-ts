@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/birthday.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function birthday(s: number[], d: number, m: number): number {

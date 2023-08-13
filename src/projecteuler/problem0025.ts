@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0025.md]]
+ */
+
 import { logger as console } from '../logger';
 import { bigNum, bigSum, bigNumToString } from './helpers';
 

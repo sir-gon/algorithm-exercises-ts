@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/timeConversion.md]]
+ */
+
 export function timeConversion(s: string): string {
   let meridian = s.substring(s.length - 2, s.length);
   meridian = meridian.toLowerCase();

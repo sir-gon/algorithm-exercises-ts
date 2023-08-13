@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/diagonalDifference.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function diagonalDifference(arr: number[][]): number {

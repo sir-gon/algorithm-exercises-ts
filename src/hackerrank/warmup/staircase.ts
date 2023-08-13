@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/staircase.md]]
+ */
+
 export function staircase(n: number): string {
   const result: string[] = [];
 

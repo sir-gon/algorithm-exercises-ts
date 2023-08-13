@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/miniMaxSum.md]]
+ */
+
 export function miniMaxSum(arr: number[]): string {
   if (arr.length == 0) {
     throw new Error('Empty input');

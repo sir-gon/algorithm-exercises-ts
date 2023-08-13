@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/dayOfProgrammer.md]]
+ */
+
 import { logger as console } from '../../logger';
 import { MonthNumbers, daysInMonthNumber } from '../../constants';
 

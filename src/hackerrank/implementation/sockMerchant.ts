@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/sockMerchant.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function sockMerchant(n: number, ar: number[]): number {

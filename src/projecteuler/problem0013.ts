@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0013.md]]
+ */
+
 import { logger as console } from '../logger';
 import { bigSumMany } from './helpers';
 

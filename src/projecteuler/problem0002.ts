@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0002.md]]
+ */
+
 import { logger as console } from '../logger';
 
 export function problem0002(_top: number): number {
