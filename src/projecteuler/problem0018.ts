@@ -16,7 +16,7 @@ export function problem0018(_triangle: number[][]): number {
   );
 
   const leafs: number[] = [];
-  const weightsTree = BNodeBuilder.buildBNodeTreeWeigth(
+  const weightsTree = BNodeBuilder.buildBNodeTreeWeight(
     _triangle,
     rootCoordinateI,
     rootCoordinateJ,
