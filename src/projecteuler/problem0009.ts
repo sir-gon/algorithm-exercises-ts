@@ -7,7 +7,7 @@
 // PRODUCT: a * b * c = 31875000
 // ////////////////////////////////////////////////////////////////////////////
 
-import { nullable } from './helpers/index';
+import { nullable } from './helpers';
 import { logger as console } from '../logger';
 
 interface Triplet {

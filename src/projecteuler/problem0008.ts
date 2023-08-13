@@ -13,7 +13,7 @@
 //    The the greatest product of 13 consecutive digits is: 23514624000
 /// ///////////////////////////////////////////////////////////////////////////
 
-import { product } from './helpers/index';
+import { product } from './helpers';
 import { logger as console } from '../logger';
 
 function problem0008(_number: string, _interval: number): number {

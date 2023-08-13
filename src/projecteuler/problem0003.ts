@@ -3,7 +3,7 @@
  */
 
 import { logger as console } from '../logger';
-import { divisors, isPrime } from './helpers/index';
+import { divisors, isPrime } from './helpers';
 
 type nullable<T> = T | null | undefined;
 

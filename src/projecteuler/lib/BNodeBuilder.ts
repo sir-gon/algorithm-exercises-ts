@@ -27,7 +27,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
     return null;
   }
 
-  static buildBNodeTreeWeigth(
+  static buildBNodeTreeWeight(
     dataTree: nullable<number[][]> = null,
     i = 0,
     j = 0,
@@ -42,7 +42,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
       if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
         // Next left coordinates: [i + 1][j]
         resultNode.setLeft(
-          BNodeBuilder.buildBNodeTreeWeigth(
+          BNodeBuilder.buildBNodeTreeWeight(
             dataTree,
             i + 1,
             j,
@@ -53,7 +53,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
 
         // Next rigth coordinates: [i + 1][j + 1]
         resultNode.setRight(
-          BNodeBuilder.buildBNodeTreeWeigth(
+          BNodeBuilder.buildBNodeTreeWeight(
             dataTree,
             i + 1,
             j + 1,

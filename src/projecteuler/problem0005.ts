@@ -8,7 +8,7 @@
 /// ////////////////////////////////////////////////////////////////////////////
 
 import { logger as console } from '../logger';
-import { primeFactors } from './helpers/index';
+import { primeFactors } from './helpers';
 
 function _increase(
   _element: number,

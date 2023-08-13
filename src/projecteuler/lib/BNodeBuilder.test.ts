@@ -32,29 +32,35 @@ describe('class BNodeBuilder for binary trees', () => {
 });
 
 describe('class BNodeBuilder for binary weight trees', () => {
-  it('tree of BNode: building weigth tree with null value', () => {
+  it('tree of BNode: building Weight tree with null value', () => {
     expect.assertions(1);
 
-    const tree = BNodeBuilder.buildBNodeTreeWeigth();
+    const tree = BNodeBuilder.buildBNodeTreeWeight();
 
     expect(tree).toBeNull();
   });
 
-  it('tree of BNode: building weigth tree with values', () => {
-    expect.assertions(1);
+  it('tree of BNode: building Weight tree with values', () => {
+    expect.assertions(2);
 
-    const tree = BNodeBuilder.buildBNodeTreeWeigth(data, 0, 0);
+    // with default value for rootValue = 0
+    let tree = BNodeBuilder.buildBNodeTreeWeight(data, 0, 0);
+    let comparedTree = new BNode(75, new BNode(170), new BNode(139));
 
-    const comparedTree = new BNode(75, new BNode(170), new BNode(139));
+    expect(tree).toMatchObject(comparedTree);
+
+    // with rootValue = null
+    tree = BNodeBuilder.buildBNodeTreeWeight(data, 0, 0, null);
+    comparedTree = new BNode(75, new BNode(170), new BNode(139));
 
     expect(tree).toMatchObject(comparedTree);
   });
 
-  it('tree of BNode: building weigth tree with invalid coordinates', () => {
+  it('tree of BNode: building Weight tree with invalid coordinates', () => {
     expect.assertions(2);
 
     // invalid coordinates
-    expect(BNodeBuilder.buildBNodeTreeWeigth(data, 0, 5)).toBeNull();
-    expect(BNodeBuilder.buildBNodeTreeWeigth(data, 5, 5)).toBeNull();
+    expect(BNodeBuilder.buildBNodeTreeWeight(data, 0, 5)).toBeNull();
+    expect(BNodeBuilder.buildBNodeTreeWeight(data, 5, 5)).toBeNull();
   });
 });

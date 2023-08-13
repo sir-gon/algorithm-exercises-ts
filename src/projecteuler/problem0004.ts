@@ -12,7 +12,7 @@
 
 import { logger as console } from '../logger';
 
-import { nullable, isPalindrome } from './helpers/index';
+import { nullable, isPalindrome } from './helpers';
 
 function problem0004(_bottom: number, _top: number): nullable<number> {
   let i;

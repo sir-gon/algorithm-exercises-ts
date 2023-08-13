@@ -15,7 +15,7 @@
 
 import { logger as console } from '../logger';
 
-import { isPrime, sum } from './helpers/index';
+import { isPrime, sum } from './helpers';
 
 function problem0010(bottom: number, top: number): number {
   const primes = [];

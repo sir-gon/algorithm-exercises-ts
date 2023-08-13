@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/projecteuler/problem0007.md]]
  */
 import { logger as console } from '../logger';
-import { isPrime } from './helpers/index';
+import { isPrime } from './helpers';
 
 function problem0007(_top: number): number {
   const primes = [];
