@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/divisibleSumPairs.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function divisibleSumPairs(n: number, k: number, ar: number[]): number {

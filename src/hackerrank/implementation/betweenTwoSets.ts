@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/betweenTwoSets.md]]
+ */
+
 export function isFactor(n: number, group: number[]): boolean {
   let result = true;
   let i = 0;

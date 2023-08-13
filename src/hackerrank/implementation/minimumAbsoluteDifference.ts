@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/minimumAbsoluteDifference.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function minimumAbsoluteDifference(arr: number[]): number {

@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/repeatedString.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 export function countAs(word: string): number {

@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/kangaroo.md]]
+ */
+
 export function kangaroo(
   x1: number,
   v1: number,

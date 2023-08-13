@@ -1,5 +1,8 @@
-import { logger as console } from '../logger';
+/**
+ * @link Problem definition [[docs/projecteuler/problem0023.md]]
+ */
 
+import { logger as console } from '../logger';
 import { abundance, sum, ___DIVISORS_ABUNDANCE___ } from './helpers';
 
 export function problem0023(_underLimit: number, _superLimit: number): number {

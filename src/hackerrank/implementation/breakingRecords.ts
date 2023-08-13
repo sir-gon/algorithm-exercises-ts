@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/breakingRecords.md]]
+ */
+
 export function breakingRecords(scores: number[]): number[] {
   if (scores.length == 0) {
     throw new Error('Empty input');

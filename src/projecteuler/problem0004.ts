@@ -1,3 +1,6 @@
+/**
+ * @link Problem definition [[docs/projecteuler/problem0004.md]]
+ */
 /// ///////////////////////////////////////////////////////////////////////////
 // NOTES ABOUT THE SOLUTION:
 // This solution cycles to test all pairs of factors between 111 and 999 that

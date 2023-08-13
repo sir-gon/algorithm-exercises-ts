@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/migratoryBirds.md]]
+ */
+
 import { logger as console } from '../../logger';
 
 interface Birds {

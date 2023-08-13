@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/warmup/plusMinus.md]]
+ */
+
 export function plusMinus(arr: number[]): string {
   let positives = 0;
   let negatives = 0;

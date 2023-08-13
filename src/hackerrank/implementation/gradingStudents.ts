@@ -1,3 +1,7 @@
+/**
+ * @link Problem definition [[docs/hackerrank/implementation/gradingStudents.md]]
+ */
+
 export function gradingStudents(grades: number[]): number[] {
   const minimum = 38;
   const roundTo = 5;
