@@ -6,12 +6,11 @@ import { logger as console } from '../../logger';
 
 export function jumpingOnClouds(c: number[]): number {
   let result = 0;
-  const end = false;
   let key = 0;
 
   console.debug(c);
 
-  while (key < c.length || end) {
+  while (key < c.length) {
     if (key + 2 < c.length && c[key + 2] === 0) {
       result += 1;
       key += 2;
