@@ -15,7 +15,7 @@ export function problem0022(listOfNames: string[]): number {
     result += (i + 1) * wordScore(listOfNames[i]);
   }
 
-  console.log(`result`, result);
+  console.log(`result: ${result}`);
 
   return result;
 }

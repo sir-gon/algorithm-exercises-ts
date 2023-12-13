@@ -16,7 +16,7 @@ import { bigFactorial, bigSumMany } from './helpers';
 export function problem0020(_limit: number): string {
   const strFactorial = bigFactorial(_limit);
 
-  console.log(`Factorial of ${_limit}!:`, strFactorial);
+  console.log(`Factorial of ${_limit}!: ${strFactorial}`);
 
   const digits = strFactorial.split('');
 

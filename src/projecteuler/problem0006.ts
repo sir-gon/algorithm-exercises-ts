@@ -38,7 +38,7 @@ function problem0006(_bottom = 1, _top = 100): number {
     }`
   );
 
-  console.log('Problem 0006 result: %i', answer);
+  console.log(`Problem 0006 result: ${answer}`);
   return answer;
 }
 
