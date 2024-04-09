@@ -4,6 +4,7 @@
 //    - src/data/p022_names.json
 // ////////////////////////////////////////////////////////////////////////////
 
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger';
 
 import { problem0022 } from './problem0022';
