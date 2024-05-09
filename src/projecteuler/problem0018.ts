@@ -31,7 +31,8 @@ export function problem0018(_triangle: number[][]): number {
   console.debug(`leafs count: ${leafs.length}`);
   console.debug(`leafs: ${leafs}`);
 
-  const max = leafs.reduce((a, b) => (a > b ? a : b));
+  const __START_FROM__ = 0;
+  const max = leafs.reduce((a, b) => (a > b ? a : b), __START_FROM__);
 
   return max;
 }
