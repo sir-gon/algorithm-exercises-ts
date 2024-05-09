@@ -39,7 +39,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
     if (dataTree[i]?.[j]) {
       const resultNode = new BNode<number>(dataTree[i][j] + (rootValue ?? 0));
 
-      if (dataTree[i + 1] && dataTree[i + 1][j] && dataTree[i + 1][j + 1]) {
+      if (dataTree?.[i + 1]?.[j] && dataTree?.[i + 1]?.[j + 1]) {
         // Next left coordinates: [i + 1][j]
         resultNode.setLeft(
           BNodeBuilder.buildBNodeTreeWeight(
