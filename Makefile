@@ -44,6 +44,7 @@ env:
 	@echo "################################################################################"
 
 clean:
+	npm run jest:clean
 	rm -vfr ./node_modules
 	rm -vfr ./coverage
 	mkdir -p ./coverage

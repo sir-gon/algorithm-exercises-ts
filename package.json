@@ -28,6 +28,7 @@
     "start": "npm run test",
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "jest:ci": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "jest:clean": "jest --clearCache && watchman watch-del-all",
     "jest:bruteforce": "BRUTEFORCE=true node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "prettier": "npx prettier --write 'src/**/*.js'",
