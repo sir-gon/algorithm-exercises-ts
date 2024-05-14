@@ -26,6 +26,10 @@
   },
   "scripts": {
     "lint": "npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
-    "test": "jest"
+    "jest": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "jest:bruteforce": "BRUTEFORCE=true node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
+    "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
+    "test": "npm run jest",
+    "test:all": "npm run lint && npm run jest && echo 'Done.'"
   }
 }
