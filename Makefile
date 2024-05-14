@@ -65,7 +65,7 @@ test/static: dependencies
 	npm run lint
 
 test: env dependencies test/static
-	npm run test
+	npm run jest:ci
 
 coverage: test
 
