@@ -1,9 +1,9 @@
 {
   "author": "Gonzalo Diaz <devel@gon.cl>",
-  "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
+  "description": "Algorithm exercises solved in Typescript, running with Jest testing suite. Developed with TDD.",
   "license": "MIT",
   "main": "src/problem0000-template.ts",
-  "name": "projecteuler.net",
+  "name": "algorithm-exercises-ts",
   "type": "module",
   "version": "1.0.0",
   "dependencies": {
@@ -33,7 +33,7 @@
     "jest:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "style:format": "npx --yes prettier --write 'src/**/*.ts'",
     "style:check": "npx --yes prettier --check 'src/**/*.ts'",
-    "test": "npm run jest:ci",
+    "test": "jest",
     "update-all": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)"
   }
 }

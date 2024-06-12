@@ -1,7 +1,7 @@
 ---
 services:
   algorithm-exercises-ts-test:
-    image: algorithm-exercises-ts:latest
+    image: algorithm-exercises-ts:test
     build:
       context: .
       target: testing
