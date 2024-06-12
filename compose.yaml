@@ -1,3 +1,4 @@
+---
 services:
   algorithm-exercises-ts-test:
     image: algorithm-exercises-ts:latest
@@ -17,8 +18,8 @@ services:
       context: .
       target: lint
     # environment:
-      # LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
-      # BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
+    #   LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+    #   BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./:/app
     profiles: ["lint"]
