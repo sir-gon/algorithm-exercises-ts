@@ -45,10 +45,14 @@ env:
 
 clean:
 	npm run jest:clean
-	rm -vfr ./node_modules
 	rm -vfr ./coverage
+	rm -vfr ./dist
+	rm -vfr ./node_modules
 	mkdir -p ./coverage
 	touch ./coverage/.gitkeep
+
+build: dependencies
+	${NPM} run build
 
 dependencies:
 	@echo "################################################################################"

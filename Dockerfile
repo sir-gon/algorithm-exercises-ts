@@ -20,21 +20,63 @@ RUN npm install -g --ignore-scripts markdownlint-cli
 # [!TIP] Use a bind-mount to "/app" to override following "copys"
 # for lint and test against "current" sources in this stage
 
+# YAML sources
+COPY ./.github ${WORKDIR}/
+COPY ./compose.yaml ${WORKDIR}/
+
+# Markdown sources
+COPY ./docs ${WORKDIR}/
+COPY ./README.md ${WORKDIR}/
+COPY ./LICENSE.md ${WORKDIR}/
+COPY ./CODE_OF_CONDUCT.md ${WORKDIR}/
+
+# Code source
+COPY ./src ${WORKDIR}/src
+COPY ./package.json ${WORKDIR}/package.json
+COPY ./package-lock.json ${WORKDIR}/package-lock.json
+COPY ./Makefile ${WORKDIR}/
+
+# code linting conf
+COPY ./.prettierrc ${WORKDIR}/
+COPY ./.prettierignore ${WORKDIR}/
+COPY ./.eslintrc ${WORKDIR}/
+COPY ./.eslintignore ${WORKDIR}/
+
+# markdownlint conf
+COPY ./.markdownlint.yaml ${WORKDIR}/
+
+# yamllint conf
+COPY ./.yamllint ${WORKDIR}/
+COPY ./.yamlignore ${WORKDIR}/
+
 CMD ["make", "lint"]
 
 ###############################################################################
 FROM base AS development
 
-###############################################################################
-FROM development AS builder
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 COPY ./src ${WORKDIR}/src
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 COPY ./tsconfig.json ${WORKDIR}/tsconfig.json
+COPY ./tsconfig.prod.json ${WORKDIR}/tsconfig.prod.json
 
 RUN npm ci --verbose --ignore-scripts
+RUN ls -alh
+
+# CMD []
+###############################################################################
+FROM development AS builder
+
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
+
+RUN npm run build
+
+CMD ["ls", "-alh"]
 
 ###############################################################################
 ### In testing stage, can't use USER, due permissions issue
@@ -42,38 +84,39 @@ RUN npm ci --verbose --ignore-scripts
 ##
 ## https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
 ##
-FROM builder AS testing
+FROM development AS testing
 
 ENV LOG_LEVEL=info
 ENV BRUTEFORCE=false
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
-WORKDIR /app
-
-COPY ./.eslintrc /app/.eslintrc
-COPY ./.prettierrc /app/.prettierrc
 COPY ./jest.config.ts /app/jest.config.ts
-COPY --from=builder /app/node_modules /app/node_modules
 RUN ls -alh
 
-CMD ["npm", "run", "test"]
+CMD ["make", "test"]
 
 ###############################################################################
 ### In production stage
 ## in the production phase, "good practices" such as
 ## WORKSPACE and USER are maintained
 ##
-FROM builder AS production
+FROM base AS production
 
+ENV NODE_ENV=production
 ENV LOG_LEVEL=info
 ENV BRUTEFORCE=false
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
-WORKDIR /app
+COPY --from=builder /app/dist ${WORKDIR}/dist
 
-COPY ./.eslintrc /app/.eslintrc
-COPY ./.prettierrc /app/.prettierrc
-COPY ./jest.config.ts /app/jest.config.ts
-COPY --from=builder /app/node_modules /app/node_modules
+COPY ./Makefile ${WORKDIR}/
+COPY ./package.json ${WORKDIR}/package.json
+COPY ./package-lock.json ${WORKDIR}/package-lock.json
+
+RUN npm ci --verbose --omit=dev --omit=optional --ignore-scripts --no-cache
 RUN ls -alh
 
 USER node
-CMD ["npm", "run", "test"]
+CMD ["ls", "-alh"]
