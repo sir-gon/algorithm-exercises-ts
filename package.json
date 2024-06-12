@@ -1,9 +1,9 @@
 {
   "author": "Gonzalo Diaz <devel@gon.cl>",
-  "description": "Solutions to the first 100 problems from [Project Euler](https://projecteuler.net/)",
+  "description": "Algorithm exercises solved in Typescript, running with Jest testing suite. Developed with TDD.",
   "license": "MIT",
   "main": "src/problem0000-template.ts",
-  "name": "projecteuler.net",
+  "name": "algorithm-exercises-ts",
   "type": "module",
   "version": "1.0.0",
   "dependencies": {
