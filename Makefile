@@ -57,16 +57,25 @@ dependencies:
 	test -x ./node_modules ||  npm install --verbose
 	@echo "################################################################################"
 
-mdlint:
+lint/markdown:
 	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
 
-lint: test/static mdlint
+lint/yaml:
+	yamllint --stric . && echo '✔  Your code looks good.'
+
+lint: lint/markdown lint/yaml test/styling test/static
 
 test/static: dependencies
-	npm run lint
+	${NPM} run lint
 
-test: env dependencies test/static
-	npm run jest:ci
+test/styling: dependencies
+	${NPM} run style:check
+
+format: dependencies
+	${NPM} run style:format
+
+test: env dependencies
+	${NPM} run jest:ci
 
 coverage: test
 
@@ -81,21 +90,37 @@ update: dependencies outdated
 upgrade: update
 
 compose/build: env
+	docker-compose --profile lint build
 	docker-compose --profile testing build
+	docker-compose --profile production build
 
 compose/rebuild: env
+	docker-compose --profile lint build --no-cache
 	docker-compose --profile testing build --no-cache
+	docker-compose --profile production build --no-cache
 
-compose/mdlint: env
+compose/lint/markdown: compose/build
 	docker-compose --profile lint build
-	docker-compose --profile lint run --rm algorithm-exercises-ts-mdlint make mdlint
+	docker-compose --profile lint run --rm algorithm-exercises-ts-lint make lint/markdown
+
+compose/lint/yaml: compose/build
+	docker-compose --profile lint run --rm algorithm-exercises-ts-lint make lint/yaml
+
+compose/test/styling: compose/build
+	docker-compose --profile lint run --rm algorithm-exercises-ts-lint make test/styling
 
 compose/test/static: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-ts make test/static
+	docker-compose --profile lint run --rm algorithm-exercises-ts-lint make test/static
 
-compose/lint: compose/test/static compose/mdlint
+compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
+
+compose/test: compose/build
+	docker-compose --profile testing run --rm algorithm-exercises-ts-test make test
 
 compose/run: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-ts make test
+	docker-compose --profile production run --rm algorithm-exercises-ts make run
 
 all: env dependencies test
+
+run:
+	ls -alh

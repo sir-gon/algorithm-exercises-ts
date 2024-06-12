@@ -7,14 +7,20 @@ ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
 ###############################################################################
-FROM node:20.14.0-alpine3.20 AS lint
+FROM base AS lint
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-COPY ./src ${WORKDIR}/src
-RUN apk add --update --no-cache make
-RUN npm install -g markdownlint-cli
+RUN apk add --update --no-cache make nodejs npm
+RUN apk add --update --no-cache yamllint
+
+RUN npm install -g --ignore-scripts markdownlint-cli
+
+# [!TIP] Use a bind-mount to "/app" to override following "copys"
+# for lint and test against "current" sources in this stage
+
+CMD ["make", "lint"]
 
 ###############################################################################
 FROM base AS development
@@ -28,7 +34,7 @@ COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./Makefile ${WORKDIR}/
 COPY ./tsconfig.json ${WORKDIR}/tsconfig.json
 
-RUN npm ci --verbose
+RUN npm ci --verbose --ignore-scripts
 
 ###############################################################################
 ### In testing stage, can't use USER, due permissions issue
