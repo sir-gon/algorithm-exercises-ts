@@ -1,16 +1,15 @@
 # Algorithm Exercises (Typescript)
 
 [![Node.js CI](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml)
-[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
+[![ESLint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml)
+[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
+[![YAML lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-ts)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-ts)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-ts)
-
-[![ESLint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml)
-[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
-[![YAML lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml)
+[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
