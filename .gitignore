@@ -169,3 +169,5 @@ dist
 # Built Visual Studio Code Extensions
 *.vsix
 
+# Static Analysis Results Interchange Format
+*.sarif
