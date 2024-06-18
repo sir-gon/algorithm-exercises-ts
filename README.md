@@ -3,11 +3,14 @@
 [![Node.js CI](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
-[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-ts)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-ts)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-ts)
+
+[![ESLint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml)
+[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
+[![YAML lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
@@ -15,150 +18,218 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 
+## TL;DR
+
+[Install and run](#install-and-run)
+
 ## What is this?
 
-[Project Euler](https://projecteuler.net/) provide some algorithms and
-mathematical problems to solve to be used as experience tests.
+This repository is part of a series that share and solve the same [objectives](#objetives),
+with the difference that each one is based on a different software ecosystem,
+depending on the chosen programming language:
 
-Use this answers to learn some tip and tricks for algorithms tests.
+- [Modern Javascript: algorithm-exercises-js](https://github.com/sir-gon/algorithm-exercises-js)
+- [Python 3.x: algorithm-exercises-py](https://github.com/sir-gon/algorithm-exercises-py)
+- [Typescript: algorithm-exercises-ts](https://github.com/sir-gon/algorithm-exercises-ts)
+- [Go / Golang: algorithm-exercises-go](https://github.com/sir-gon/algorithm-exercises-go)
+- [Java: algorithm-exercises-java](https://github.com/sir-gon/algorithm-exercises-java)
+- [.NET / C#: algorithm-exercises-csharp](https://github.com/sir-gon/algorithm-exercises-csharp)
 
-## Why I publish solutions?
+## Objetives
 
-As Project Euler says:
+### Functional
 
-<https://projecteuler.net/about#publish>
+- For academic purposes, it is an backup of some algorithm exercises
+(with their solutions), proposed by various sources:
+[leetcode, hackerrank, projecteuler](#algorithm-excersices-sources), ...
 
-```text
-I learned so much solving problem XXX, so is it okay
-to publish my solution elsewhere?
+- The solutions must be written on "vanilla code", that is,
+avoiding as much as possible the use of external libraries (in runtime).
 
-It appears that you have answered your own question. There is nothing quite
-like that "Aha!" moment when you finally beat a problem which you have been
-working on for some time. It is often through the best of intentions in wishing
-to share our insights so that others can enjoy that moment too. Sadly, that
-will rarely be the case for your readers. Real learning is an active process
-and seeing how it is done is a long way from experiencing that epiphany of
-discovery. Please do not deny others what you have so richly valued yourself.
+- Adoption of methodology and good practices.
+Each exercise is implemented as a unit test set,
+using TDD (Test-driven Development) and Clean Code ideas.
 
-However, the rule about sharing solutions outside of Project Euler does not
-apply to the first one-hundred problems, as long as any discussion clearly aims
-to instruct methods, not just provide answers, and does not directly threaten
-to undermine the enjoyment of solving later problems. Problems 1 to 100 provide
-a wealth of helpful introductory teaching material and if you are able to
-respect our requirements, then we give permission for those problems and their
-solutions to be discussed elsewhere.
-```
+### Technical
 
-If you have better answers or optimal solutions, fork and PR-me
+Foundation of a project that supports:
 
-Enjoy 😁 !
+- Explicit **typing** when the language supports it, even when it is not mandatory.
+- Static Code Analysis (**Lint**) of code, scripts and documentation.
+- Uniform **Code Styling**.
+- **Unit Test** framework.
+- **Coverge** collection. High coverage percentage. Equal or close to 100%.
+- **Pipeline** (Github Actions). Each command must take care of its
+return status code.
+- **Docker**-based workflow to replicate behavior in any environment.
+- Other tools to support the reinforcement of software development **good practices**.
 
-## Using NodeJS runtime
+## Install and Run
 
-### Requirements
+You can run tests in the following ways:
 
-You must install dependencies:
+- [Install and run directly](#install-and-run-directly) require runtime tools
+installed in your SO.
+- [Install and run with make](#install-and-run-using-make) require runtime tools
+and "make" installed in your SO.
+- [Install and in Docker](#install-and-running-with-docker-) require Docker and
+docker-compose installed.
+- (⭐️)
+[Install and in Docker with make](#install-and-running-with-docker--using-make)
+require docker-compose and make installed.
 
-```text
+⭐️: Prefered way.
+
+### Install and Run directly
+
+Using a NodeJS runtime in your SO. You must install dependencies:
+
+```bash
 npm install
 ```
 
-Or using make
-
-```text
-make dependencies
-```
-
-### Testing silently
-
 Every problem is a function with unit test.
+
 Unit test has test cases and input data to solve the problem.
 
 Run all tests:
 
-```text
+```bash
 npm run test
 ```
 
-### Testing with full logs
+#### Test run with alternative behaviors
 
-Run all tests with debug outputs:
+You can change test running behaviour using some environment variables as follows:
 
-```text
+| Variable | Values | Default |
+| ------ | ------ | ------ |
+| LOG_LEVEL  | `debug`, `warning`, `error`, `info` | `info` |
+| BRUTEFORCE | `true`, `false`| `false` |
+
+- `LOG_LEVEL`: change verbosity level in outputs.
+- `BRUTEFORCE`: enable or disable running large tests.
+(long time, large amount of data, high memory consumition).
+
+#### Examples running tests with alternative behaviors
+
+Run tests with debug outputs:
+
+```bash
 LOG_LEVEL=debug npm run test
 ```
 
-Use one of following values: debug, warning, error, info.
+Run brute-force tests with debug outputs:
 
-### Testing using make
+```bash
+BRUTEFORCE=true LOG_LEVEL=debug npm run test
+```
 
-```text
+### Install and Run using make
+
+`make` tool is used to standardizes the commands for the same tasks
+across each sibling repository.
+
+Run tests (libraries are installed as dependency task in make):
+
+```bash
 make test
 ```
 
-#### Enable all large BRUTEFORCE tests
+Run tests with debug outputs:
 
-Direct in host using a make:
-
-```text
-make test -e BRUTEFORCE=true
-```
-
-#### Enable all DEBUG outputs
-
-```text
+```bash
 make test -e LOG_LEVEL=debug
 ```
 
-#### Enable all large BRUTEFORCE tests and all DEBUG outputs
+Run brute-force tests with debug outputs:
 
-```text
-make test -e LOG_LEVEL=debug -e BRUTEFORCE=true
+```bash
+make test -e BRUTEFORCE=true -e LOG_LEVEL=debug
 ```
 
-## Running with Docker 🐳
+Alternative way, use environment variables as prefix:
 
-### Build a complete image with and run all tests
-
-Running container with testing (final) target.
-
-Designed to store all application files and dependencies as a complete runnable image.
-Coverage results will be stored in host **/coverage** directory (mounted as volume).
-
-```text
-# Build a complete image
-docker-compose build algorithm-exercises-ts
-docker-compose run --rm algorithm-exercises-ts npm run test
+```bash
+BRUTEFORCE=true LOG_LEVEL=debug make test
 ```
 
-### Enable BRUTEFORCE tests with full DEBUG output
+### Install and Running with Docker 🐳
 
-With docker-compose:
+Build an image of the test stage.
+Then creates and ephemeral container an run tests.
 
-```text
-docker-compose --profile testing run --rm algorithm-exercises-ts make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+BRUTEFORCE and LOG_LEVEL environment variables are passing from current
+environment using docker-compose.
+
+```bash
+docker-compose --profile testing run --rm algorithm-exercises-ts-test
 ```
 
-Using make:
+To change behavior using environment variables, you can pass to containers
+in the following ways:
 
-```text
-make docker/compose-run -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+From host using docker-compose (compose.yaml) mechanism:
+
+```bash
+BRUTEFORCE=true LOG_LEVEL=debug docker-compose --profile testing run --rm algorithm-exercises-ts-test
 ```
 
-### Build and run a development image
+Overriding docker CMD, as parameter of make "-e":
+
+```bash
+docker-compose --profile testing run --rm algorithm-exercises-ts-test make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+```
+
+### Install and Running with Docker 🐳 using make
+
+```bash
+make compose/build
+make compose/test
+```
+
+To pass environment variables you can use docker-compose
+or overriding CMD and passing to make as "-e" argument.
+
+Passing environment variables using docker-compose (compose.yaml mechanism):
+
+```bash
+BRUTEFORCE=true LOG_LEVEL=debug make compose/test
+```
+
+## Development workflow using Docker / docker-compose
 
 Running container with development target.
-Designed to develop on top of this image. All source application is mounted as
-a volume in **/app** directory.
-Dependencies should be installed to run (not present in this target) so, you
-must install dependencies before run (or after a dependency add/change).
+Designed for development workflow on top of this image.
+All source application is mounted as a volume in **/app** directory.
+Dependencies should be installed to run so, you must
+install dependencies before run (or after a dependency add/change).
 
-```text
-# install node_modules dependencies using docker runtime and store them in host directory
+```bash
+# Build development target image
 docker-compose build --compress algorithm-exercises-ts-dev
+# run ephemeral container to install dependencies using docker runtime
+# and store them in host directory (by bind-mount volume)
 docker-compose run --rm algorithm-exercises-ts-dev npm install --verbose
+# Run ephemeral container and override command to run test
 docker-compose run --rm algorithm-exercises-ts-dev npm run test
 ```
+
+## Run complete workflow (Docker + make)
+
+Following command simulates a standarized pipeline across environments,
+using docker-compose and make.
+
+```bash
+make compose/build && make compose/lint && make compose/test && make compose/run
+```
+
+- Build all Docker stages and tag relevant images.
+- Run static analysis (lint) checks
+- Run unit tests
+- Run a "final" production ready image as a final container.
+Final "production" image just shows a minimal "production ready"
+build (with no tests).
 
 ## About development
 
@@ -166,8 +237,38 @@ Developed with runtime:
 
 ```text
 node --version
-v22.1.0
+v22.2.0
 ```
+
+## Algorithm excersices sources
+
+- [Leetcode](https://leetcode.com/) online platform for
+coding interview preparation.
+- [HackerRank](https://www.hackerrank.com/) competitive programming challenges
+for both consumers and businesses.
+- [Project Euler](https://projecteuler.net/) a series of computational problems
+intended to be solved with computer programs.
+
+Use these answers to learn some tip and tricks for algorithms tests.
+
+### Disclaimer. Why I publish solutions?
+
+As Project Euler says:
+
+<https://projecteuler.net/about#publish>
+
+```text
+I learned so much solving problem XXX, so is it okay to publish my solution elsewhere?
+It appears that you have answered your own question. There is nothing quite like that "Aha!" moment when you finally beat a problem which you have been working on for some time. It is often through the best of intentions in wishing to share our insights so that others can enjoy that moment too. Sadly, that will rarely be the case for your readers. Real learning is an active process and seeing how it is done is a long way from experiencing that epiphany of discovery. Please do not deny others what you have so richly valued yourself.
+
+However, the rule about sharing solutions outside of Project Euler does not apply to the first one-hundred problems, as long as any discussion clearly aims to instruct methods, not just provide answers, and does not directly threaten to undermine the enjoyment of solving later problems. Problems 1 to 100 provide a wealth of helpful introductory teaching material and if you are able to respect our requirements, then we give permission for those problems and their solutions to be discussed elsewhere.
+```
+
+If you have better answers or optimal solutions, fork and PR-me
+
+Enjoy 😁 !
+
+## Status
 
 ### License
 
