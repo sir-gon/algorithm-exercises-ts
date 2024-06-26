@@ -6,7 +6,7 @@ export default class BNodeBuilder<T = number> extends BNode<T> {
     dataTree: nullable<T[][]> = null,
     i = 0,
     j = 0
-  ): nullable<BNode<T>> {
+  ): null | BNode<NonNullable<T>> {
     if (!dataTree) return null;
 
     if (dataTree[i]?.[j]) {
