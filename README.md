@@ -8,6 +8,7 @@
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-ts)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-ts)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-ts)
+[![CodeFactor](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-ts/badge)](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-ts)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
 
