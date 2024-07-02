@@ -110,20 +110,6 @@ describe('divisors of a number', () => {
     expect(isPrime(3000)).toBe(false);
   });
 
-  it('abundance of a integer number compared to enum', () => {
-    expect.assertions(3);
-
-    expect(abundance(10)).toStrictEqual(
-      ___DIVISORS_ABUNDANCE___.DIVISORS_DEFICIENT
-    );
-    expect(abundance(12)).toStrictEqual(
-      ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
-    );
-    expect(abundance(28)).toStrictEqual(
-      ___DIVISORS_ABUNDANCE___.DIVISORS_PERFECT
-    );
-  });
-
   it('abundance of a integer number compared to constants', () => {
     expect.assertions(3);
 
