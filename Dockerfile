@@ -34,6 +34,7 @@ COPY ./CODE_OF_CONDUCT.md ${WORKDIR}/
 COPY ./src ${WORKDIR}/src
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
+COPY ./tsconfig.json ${WORKDIR}/
 COPY ./Makefile ${WORKDIR}/
 
 # code linting conf
@@ -48,6 +49,10 @@ COPY ./.markdownlint.yaml ${WORKDIR}/
 # yamllint conf
 COPY ./.yamllint ${WORKDIR}/
 COPY ./.yamlignore ${WORKDIR}/
+COPY ./.gitignore ${WORKDIR}/
+
+# Dependencies
+RUN npm ci --verbose --ignore-scripts
 
 CMD ["make", "lint"]
 
@@ -57,6 +62,7 @@ FROM base AS development
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
+# Code source
 COPY ./src ${WORKDIR}/src
 COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
@@ -64,7 +70,9 @@ COPY ./Makefile ${WORKDIR}/
 COPY ./tsconfig.json ${WORKDIR}/tsconfig.json
 COPY ./tsconfig.prod.json ${WORKDIR}/tsconfig.prod.json
 
-RUN npm ci --verbose --ignore-scripts
+# Dependencies
+COPY --from=lint /app/node_modules ${WORKDIR}/node_modules
+
 RUN ls -alh
 
 # CMD []
