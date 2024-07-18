@@ -84,6 +84,7 @@ test: env dependencies
 coverage: test
 
 coverage/html: coverage
+	open coverage/lcov-report/index.html
 
 outdated:
 	-npm outdated
