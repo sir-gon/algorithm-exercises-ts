@@ -20,7 +20,16 @@
 
 ## TL;DR
 
-[Install and run](#install-and-run)
+Algorithms Exercises solved in [Typescript](https://www.typescriptlang.org/),
+running with [Jest](https://jestjs.io/) testing suite.
+Developed with TDD.
+
+[![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)](https://jestjs.io/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+Go to [Install and run](#install-and-run)
 
 ## What is this?
 
