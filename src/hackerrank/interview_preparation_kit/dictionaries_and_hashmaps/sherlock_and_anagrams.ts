@@ -34,16 +34,17 @@ export function sherlockAndAnagrams(s: string): number {
 
   let count = 0;
   // Final Anagram list
-  for (const i of Object.keys(candidates)) {
-    const total = candidates[i].length;
+  for (const word of Object.keys(candidates)) {
+    const quantity_of_anagrams = candidates[word].length;
     const k = 2;
 
-    if (total <= 1) {
-      delete candidates[i];
+    if (quantity_of_anagrams <= 1) {
+      delete candidates[word];
     } else {
       // Binomial coefficient: https://en.wikipedia.org/wiki/Binomial_coefficient
       count += Math.floor(
-        factorial(total) / (factorial(k) * factorial(total - k))
+        factorial(quantity_of_anagrams) /
+          (factorial(k) * factorial(quantity_of_anagrams - k))
       );
     }
   }
