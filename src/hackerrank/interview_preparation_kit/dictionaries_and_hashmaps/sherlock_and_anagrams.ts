@@ -20,7 +20,10 @@ export function sherlockAndAnagrams(s: string): number {
       // Add substrings to a candidate list.
       // two strings are anagrams if sorted strings are the same.
 
-      const anagram_candidate = substr.split('').sort().join('');
+      const anagram_candidate = substr
+        .split('')
+        .sort((a: string, b: string) => a.localeCompare(b))
+        .join('');
       if (anagram_candidate in candidates) {
         candidates[anagram_candidate].push(substr);
       } else {
