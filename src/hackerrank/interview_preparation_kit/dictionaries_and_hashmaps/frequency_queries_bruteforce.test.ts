@@ -1,30 +1,14 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger';
 
-import { freqQuery } from './frequency_queries';
-
-const TEST_CASES = [
-  {
-    title: 'Sample Test Case 0',
-    input: [
-      [1, 5],
-      [1, 6],
-      [3, 2],
-      [1, 10],
-      [1, 10],
-      [1, 6],
-      [2, 5],
-      [3, 2]
-    ],
-    expected: [0, 1]
-  }
-];
+import { freqQuery } from './frequency_queries_bruteforce';
+import SMALL_TEST_CASES from './frequency_queries_testcases.json';
 
 describe('frequency_queries', () => {
   it('freqQuery test cases', () => {
-    expect.assertions(1);
+    expect.assertions(4);
 
-    TEST_CASES.forEach((value) => {
+    SMALL_TEST_CASES.forEach((value) => {
       const answer = freqQuery(value.input);
 
       console.debug(`freqQuery(${value.input}) solution found: ${answer}`);
