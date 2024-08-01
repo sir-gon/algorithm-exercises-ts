@@ -4,7 +4,7 @@ import { logger as console } from '../../../logger';
 import { freqQuery } from './frequency_queries_optimized';
 import TEST_CASES from './frequency_queries_testcases.json';
 
-describe('frequency_queries', () => {
+describe('frequency_queries_optimized', () => {
   it('freqQuery test cases', () => {
     expect.assertions(4);
 
