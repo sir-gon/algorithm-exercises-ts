@@ -3,30 +3,19 @@ import { logger as console } from '../../../logger';
 
 import { maxSubsetSum } from './max_array_sum';
 
-const TEST_CASES = [
-  {
-    title: 'Sample Test case 0',
-    input: [3, 7, 4, 6, 5],
-    expected: 13
-  },
-  {
-    title: 'Sample Test case 1',
-    input: [2, 1, 5, 8, 4],
-    expected: 11
-  },
-  {
-    title: 'Sample Test case 2',
-    input: [3, 5, -7, 8, 10],
-    expected: 15
-  }
-];
+import TEST_CASES from './max_array_sum.testcases.json';
+import TEST_CASE3 from './max_array_sum.testcase3.json';
+
+const ALL_TEST_CASES = [...TEST_CASES, TEST_CASE3];
+
+const DECIMAL_RADIX = 10;
 
 describe('max_array_sum', () => {
   it('maxSubsetSum test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
-      const answer = maxSubsetSum(test.input);
+    ALL_TEST_CASES.forEach((test) => {
+      const answer = maxSubsetSum(test.input).toString(DECIMAL_RADIX);
 
       console.debug(`maxSubsetSum(${test.input}) solution found: ${answer}`);
 
