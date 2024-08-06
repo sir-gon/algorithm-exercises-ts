@@ -3,8 +3,8 @@ import { logger as console } from '../../logger';
 
 import { getTotalX, factorOf, isFactor } from './betweenTwoSets';
 
-describe('between Two Sets', () => {
-  it('between Two Sets Border cases', () => {
+describe('betweenTwoSets', () => {
+  it('getTotalX Border cases', () => {
     expect.assertions(5);
 
     const input = [16, 32, 96];

@@ -6,7 +6,7 @@ import { maxMin } from './angry_children';
 import TEST_CASES from './angry_children.testcases.json';
 
 describe('angry_children', () => {
-  it('angry_children test cases', () => {
+  it('maxMin test cases', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {

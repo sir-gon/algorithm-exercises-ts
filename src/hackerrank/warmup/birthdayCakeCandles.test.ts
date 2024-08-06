@@ -4,7 +4,7 @@ import { logger as console } from '../../logger';
 import { birthdayCakeCandles } from './birthdayCakeCandles';
 
 describe('birthdayCakeCandles', () => {
-  it('miniMaxSum border case', () => {
+  it('birthdayCakeCandles border case', () => {
     expect.assertions(1);
 
     expect(() => {
