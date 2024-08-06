@@ -3,8 +3,8 @@ import { logger as console } from '../../logger';
 
 import { compareTriplets } from './compareTriplets';
 
-describe('problem simpleArraySum', () => {
-  it('problem simpleArraySum Border case', () => {
+describe('compareTriplets', () => {
+  it('problem compareTriplets Border case', () => {
     expect.assertions(1);
 
     const a = [1];
@@ -15,7 +15,7 @@ describe('problem simpleArraySum', () => {
     }).toThrow('Wrong comparition length');
   });
 
-  it('problem simpleArraySum Test case 0', () => {
+  it('problem compareTriplets Test case 0', () => {
     expect.assertions(1);
 
     const a = [5, 6, 7];

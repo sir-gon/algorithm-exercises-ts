@@ -3,7 +3,7 @@ import { logger as console } from '../../logger';
 
 import { birthday } from './birthday';
 
-describe('subarray Division', () => {
+describe('the-birthday-bar', () => {
   it('subarray Division test case 0', () => {
     expect.assertions(1);
 
