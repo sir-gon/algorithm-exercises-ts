@@ -6,39 +6,41 @@
 const TOP_LIMIT = 10 ** 10 + 7;
 const STEPS_LIMIT = 3;
 
-export function step_perms_comput_with_cache(
-  n_steps: number,
-  cache: Record<number, number>,
-  steps_limit: number
-): number {
-  if (0 <= n_steps && n_steps <= 2) {
-    return n_steps;
+export class StepPerms {
+  TOP_LIMIT = 1;
+  STEPS_LIMIT = 1;
+  CACHE: Record<number, number> = {};
+
+  constructor(top_limit: number, steps_limit: number) {
+    this.TOP_LIMIT = top_limit;
+    this.STEPS_LIMIT = steps_limit;
   }
 
-  const keys = new Set(Object.values(cache));
-  let result = 0;
-
-  for (let i = 1; i <= Math.min(steps_limit, n_steps); i++) {
-    const searchKey = n_steps - i;
-    if (!keys.has(searchKey)) {
-      cache[searchKey] = step_perms_comput_with_cache(
-        searchKey,
-        cache,
-        steps_limit
-      );
+  step_perms_comput_with_cache(n_steps: number): number {
+    if (0 <= n_steps && n_steps <= 2) {
+      return n_steps;
     }
 
-    result += cache[searchKey];
-  }
+    const keys = new Set(Object.keys(this.CACHE));
+    let result = 0;
 
-  return result + (n_steps <= steps_limit ? 1 : 0);
+    for (let i = 1; i <= Math.min(this.STEPS_LIMIT, n_steps); i++) {
+      const searchKey = n_steps - i;
+      if (!keys.has(searchKey.toString())) {
+        this.CACHE[searchKey] = this.step_perms_comput_with_cache(searchKey);
+      }
+
+      result += this.CACHE[searchKey];
+    }
+
+    return result + (n_steps <= this.STEPS_LIMIT ? 1 : 0);
+  }
 }
 
 export function stepPerms(n: number): number {
-  const initial_cache: Record<number, number> = {};
-  return (
-    step_perms_comput_with_cache(n, initial_cache, STEPS_LIMIT) % TOP_LIMIT
-  );
+  const stairs = new StepPerms(TOP_LIMIT, STEPS_LIMIT);
+
+  return stairs.step_perms_comput_with_cache(n) % TOP_LIMIT;
 }
 
-export default { stepPerms, step_perms_comput_with_cache };
+export default { stepPerms, StepPerms };
