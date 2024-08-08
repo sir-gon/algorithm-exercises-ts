@@ -7,6 +7,7 @@ import { logger as console } from '../logger';
 import { problem0007 } from './problem0007';
 
 import { describe, expect, it } from '@jest/globals';
+
 describe('problem 0007 BRUTEFORCE', () => {
   it('problem 0007 BRUTEFORCE large', () => {
     expect.assertions(1);

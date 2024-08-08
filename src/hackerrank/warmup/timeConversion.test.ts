@@ -3,6 +3,7 @@ import { logger as console } from '../../logger';
 import { timeConversion } from './timeConversion';
 
 import { describe, expect, it } from '@jest/globals';
+
 describe('timeConversion', () => {
   it('timeConversion example', () => {
     expect.assertions(2);
@@ -15,6 +16,7 @@ describe('timeConversion', () => {
     for (const test of tests) {
       const calculated = timeConversion(test.input);
       console.log(`timeConversion(${test.input}) Test case 0: ${calculated}`);
+
       expect(calculated).toBe(test.answer);
     }
   });
