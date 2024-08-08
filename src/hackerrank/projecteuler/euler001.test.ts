@@ -18,6 +18,7 @@ describe('euler001', () => {
       console.log(
         `euler001(${test.a}, ${test.b}, ${test.n}) solution found: ${test.answer}`
       );
+
       expect(calculated).toStrictEqual(test.answer);
     });
   });
