@@ -3,15 +3,15 @@
         "title": "Sample Test case 0",
         "tests": [
             {
-                "input": 1,
+                "n_steps": 1,
                 "expected": 1
             },
             {
-                "input": 3,
+                "n_steps": 3,
                 "expected": 4
             },
             {
-                "input": 7,
+                "n_steps": 7,
                 "expected": 44
             }
         ]
@@ -20,11 +20,11 @@
         "title": "Sample Test case 9",
         "tests": [
             {
-                "input": 5,
+                "n_steps": 5,
                 "expected": 13
             },
             {
-                "input": 8,
+                "n_steps": 8,
                 "expected": 81
             }
         ]
@@ -33,15 +33,15 @@
         "title": "Sample Test case 10",
         "tests": [
             {
-                "input": 15,
+                "n_steps": 15,
                 "expected": 5768
             },
             {
-                "input": 20,
+                "n_steps": 20,
                 "expected": 121415
             },
             {
-                "input": 27,
+                "n_steps": 27,
                 "expected": 8646064
             }
         ]
