@@ -16,19 +16,16 @@ export function whatFlavorsCompute(cost: number[], money: number): number[] {
     const v1 = cost[i];
     const v2 = money - v1;
 
-    if (v1 != v2) {
-      if (CACHE?.[v1] && CACHE?.[v2]) {
-        ans1 = v1;
-        ans2 = v2;
-        break;
-      }
-    } else {
-      // count of the element must be greater than 1 if they are same
-      if (CACHE?.[v1] && CACHE[v1] > 1) {
-        ans1 = v1;
-        ans2 = v1;
-        break;
-      }
+    if (v1 != v2 && CACHE?.[v1] && CACHE?.[v2]) {
+      ans1 = v1;
+      ans2 = v2;
+      break;
+    }
+
+    if (v1 == v2 && CACHE?.[v1] && CACHE[v1] > 1) {
+      ans1 = v1;
+      ans2 = v1;
+      break;
     }
   }
 
