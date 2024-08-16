@@ -11,9 +11,8 @@ export function whatFlavorsCompute(
   for (const [key, price] of Object.entries(cost)) {
     const i = parseInt(key);
     const diff = money - price;
-    const cacheKeys = new Set(Object.keys(cache));
 
-    if (cacheKeys.has(diff.toString())) {
+    if (Number.isInteger(cache?.[diff])) {
       return [i + 1, cache[diff] + 1].sort((a, b) => a - b);
     }
 
