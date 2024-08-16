@@ -26,9 +26,14 @@ The preliminary guess is that the "edges" may be poorly thought out,
 and it may also not properly account for cases where there may be
 "repeated" values in the search.
 
-## Working solution
+## Editorial-based solution
 
-This solution has a complexity of O(N).
+Using editorial C++ based solution, I can notice about that solution in O(n) space,
+realy do 3 times (3*O(n)) pass over data list.
+
+## Final working solution
+
+This solution has a complexity of O(N) in just one iteration.
 It is based on a very simple idea.
 
 A dictionary (key-value object) is created.
