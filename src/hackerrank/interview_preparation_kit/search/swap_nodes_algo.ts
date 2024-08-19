@@ -74,7 +74,7 @@ export function build_tree(indexes: number[][]): Node<number> {
     const last_level: number = parseInt(
       Object.keys(node_collector)
         .sort((a, b) => parseInt(b) - parseInt(a))
-        .shift() ?? '0'
+        .shift() as string
     );
 
     for (
@@ -83,7 +83,7 @@ export function build_tree(indexes: number[][]): Node<number> {
       i++
     ) {
       const current_node: Node<number> = node_collector[last_level][i];
-      const new_element: number[] = indexesCopy.shift() ?? [];
+      const new_element: number[] = indexesCopy.shift() as Array<number>;
 
       if ((new_element?.[0] ?? __LEAF_VALUE__) != __LEAF_VALUE__) {
         current_node.left = new Node<number>(new_element[0]);
@@ -110,7 +110,7 @@ export function flat_tree(root: Node<number>): number[] {
   const last_level: number = parseInt(
     Object.keys(node_collector)
       .sort((a, b) => parseInt(b) - parseInt(a))
-      .shift() ?? '0'
+      .shift() as string
   );
 
   const output: number[] = [];
