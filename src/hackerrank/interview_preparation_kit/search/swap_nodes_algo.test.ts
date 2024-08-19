@@ -1,6 +1,13 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { build_tree, flat_tree } from './swap_nodes_algo';
+import { Node } from '../../lib/Node';
+import {
+  build_tree,
+  flat_tree,
+  swap_branch,
+  swapNodes,
+  __INITIAL_LEVEL__
+} from './swap_nodes_algo';
 import TEST_CASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
@@ -26,6 +33,28 @@ describe('swap_nodes_algo', () => {
     expect(t_result).toStrictEqual(expected);
   });
 
+  it('test_swap_branch empty', () => {
+    expect.assertions(1);
+
+    const t_input: null = null;
+    const t_result: Node<number> | null = swap_branch(t_input);
+    const expected = null;
+
+    expect(t_result).toStrictEqual(expected);
+  });
+
+  it('test_swap_branch', () => {
+    expect.assertions(1);
+
+    const t_input: Node<number> = new Node<number>(__INITIAL_LEVEL__);
+    t_input.left = new Node<number>(2);
+    t_input.right = new Node<number>(3);
+    const t_result: number[] = flat_tree(swap_branch(t_input));
+    const expected: number[] = [3, 1, 2];
+
+    expect(t_result).toStrictEqual(expected);
+  });
+
   it('build_tree and plain test cases', () => {
     expect.assertions(4);
 
@@ -34,6 +63,16 @@ describe('swap_nodes_algo', () => {
       const t_result = flat_tree(t_to_test);
 
       expect(t_result).toStrictEqual(test.plain);
+    });
+  });
+
+  it('swapNodes test cases', () => {
+    expect.assertions(4);
+
+    TEST_CASES.forEach((test) => {
+      const t_result: number[][] = swapNodes(test.nodes, test.queries);
+
+      expect(t_result).toStrictEqual(test.expected);
     });
   });
 });

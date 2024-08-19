@@ -2,57 +2,61 @@
  * @link Problem export functioninition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
  */
 
+import { logger as console } from '../../../logger';
 import { Node } from '../../lib/Node';
 
 // CONSTANTS
-const __INITIAL_LEVEL__: number = 1;
-const __ROOT_VALUE__: number = 1;
-const __LEAF_VALUE__: number = -1;
+export const __INITIAL_LEVEL__: number = 1;
+export const __ROOT_VALUE__: number = 1;
+export const __LEAF_VALUE__: number = -1;
 
 export function callback_collect_nodes(
-  root: Node<number>,
+  root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number
 ): void {
-  if (collect?.[level] === undefined) {
-    collect[level] = [root];
-  } else {
-    collect[level].push(root);
+  if (root) {
+    if (collect?.[level] === undefined) {
+      collect[level] = [root];
+    } else {
+      collect[level].push(root);
+    }
   }
 }
 
 export function callback_collect_flat(
-  root: Node<number>,
+  root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number
 ): void {
   const _level: number = 0 * level; // set a unique key to use dict as a list
-
-  if (collect?.[_level] === undefined) {
-    collect[_level] = [root];
-  } else {
-    collect[_level].push(root);
+  if (root) {
+    if (collect?.[_level] === undefined) {
+      collect[_level] = [root];
+    } else {
+      collect[_level].push(root);
+    }
   }
 }
 
 export function traverse_in_order_collector(
-  root: Node<number>,
+  root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number,
   callbackFn: (
-    root: Node<number>,
+    root: Node<number> | null | undefined,
     collect: Record<number, Node<number>[]>,
     level: number
   ) => void
 ): Record<number, Node<number>[]> {
-  if (root.left !== null) {
-    traverse_in_order_collector(root.left, collect, level + 1, callbackFn);
+  if (root?.left !== null) {
+    traverse_in_order_collector(root?.left, collect, level + 1, callbackFn);
   }
 
   callbackFn(root, collect, level);
 
-  if (root.right !== null) {
-    traverse_in_order_collector(root.right, collect, level + 1, callbackFn);
+  if (root?.right !== null) {
+    traverse_in_order_collector(root?.right, collect, level + 1, callbackFn);
   }
 
   return collect;
@@ -97,7 +101,7 @@ export function build_tree(indexes: number[][]): Node<number> {
   return root;
 }
 
-export function flat_tree(root: Node<number>): number[] {
+export function flat_tree(root: Node<number> | null): number[] {
   let node_collector: Record<number, Node<number>[]> = {};
 
   node_collector = traverse_in_order_collector(
@@ -121,8 +125,51 @@ export function flat_tree(root: Node<number>): number[] {
   return output;
 }
 
-export function swapNodes(indexes: number[][], queries: number[]): number[][] {
-  return [];
+export function swap_branch(root: Node<number> | null): Node<number> | null {
+  if (root) {
+    [root.left, root.right] = [root.right, root.left];
+  }
+
+  return root;
 }
 
-export default { swapNodes };
+export function swapNodes(indexes: number[][], queries: number[]): number[][] {
+  const tree: Node<number> = build_tree(indexes);
+
+  const output: number[][] = [];
+  let node_collector: Record<number, Node<number>[]> = {};
+
+  traverse_in_order_collector(
+    tree,
+    node_collector,
+    __INITIAL_LEVEL__,
+    callback_collect_nodes
+  );
+
+  node_collector = Object.fromEntries(
+    Object.entries(node_collector).sort(([a], [b]) => parseInt(a) - parseInt(b))
+  );
+
+  let flattened_tree: number[] = flat_tree(tree);
+
+  console.debug(`Plain tree: ${flattened_tree}`);
+
+  for (const query in queries) {
+    for (const [level, node_list] of Object.entries(node_collector)) {
+      const t_level: number = parseInt(level);
+
+      if (t_level % queries[query] == 0) {
+        for (const node of node_list) {
+          swap_branch(node);
+        }
+      }
+    }
+
+    flattened_tree = flat_tree(tree);
+    output.push(flattened_tree);
+  }
+
+  return output;
+}
+
+export default { swapNodes, __INITIAL_LEVEL__ };
