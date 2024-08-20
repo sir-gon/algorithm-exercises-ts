@@ -65,9 +65,11 @@ export function traverse_in_order_collector(
 export function build_tree(indexes: number[][]): Node<number> {
   const indexesCopy: number[][] = [...indexes];
   const root: Node<number> = new Node<number>(__ROOT_VALUE__);
-  const node_collector: Record<number, Node<number>[]> = {};
+  let node_collector: Record<number, Node<number>[]> = {};
 
   while (indexesCopy.length > 0) {
+    node_collector = {};
+
     traverse_in_order_collector(
       root,
       node_collector,
@@ -81,11 +83,11 @@ export function build_tree(indexes: number[][]): Node<number> {
         .shift() as string
     );
 
-    for (
-      let i = 0;
-      i < Math.min(indexesCopy.length, node_collector[last_level]?.length);
-      i++
-    ) {
+    const level_size = Math.min(
+      indexesCopy.length,
+      node_collector[last_level]?.length
+    );
+    for (let i = 0; i < level_size; i++) {
       const current_node: Node<number> = node_collector[last_level][i];
       const new_element: number[] = indexesCopy.shift() as Array<number>;
 
