@@ -55,14 +55,14 @@ describe('swap_nodes_algo', () => {
     expect(t_result).toStrictEqual(expected);
   });
 
-  it('build_tree and plain test cases', () => {
+  it('build tree and flattened tree test cases', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
       const t_to_test = build_tree(test.nodes);
       const t_result = flat_tree(t_to_test);
 
-      expect(t_result).toStrictEqual(test.plain);
+      expect(t_result).toStrictEqual(test.flattened);
     });
   });
 
