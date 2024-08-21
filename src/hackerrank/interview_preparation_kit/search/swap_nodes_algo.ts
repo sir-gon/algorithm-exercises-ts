@@ -137,7 +137,6 @@ export function swap_branch(root: Node<number> | null): Node<number> | null {
 
 export function swapNodes(indexes: number[][], queries: number[]): number[][] {
   const tree: Node<number> = build_tree(indexes);
-
   const output: number[][] = [];
   let node_collector: Record<number, Node<number>[]> = {};
 
