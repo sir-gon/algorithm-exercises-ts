@@ -127,14 +127,6 @@ export function flat_tree(root: Node<number> | null): number[] {
   return output;
 }
 
-export function swap_branch(root: Node<number> | null): Node<number> | null {
-  if (root) {
-    [root.left, root.right] = [root.right, root.left];
-  }
-
-  return root;
-}
-
 export function swapNodes(indexes: number[][], queries: number[]): number[][] {
   const tree: Node<number> = build_tree(indexes);
   const output: number[][] = [];
@@ -161,7 +153,8 @@ export function swapNodes(indexes: number[][], queries: number[]): number[][] {
 
       if (t_level % queries[query] == 0) {
         for (const node of node_list) {
-          swap_branch(node);
+          // swap branches
+          [node.left, node.right] = [node.right, node.left];
         }
       }
     }
