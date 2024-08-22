@@ -8,8 +8,8 @@ export function kangaroo(
   x2: number,
   v2: number
 ): string {
-  if (v1 == v2) {
-    if (x1 != x2) return 'NO';
+  if (v1 === v2) {
+    if (x1 !== x2) return 'NO';
     return 'YES';
   }
 

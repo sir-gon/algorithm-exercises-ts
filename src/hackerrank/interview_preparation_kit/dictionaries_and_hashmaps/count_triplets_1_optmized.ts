@@ -6,7 +6,7 @@
 export function countTriplets(arr: number[], ratio: number): number {
   let triplets = 0;
 
-  const a_counter: Record<number, number> = arr.reduce(
+  const aCounter: Record<number, number> = arr.reduce(
     (accumulator: Record<number, number>, entry: number) => {
       if (entry in accumulator) {
         accumulator[entry] += 1;
@@ -18,20 +18,20 @@ export function countTriplets(arr: number[], ratio: number): number {
     {}
   );
 
-  const b_counter: Record<number, number> = {};
+  const bCounter: Record<number, number> = {};
 
   arr.forEach((x) => {
     const j = Math.floor(x / ratio);
     const k = x * ratio;
-    a_counter[x] -= 1;
-    if (b_counter[j] && a_counter[k] && x % ratio == 0) {
-      triplets += b_counter[j] * a_counter[k];
+    aCounter[x] -= 1;
+    if (bCounter[j] && aCounter[k] && x % ratio === 0) {
+      triplets += bCounter[j] * aCounter[k];
     }
 
-    if (x in b_counter) {
-      b_counter[x] += 1;
+    if (x in bCounter) {
+      bCounter[x] += 1;
     } else {
-      b_counter[x] = 1;
+      bCounter[x] = 1;
     }
   });
 

@@ -2,165 +2,125 @@
  * @link Problem export functioninition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
  */
 
-import { logger as console } from '../../../logger';
 import { Node } from '../../lib/Node';
 
 // CONSTANTS
 export const __INITIAL_LEVEL__: number = 1;
 export const __ROOT_VALUE__: number = 1;
 export const __LEAF_VALUE__: number = -1;
+const __RADIX__ = 10;
 
-export function callback_collect_nodes(
-  root: Node<number> | null | undefined,
-  collect: Record<number, Node<number>[]>,
-  level: number
-): void {
-  if (root) {
-    if (collect?.[level] === undefined) {
-      collect[level] = [root];
-    } else {
-      collect[level].push(root);
-    }
-  }
-}
+export class Tree {
+  root: Node<number>;
 
-export function callback_collect_flat(
-  root: Node<number> | null | undefined,
-  collect: Record<number, Node<number>[]>,
-  level: number
-): void {
-  const _level: number = 0 * level; // set a unique key to use dict as a list
-  if (root) {
-    if (collect?.[_level] === undefined) {
-      collect[_level] = [root];
-    } else {
-      collect[_level].push(root);
-    }
-  }
-}
+  nodeCollector: Record<number, Node<number>[]>;
 
-export function traverse_in_order_collector(
-  root: Node<number> | null | undefined,
-  collect: Record<number, Node<number>[]>,
-  level: number,
-  callbackFn: (
-    root: Node<number> | null | undefined,
-    collect: Record<number, Node<number>[]>,
-    level: number
-  ) => void
-): Record<number, Node<number>[]> {
-  if (root?.left !== null) {
-    traverse_in_order_collector(root?.left, collect, level + 1, callbackFn);
+  constructor(indexes: number[][]) {
+    this.root = new Node(__ROOT_VALUE__);
+    this.nodeCollector = {};
+    this.nodeCollector[__INITIAL_LEVEL__] = [this.root];
+
+    this.buildTree(indexes);
   }
 
-  callbackFn(root, collect, level);
+  buildTree(indexes: number[][]): Tree {
+    const indexesCopy = [...indexes];
+    let currentLevel = __INITIAL_LEVEL__;
 
-  if (root?.right !== null) {
-    traverse_in_order_collector(root?.right, collect, level + 1, callbackFn);
-  }
+    while (indexesCopy.length > 0) {
+      const levelSize = Math.min(
+        indexesCopy.length,
+        this.nodeCollector[currentLevel]?.length
+      );
 
-  return collect;
-}
+      const nextLevel = currentLevel + 1;
 
-export function build_tree(indexes: number[][]): Node<number> {
-  const indexesCopy: number[][] = [...indexes];
-  const root: Node<number> = new Node<number>(__ROOT_VALUE__);
-  let node_collector: Record<number, Node<number>[]> = {};
-
-  while (indexesCopy.length > 0) {
-    node_collector = {};
-
-    traverse_in_order_collector(
-      root,
-      node_collector,
-      __INITIAL_LEVEL__,
-      callback_collect_nodes
-    );
-
-    const last_level: number = parseInt(
-      Object.keys(node_collector)
-        .sort((a, b) => parseInt(b) - parseInt(a))
-        .shift() as string
-    );
-
-    const level_size = Math.min(
-      indexesCopy.length,
-      node_collector[last_level]?.length
-    );
-    for (let i = 0; i < level_size; i++) {
-      const current_node: Node<number> = node_collector[last_level][i];
-      const new_element: number[] = indexesCopy.shift() as Array<number>;
-
-      if ((new_element?.[0] ?? __LEAF_VALUE__) != __LEAF_VALUE__) {
-        current_node.left = new Node<number>(new_element[0]);
+      if (levelSize > 0) {
+        this.nodeCollector[nextLevel] = [];
       }
-      if ((new_element?.[1] ?? __LEAF_VALUE__) != __LEAF_VALUE__) {
-        current_node.right = new Node<number>(new_element[1]);
+
+      for (let i = 0; i < levelSize; i++) {
+        const currentNode = this.nodeCollector[currentLevel][i];
+        const newElement = indexesCopy?.shift() ?? [];
+
+        if ((newElement?.[0] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
+          currentNode.left = new Node(newElement[0]);
+          this.nodeCollector[nextLevel].push(currentNode.left);
+        }
+        if ((newElement?.[1] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
+          currentNode.right = new Node(newElement[1]);
+          this.nodeCollector[nextLevel].push(currentNode.right);
+        }
+      }
+
+      if (this.nodeCollector[nextLevel].length > 0) {
+        currentLevel = nextLevel;
       }
     }
+
+    return this;
   }
 
-  return root;
-}
+  getRoot(): Node<number> {
+    return this.root;
+  }
 
-export function flat_tree(root: Node<number> | null): number[] {
-  let node_collector: Record<number, Node<number>[]> = {};
+  getCollector(): Record<number, Node<number>[]> {
+    return this.nodeCollector;
+  }
 
-  node_collector = traverse_in_order_collector(
-    root,
-    node_collector,
-    __INITIAL_LEVEL__,
-    callback_collect_flat
-  );
+  flatTree(): number[] {
+    const flatTreeCollector: Node<number>[] = [];
 
-  const last_level: number = parseInt(
-    Object.keys(node_collector)
-      .sort((a, b) => parseInt(b) - parseInt(a))
-      .shift() as string
-  );
+    function traverseInOrderFlat(node: Node<number>): void {
+      if (node?.left !== null) {
+        traverseInOrderFlat(node?.left);
+      }
 
-  const output: number[] = [];
-  node_collector[last_level].forEach((node: Node<number>) => {
-    output.push(node.data);
-  });
+      if (node) {
+        flatTreeCollector.push(node);
+      }
 
-  return output;
+      if (node?.right !== null) {
+        traverseInOrderFlat(node?.right);
+      }
+    }
+
+    traverseInOrderFlat(this.root);
+
+    const output: number[] = [];
+    flatTreeCollector.forEach((node) => {
+      output.push(node.data);
+    });
+
+    return output;
+  }
 }
 
 export function swapNodes(indexes: number[][], queries: number[]): number[][] {
-  const tree: Node<number> = build_tree(indexes);
+  const tree: Tree = new Tree(indexes);
+  let nodeCollector: Record<number, Node<number>[]> = tree.getCollector();
   const output: number[][] = [];
-  let node_collector: Record<number, Node<number>[]> = {};
 
-  traverse_in_order_collector(
-    tree,
-    node_collector,
-    __INITIAL_LEVEL__,
-    callback_collect_nodes
+  nodeCollector = Object.fromEntries(
+    Object.entries(nodeCollector).sort(
+      ([a], [b]) => parseInt(a, __RADIX__) - parseInt(b, __RADIX__)
+    )
   );
 
-  node_collector = Object.fromEntries(
-    Object.entries(node_collector).sort(([a], [b]) => parseInt(a) - parseInt(b))
-  );
+  for (const query of queries) {
+    for (const [level, nodeList] of Object.entries(nodeCollector)) {
+      const tLevel: number = parseInt(level, __RADIX__);
 
-  let flattened_tree: number[] = flat_tree(tree);
-
-  console.debug(`Plain tree: ${flattened_tree}`);
-
-  for (const query in queries) {
-    for (const [level, node_list] of Object.entries(node_collector)) {
-      const t_level: number = parseInt(level);
-
-      if (t_level % queries[query] == 0) {
-        for (const node of node_list) {
+      if (tLevel % query === 0) {
+        for (const node of nodeList) {
           // swap branches
           [node.left, node.right] = [node.right, node.left];
         }
       }
     }
 
-    flattened_tree = flat_tree(tree);
-    output.push(flattened_tree);
+    output.push(tree.flatTree());
   }
 
   return output;

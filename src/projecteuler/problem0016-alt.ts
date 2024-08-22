@@ -17,6 +17,8 @@
 
 import { logger as console } from '../logger';
 
+const __RADIX__ = 10;
+
 function problem0016alt(base: string, exponent: number): string {
   const newBase = BigInt(base);
   let powerOf = BigInt(1);
@@ -33,7 +35,7 @@ function problem0016alt(base: string, exponent: number): string {
 
   let result = 0;
   digits.forEach((num: string) => {
-    result += parseInt(num);
+    result += parseInt(num, __RADIX__);
   });
 
   console.log(`Sum of Digits: (${result})`);

@@ -1,5 +1,5 @@
 import { logger as console } from '../../logger';
-import { sum } from './';
+import { sum } from './sum';
 
 export const divisors = (target: number): number[] => {
   let top = Math.abs(target);
@@ -65,7 +65,7 @@ export const nextPrimeFactor = (_target: number): PrimeFactor => {
   const init = 1;
   let i = init;
 
-  if (top != 1) {
+  if (top !== 1) {
     do {
       i += 1;
       factor = i;
@@ -74,8 +74,8 @@ export const nextPrimeFactor = (_target: number): PrimeFactor => {
   }
 
   return {
-    factor: factor,
-    carry: carry,
+    factor,
+    carry,
     cycles: i - init
   };
 };
@@ -103,12 +103,11 @@ export const primeFactors = (target: number): PrimeFactors => {
     factor = partial.carry;
   }
 
-  return { factors: factors, cycles: cycles };
+  return { factors, cycles };
 };
 
-export const isPrime = (target: number): boolean => {
-  return target != 1 && target === nextPrimeFactor(target).factor;
-};
+export const isPrime = (target: number): boolean =>
+  target !== 1 && target === nextPrimeFactor(target).factor;
 
 export enum ___DIVISORS_ABUNDANCE___ {
   DIVISORS_ABUNDANT = 'abundant',
@@ -117,8 +116,8 @@ export enum ___DIVISORS_ABUNDANCE___ {
 }
 
 export const abundance = (target: number): ___DIVISORS_ABUNDANCE___ => {
-  const divisors = properDivisors(target);
-  const divSum = sum(divisors);
+  const tDivisors = properDivisors(target);
+  const divSum = sum(tDivisors);
 
   if (divSum > target) {
     return ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT;

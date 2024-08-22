@@ -9,7 +9,7 @@ interface Birds {
 }
 
 export function migratoryBirds(arr: number[]): number {
-  if (arr.length == 0) {
+  if (arr.length === 0) {
     throw new Error('Empty input');
   }
 
@@ -28,7 +28,7 @@ export function migratoryBirds(arr: number[]): number {
     console.debug(`bird = ${bird} ~> map[bird] = ${map[bird]}`);
     console.debug(`max = ${max} ~> map[max] = ${map[max]}`);
 
-    if (map[bird] > map[max] || (map[bird] == map[max] && bird < max))
+    if (map[bird] > map[max] || (map[bird] === map[max] && bird < max))
       max = bird;
   }
 

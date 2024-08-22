@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { product } from './';
+import { product } from '.';
 
 describe('product of all numbers in array', () => {
   it('product of some positive, negative or zero integers', () => {

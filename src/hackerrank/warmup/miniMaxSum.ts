@@ -3,7 +3,7 @@
  */
 
 export function miniMaxSum(arr: number[]): string {
-  if (arr.length == 0) {
+  if (arr.length === 0) {
     throw new Error('Empty input');
   }
 

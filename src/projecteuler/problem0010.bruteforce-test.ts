@@ -1,10 +1,9 @@
 /* istanbul ignore file */
 
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger';
 
 import { problem0010 } from './problem0010';
-
-import { describe, expect, it } from '@jest/globals';
 
 describe('problem 0010', () => {
   it('problem 0010 solution found BRUTE FORCE', () => {

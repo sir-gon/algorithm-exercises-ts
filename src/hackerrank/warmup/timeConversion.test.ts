@@ -1,8 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../logger';
 
 import { timeConversion } from './timeConversion';
-
-import { describe, expect, it } from '@jest/globals';
 
 describe('timeConversion', () => {
   it('timeConversion example', () => {

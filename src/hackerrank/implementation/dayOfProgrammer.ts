@@ -24,12 +24,12 @@ export function dayOfProgrammer(year: number): string {
     leap = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 1 : 0;
   }
 
-  copyOfdaysInMonthNumber[2] = copyOfdaysInMonthNumber[2] + leap;
+  copyOfdaysInMonthNumber[2] += leap;
 
   // transition year
   if (year === 1918) {
     const adjustDaysIn1918 = 13;
-    copyOfdaysInMonthNumber[2] = copyOfdaysInMonthNumber[2] - adjustDaysIn1918;
+    copyOfdaysInMonthNumber[2] -= adjustDaysIn1918;
   }
 
   let accumDays = 0;

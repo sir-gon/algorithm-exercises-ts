@@ -6,7 +6,7 @@
 // Complete the freqQuery function below.
 export function freqQuery(queries: number[][]): number[] {
   const result: number[] = [];
-  const data_map: Record<number, number> = {};
+  const dataMap: Record<number, number> = {};
 
   const __INITIAL__ = 0;
   const __INSERT__ = 1;
@@ -19,17 +19,17 @@ export function freqQuery(queries: number[][]): number[] {
   queries.forEach((query) => {
     const [operation, data] = query;
 
-    const current = data_map?.[data] ?? __INITIAL__;
+    const current = dataMap?.[data] ?? __INITIAL__;
 
     switch (operation) {
       case __INSERT__:
-        data_map[data] = current + 1;
+        dataMap[data] = current + 1;
         break;
       case __DELETE__:
-        data_map[data] = Math.max(0, current - 1);
+        dataMap[data] = Math.max(0, current - 1);
         break;
       case __SELECT__: {
-        const uniqueDatavalues = new Set(Object.values(data_map));
+        const uniqueDatavalues = new Set(Object.values(dataMap));
         if (uniqueDatavalues.has(data)) {
           result.push(__FOUND__);
         } else {

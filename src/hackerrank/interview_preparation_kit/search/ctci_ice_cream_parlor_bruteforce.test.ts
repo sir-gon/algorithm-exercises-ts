@@ -3,7 +3,7 @@ import { logger as console } from '../../../logger';
 
 import {
   whatFlavors,
-  what_flavors_bruteforce_compute
+  whatFlavorsBruteforceCompute
 } from './ctci_ice_cream_parlor_bruteforce';
 import TEST_CASES from './ctci_ice_cream_parlor.testcases.json';
 import TEST_CASES_BORDER_CASES from './ctci_ice_cream_parlor.border_testcases.json';
@@ -14,7 +14,7 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
 
     TEST_CASES.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
-        const answer = what_flavors_bruteforce_compute(test.costs, test.money);
+        const answer = whatFlavorsBruteforceCompute(test.costs, test.money);
 
         console.debug(
           `${testSet.title} ctci_ice_cream_parlor_bruteforce(${test.costs}, ${test.money}) solution found: ${answer}`
@@ -32,7 +32,7 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
     TEST_CASES_BORDER_CASES.forEach((testSet) => {
       testSet?.tests.forEach((test) => {
         expect(
-          what_flavors_bruteforce_compute(test.costs, test.money)
+          whatFlavorsBruteforceCompute(test.costs, test.money)
         ).toStrictEqual(test.expected);
         expect(whatFlavors(test.costs, test.money)).toBeUndefined();
       });

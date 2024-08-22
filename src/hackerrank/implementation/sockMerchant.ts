@@ -19,10 +19,10 @@ export function sockMerchant(n: number, ar: number[]): number {
 
   console.debug(matches);
 
-  for (const k in matches) {
-    console.debug(matches[k]);
+  for (const match of Object.values(matches)) {
+    console.debug(match);
 
-    result += Math.floor(matches[k] / 2);
+    result += Math.floor(match / 2);
   }
 
   return result;

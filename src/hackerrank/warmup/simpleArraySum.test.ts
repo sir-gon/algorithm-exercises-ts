@@ -1,8 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../logger';
 
 import { simpleArraySum } from './simpleArraySum';
-
-import { describe, expect, it } from '@jest/globals';
 
 describe('problem simpleArraySum', () => {
   it('problem simpleArraySum Test case 0', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { numberToWord } from './';
+import { numberToWord } from '.';
 
 describe('transform numbers to word representation in british english', () => {
   it('transform numbers to word, common cases up to 2 digits', () => {

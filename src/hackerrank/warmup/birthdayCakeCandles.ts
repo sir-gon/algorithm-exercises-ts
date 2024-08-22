@@ -3,7 +3,7 @@
  */
 
 export function birthdayCakeCandles(ar: number[]): number {
-  if (ar.length == 0) {
+  if (ar.length === 0) {
     throw new Error('Empty input');
   }
 

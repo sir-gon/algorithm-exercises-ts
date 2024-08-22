@@ -4,6 +4,7 @@
 
 class Contest {
   luck: number;
+
   important: number;
 
   constructor(luck: number, important: number) {

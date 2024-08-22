@@ -3,17 +3,17 @@
  */
 
 export function minimumAbsoluteDifference(arr: number[]): number {
-  const sorted_nums = arr
+  const sortedNums = arr
     .map((x: number): number => x)
     .sort((a: number, b: number): number => b - a);
 
-  let result = Math.abs(sorted_nums[sorted_nums.length - 1] - sorted_nums[0]);
+  let result = Math.abs(sortedNums[sortedNums.length - 1] - sortedNums[0]);
 
-  for (let i = 0; i < sorted_nums.length - 1; i++) {
-    const a_value = sorted_nums[i];
-    const b_value = sorted_nums[i + 1];
+  for (let i = 0; i < sortedNums.length - 1; i++) {
+    const aValue = sortedNums[i];
+    const bValue = sortedNums[i + 1];
 
-    const diff = Math.abs(a_value - b_value);
+    const diff = Math.abs(aValue - bValue);
 
     result = Math.min(result, diff);
   }

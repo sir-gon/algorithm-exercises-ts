@@ -2,7 +2,9 @@
 
 export class Node<T> {
   left: Node<T> | null;
+
   right: Node<T> | null;
+
   data: T;
 
   constructor(data: T) {

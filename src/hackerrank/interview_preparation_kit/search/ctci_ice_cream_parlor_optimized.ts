@@ -2,6 +2,8 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
+const __RADIX__ = 10;
+
 export function whatFlavorsCompute(cost: number[], money: number): number[] {
   let ans1: number | null = null;
   let ans2: number | null = null;
@@ -12,17 +14,19 @@ export function whatFlavorsCompute(cost: number[], money: number): number[] {
     CACHE[price] = Number.isInteger(CACHE[price]) ? CACHE[price] + 1 : 1;
   }
 
-  for (const i in cost) {
+  for (const key of Object.keys(cost)) {
+    const i = parseInt(key, __RADIX__);
+
     const v1 = cost[i];
     const v2 = money - v1;
 
-    if (v1 != v2 && CACHE?.[v1] && CACHE?.[v2]) {
+    if (v1 !== v2 && CACHE?.[v1] && CACHE?.[v2]) {
       ans1 = v1;
       ans2 = v2;
       break;
     }
 
-    if (v1 == v2 && CACHE?.[v1] && CACHE[v1] > 1) {
+    if (v1 === v2 && CACHE?.[v1] && CACHE[v1] > 1) {
       ans1 = v1;
       ans2 = v1;
       break;
@@ -30,10 +34,10 @@ export function whatFlavorsCompute(cost: number[], money: number): number[] {
   }
 
   const result: Set<number> = new Set();
-  for (const i in cost) {
-    const x: number = parseInt(i);
+  for (const key of Object.keys(cost)) {
+    const x = parseInt(key, __RADIX__);
 
-    if (cost[x] == ans1 || cost[x] == ans2) {
+    if (cost[x] === ans1 || cost[x] === ans2) {
       result.add(x + 1);
     }
   }

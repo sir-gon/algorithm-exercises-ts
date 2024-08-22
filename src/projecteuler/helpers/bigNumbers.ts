@@ -9,9 +9,8 @@ export const bigNum = (strNumber: string, base = 10): number[] => {
   return result;
 };
 
-export const bigNumToString = (number: number[]): string => {
-  return number.reduce((a, b) => `${a}${b}`, '');
-};
+export const bigNumToString = (number: number[]): string =>
+  number.reduce((a, b) => `${a}${b}`, '');
 
 export const bigSum = (strNumberA: string, strNumberB: string): string => {
   const result = [];

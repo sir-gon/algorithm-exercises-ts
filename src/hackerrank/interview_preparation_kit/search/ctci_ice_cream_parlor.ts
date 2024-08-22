@@ -2,6 +2,8 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
+const __RADIX__ = 10;
+
 export function whatFlavorsCompute(
   cost: number[],
   money: number
@@ -9,7 +11,7 @@ export function whatFlavorsCompute(
   const cache: Record<number, number> = {};
 
   for (const [key, price] of Object.entries(cost)) {
-    const i = parseInt(key);
+    const i = parseInt(key, __RADIX__);
     const diff = money - price;
 
     if (Number.isInteger(cache?.[diff])) {

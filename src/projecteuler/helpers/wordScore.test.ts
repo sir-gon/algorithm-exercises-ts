@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { wordScore } from './';
+import { wordScore } from '.';
 
 describe('wordScore', () => {
   it('score of a word', () => {
