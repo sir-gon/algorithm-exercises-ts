@@ -1,39 +1,39 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { build_tree, flat_tree, swapNodes } from './swap_nodes_algo';
+import { buildTree, flatTree, swapNodes } from './swap_nodes_algo';
 import TEST_CASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
-  it('test_build_tree_empty', () => {
+  it('test_buildTree_empty', () => {
     expect.assertions(1);
 
-    const t_input: number[][] = [];
-    const t_to_test = build_tree(t_input);
-    const t_result = flat_tree(t_to_test);
+    const tInput: number[][] = [];
+    const tToTest = buildTree(tInput);
+    const tResult = flatTree(tToTest);
     const expected = [1];
 
-    expect(t_result).toStrictEqual(expected);
+    expect(tResult).toStrictEqual(expected);
   });
 
   it('test_build_malformed_tree', () => {
     expect.assertions(1);
 
-    const t_input: number[][] = [[], []];
-    const t_to_test = build_tree(t_input);
-    const t_result = flat_tree(t_to_test);
+    const tInput: number[][] = [[], []];
+    const tToTest = buildTree(tInput);
+    const tResult = flatTree(tToTest);
     const expected = [1];
 
-    expect(t_result).toStrictEqual(expected);
+    expect(tResult).toStrictEqual(expected);
   });
 
   it('build tree and flattened tree test cases', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
-      const t_to_test = build_tree(test.nodes);
-      const t_result = flat_tree(t_to_test);
+      const tToTest = buildTree(test.nodes);
+      const tResult = flatTree(tToTest);
 
-      expect(t_result).toStrictEqual(test.flattened);
+      expect(tResult).toStrictEqual(test.flattened);
     });
   });
 
@@ -41,9 +41,9 @@ describe('swap_nodes_algo', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
-      const t_result: number[][] = swapNodes(test.nodes, test.queries);
+      const tResult: number[][] = swapNodes(test.nodes, test.queries);
 
-      expect(t_result).toStrictEqual(test.expected);
+      expect(tResult).toStrictEqual(test.expected);
     });
   });
 });

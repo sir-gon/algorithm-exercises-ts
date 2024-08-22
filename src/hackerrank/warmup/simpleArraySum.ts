@@ -11,3 +11,5 @@ export function simpleArraySum(ar: number[]): number {
 
   return acum;
 }
+
+export default { simpleArraySum };

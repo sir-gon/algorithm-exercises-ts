@@ -5,25 +5,27 @@
 export function arrayManipulation(n: number, queries: number[][]): number {
   // why adding 2?
   //   first slot to adjust 1-based index and
-  //   last slot for storing accum_sum result
+  //   last slot for storing accumSum result
   const LENGTH = n + 2;
   const INITIAL_VALUE = 0;
   const result = Array(LENGTH).fill(INITIAL_VALUE);
   let maximum = 0;
 
   queries.forEach((query) => {
-    const [a_start, b_end, k_value] = query;
+    const [aStart, bEnd, kValue] = query;
 
-    result[a_start] += k_value;
-    result[b_end + 1] -= k_value;
+    result[aStart] += kValue;
+    result[bEnd + 1] -= kValue;
   });
 
-  let accum_sum = 0;
+  let accumSum = 0;
 
   result.forEach((value) => {
-    accum_sum += value;
-    maximum = Math.max(maximum, accum_sum);
+    accumSum += value;
+    maximum = Math.max(maximum, accumSum);
   });
 
   return maximum;
 }
+
+export default { arrayManipulation };

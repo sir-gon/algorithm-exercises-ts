@@ -11,10 +11,10 @@ export function getMinimumCost(k: number, c: number[]): number {
   let total: number = 0;
 
   let i: number = 0;
-  flowers.forEach((flower_cost) => {
+  flowers.forEach((flowerCost) => {
     const position = Math.floor(i / k);
 
-    total += (position + 1) * flower_cost;
+    total += (position + 1) * flowerCost;
     i += 1;
   });
 

@@ -13,7 +13,7 @@ export function countTriplets(arr: number[], ratio: number): number {
       for (let k = j + 1; k < size; k++) {
         console.debug(`${arr[i]}, ${arr[j]}, ${arr[k]}`);
 
-        if (ratio * arr[i] == arr[j] && ratio * arr[j] == arr[k]) {
+        if (ratio * arr[i] === arr[j] && ratio * arr[j] === arr[k]) {
           counter += 1;
         }
       }

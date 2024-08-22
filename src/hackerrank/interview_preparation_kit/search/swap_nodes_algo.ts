@@ -9,8 +9,9 @@ import { Node } from '../../lib/Node';
 export const __INITIAL_LEVEL__: number = 1;
 export const __ROOT_VALUE__: number = 1;
 export const __LEAF_VALUE__: number = -1;
+const __RADIX__ = 10;
 
-export function callback_collect_nodes(
+export function callbackCollectNodes(
   root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number
@@ -24,7 +25,7 @@ export function callback_collect_nodes(
   }
 }
 
-export function callback_collect_flat(
+export function callbackCollectFlat(
   root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number
@@ -39,7 +40,7 @@ export function callback_collect_flat(
   }
 }
 
-export function traverse_in_order_collector(
+export function traverseInOrderCollector(
   root: Node<number> | null | undefined,
   collect: Record<number, Node<number>[]>,
   level: number,
@@ -50,52 +51,53 @@ export function traverse_in_order_collector(
   ) => void
 ): Record<number, Node<number>[]> {
   if (root?.left !== null) {
-    traverse_in_order_collector(root?.left, collect, level + 1, callbackFn);
+    traverseInOrderCollector(root?.left, collect, level + 1, callbackFn);
   }
 
   callbackFn(root, collect, level);
 
   if (root?.right !== null) {
-    traverse_in_order_collector(root?.right, collect, level + 1, callbackFn);
+    traverseInOrderCollector(root?.right, collect, level + 1, callbackFn);
   }
 
   return collect;
 }
 
-export function build_tree(indexes: number[][]): Node<number> {
+export function buildTree(indexes: number[][]): Node<number> {
   const indexesCopy: number[][] = [...indexes];
   const root: Node<number> = new Node<number>(__ROOT_VALUE__);
-  let node_collector: Record<number, Node<number>[]> = {};
+  let nodeCollector: Record<number, Node<number>[]> = {};
 
   while (indexesCopy.length > 0) {
-    node_collector = {};
+    nodeCollector = {};
 
-    traverse_in_order_collector(
+    traverseInOrderCollector(
       root,
-      node_collector,
+      nodeCollector,
       __INITIAL_LEVEL__,
-      callback_collect_nodes
+      callbackCollectNodes
     );
 
-    const last_level: number = parseInt(
-      Object.keys(node_collector)
-        .sort((a, b) => parseInt(b) - parseInt(a))
-        .shift() as string
+    const lastLevel: number = parseInt(
+      Object.keys(nodeCollector)
+        .sort((a, b) => parseInt(b, __RADIX__) - parseInt(a, __RADIX__))
+        .shift() as string,
+      __RADIX__
     );
 
-    const level_size = Math.min(
+    const levelSize = Math.min(
       indexesCopy.length,
-      node_collector[last_level]?.length
+      nodeCollector[lastLevel]?.length
     );
-    for (let i = 0; i < level_size; i++) {
-      const current_node: Node<number> = node_collector[last_level][i];
-      const new_element: number[] = indexesCopy.shift() as Array<number>;
+    for (let i = 0; i < levelSize; i++) {
+      const currentNode: Node<number> = nodeCollector[lastLevel][i];
+      const newElement: number[] = indexesCopy.shift() as Array<number>;
 
-      if ((new_element?.[0] ?? __LEAF_VALUE__) != __LEAF_VALUE__) {
-        current_node.left = new Node<number>(new_element[0]);
+      if ((newElement?.[0] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
+        currentNode.left = new Node<number>(newElement[0]);
       }
-      if ((new_element?.[1] ?? __LEAF_VALUE__) != __LEAF_VALUE__) {
-        current_node.right = new Node<number>(new_element[1]);
+      if ((newElement?.[1] ?? __LEAF_VALUE__) !== __LEAF_VALUE__) {
+        currentNode.right = new Node<number>(newElement[1]);
       }
     }
   }
@@ -103,24 +105,25 @@ export function build_tree(indexes: number[][]): Node<number> {
   return root;
 }
 
-export function flat_tree(root: Node<number> | null): number[] {
-  let node_collector: Record<number, Node<number>[]> = {};
+export function flatTree(root: Node<number> | null): number[] {
+  let nodeCollector: Record<number, Node<number>[]> = {};
 
-  node_collector = traverse_in_order_collector(
+  nodeCollector = traverseInOrderCollector(
     root,
-    node_collector,
+    nodeCollector,
     __INITIAL_LEVEL__,
-    callback_collect_flat
+    callbackCollectFlat
   );
 
-  const last_level: number = parseInt(
-    Object.keys(node_collector)
-      .sort((a, b) => parseInt(b) - parseInt(a))
-      .shift() as string
+  const lastLevel: number = parseInt(
+    Object.keys(nodeCollector)
+      .sort((a, b) => parseInt(b, __RADIX__) - parseInt(a, __RADIX__))
+      .shift() as string,
+    __RADIX__
   );
 
   const output: number[] = [];
-  node_collector[last_level].forEach((node: Node<number>) => {
+  nodeCollector[lastLevel].forEach((node: Node<number>) => {
     output.push(node.data);
   });
 
@@ -128,39 +131,41 @@ export function flat_tree(root: Node<number> | null): number[] {
 }
 
 export function swapNodes(indexes: number[][], queries: number[]): number[][] {
-  const tree: Node<number> = build_tree(indexes);
+  const tree: Node<number> = buildTree(indexes);
   const output: number[][] = [];
-  let node_collector: Record<number, Node<number>[]> = {};
+  let nodeCollector: Record<number, Node<number>[]> = {};
 
-  traverse_in_order_collector(
+  traverseInOrderCollector(
     tree,
-    node_collector,
+    nodeCollector,
     __INITIAL_LEVEL__,
-    callback_collect_nodes
+    callbackCollectNodes
   );
 
-  node_collector = Object.fromEntries(
-    Object.entries(node_collector).sort(([a], [b]) => parseInt(a) - parseInt(b))
+  nodeCollector = Object.fromEntries(
+    Object.entries(nodeCollector).sort(
+      ([a], [b]) => parseInt(a, __RADIX__) - parseInt(b, __RADIX__)
+    )
   );
 
-  let flattened_tree: number[] = flat_tree(tree);
+  let flattenedTree: number[] = flatTree(tree);
 
-  console.debug(`Plain tree: ${flattened_tree}`);
+  console.debug(`Plain tree: ${flattenedTree}`);
 
-  for (const query in queries) {
-    for (const [level, node_list] of Object.entries(node_collector)) {
-      const t_level: number = parseInt(level);
+  for (const query of queries) {
+    for (const [level, nodeList] of Object.entries(nodeCollector)) {
+      const tLevel: number = parseInt(level, __RADIX__);
 
-      if (t_level % queries[query] == 0) {
-        for (const node of node_list) {
+      if (tLevel % query === 0) {
+        for (const node of nodeList) {
           // swap branches
           [node.left, node.right] = [node.right, node.left];
         }
       }
     }
 
-    flattened_tree = flat_tree(tree);
-    output.push(flattened_tree);
+    flattenedTree = flatTree(tree);
+    output.push(flattenedTree);
   }
 
   return output;

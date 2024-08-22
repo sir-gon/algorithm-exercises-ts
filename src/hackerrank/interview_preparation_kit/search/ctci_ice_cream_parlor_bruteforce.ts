@@ -2,18 +2,20 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/ctci-ice-cream-parlor.md]]
  */
 
-export function what_flavors_bruteforce_compute(
+export function whatFlavorsBruteforceCompute(
   cost: number[],
   money: number
 ): number[] {
-  for (const _i in cost) {
-    const i: number = parseInt(_i);
+  const RADIX = 10;
+
+  for (const key of Object.keys(cost)) {
+    const i: number = parseInt(key, RADIX);
     const x: number = cost[i];
 
     const budget = money - x;
 
     for (let j = i + 1; j < cost.length; j++) {
-      if (budget - cost[j] == 0) {
+      if (budget - cost[j] === 0) {
         console.log(`${i + 1} ${j + 1}`);
         return [i + 1, j + 1];
       }
@@ -24,7 +26,7 @@ export function what_flavors_bruteforce_compute(
 }
 
 export function whatFlavors(cost: number[], money: number): void {
-  console.log(what_flavors_bruteforce_compute(cost, money)?.join(' '));
+  console.log(whatFlavorsBruteforceCompute(cost, money)?.join(' '));
 }
 
-export default { what_flavors_bruteforce_compute, whatFlavors };
+export default { whatFlavorsBruteforceCompute, whatFlavors };

@@ -12,11 +12,11 @@ export function arrayManipulation(n: number, queries: number[][]): number {
   let maximum = 0;
 
   queries.forEach((query) => {
-    const [a_start, b_end, k_value] = query;
+    const [aStart, bEnd, kValue] = query;
     console.debug(`start -> ${result}`);
 
-    for (let i = a_start; i <= b_end; i++) {
-      result[i] += k_value;
+    for (let i = aStart; i <= bEnd; i++) {
+      result[i] += kValue;
       console.debug(`result -> ${result}`);
     }
   });
@@ -27,3 +27,5 @@ export function arrayManipulation(n: number, queries: number[][]): number {
 
   return maximum;
 }
+
+export default { arrayManipulation };

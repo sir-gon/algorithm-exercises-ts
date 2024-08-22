@@ -57,8 +57,8 @@ describe('flipping bits', () => {
   it('flipping bits test cases', () => {
     expect.assertions(8);
 
-    TEST_CASES.forEach((test_set) => {
-      test_set.tests.forEach((test) => {
+    TEST_CASES.forEach((testSet) => {
+      testSet.tests.forEach((test) => {
         const answer = flippingBits(test.input);
 
         console.debug(`flippingBits(${test.input}) solution found: ${answer}`);

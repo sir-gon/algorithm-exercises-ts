@@ -19,3 +19,5 @@ export function compareTriplets(a: number[], b: number[]): number[] {
 
   return awards;
 }
+
+export default { compareTriplets };

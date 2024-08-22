@@ -17,3 +17,5 @@ export function maxMin(k: number, arr: number[]): number {
 
   return result;
 }
+
+export default { maxMin };

@@ -24,42 +24,41 @@ export function sherlockAndAnagrams(s: string): number {
       // Add substrings to a candidate list.
       // two strings are anagrams if sorted strings are the same.
 
-      const anagram_candidate = substr
+      const anagramCandidate = substr
         .split('')
         .sort((a: string, b: string) => a.localeCompare(b))
         .join('');
-      if (anagram_candidate in candidates) {
-        candidates[anagram_candidate].push(substr);
+      if (anagramCandidate in candidates) {
+        candidates[anagramCandidate].push(substr);
       } else {
-        candidates[anagram_candidate] = [substr];
+        candidates[anagramCandidate] = [substr];
       }
     }
   }
 
   let total: bigint = BigInt(0);
-  let q_candidates = 0;
+  let qCandidates = 0;
   // Final Anagram list
   for (const word of Object.keys(candidates)) {
-    const quantity_of_anagrams = candidates[word].length;
+    const quantityOfAnagrams = candidates[word].length;
     const k = 2;
 
-    if (quantity_of_anagrams <= 1) {
+    if (quantityOfAnagrams <= 1) {
       delete candidates[word];
     } else {
       // Binomial coefficient: https://en.wikipedia.org/wiki/Binomial_coefficient
-      q_candidates += quantity_of_anagrams;
+      qCandidates += quantityOfAnagrams;
 
       const count =
-        extraLongFactorials(quantity_of_anagrams) /
-        (extraLongFactorials(k) *
-          extraLongFactorials(quantity_of_anagrams - k));
+        extraLongFactorials(quantityOfAnagrams) /
+        (extraLongFactorials(k) * extraLongFactorials(quantityOfAnagrams - k));
       total += count;
 
       console.debug(`'Partial anagrams of ${word}: ${count}`);
     }
   }
   console.debug(
-    `'sherlockAndAnagrams(${s}) Filtered # candidates: ${q_candidates}`
+    `'sherlockAndAnagrams(${s}) Filtered # candidates: ${qCandidates}`
   );
   console.debug(`'sherlockAndAnagrams(${s}) # anagrams: ${total}`);
 

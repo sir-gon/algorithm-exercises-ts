@@ -3,7 +3,7 @@
  */
 
 export function breakingRecords(scores: number[]): number[] {
-  if (scores.length == 0) {
+  if (scores.length === 0) {
     throw new Error('Empty input');
   }
 

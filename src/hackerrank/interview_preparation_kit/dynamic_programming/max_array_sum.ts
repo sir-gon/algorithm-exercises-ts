@@ -9,26 +9,26 @@ const bigIntMax = (...args: bigint[]): bigint =>
 export function maxSubsetSum(arr: number[]): number {
   const arrCopy: bigint[] = arr.map((x: number): bigint => BigInt(x));
 
-  if (arrCopy.length == 0) {
+  if (arrCopy.length === 0) {
     return 0;
   }
 
   const total = arrCopy.length;
 
-  if (total == 1) {
+  if (total === 1) {
     return Number(arrCopy[0]);
   }
 
-  let t_max = bigIntMax(arrCopy[0], arrCopy[1]);
-  arrCopy[1] = t_max;
+  let tMax = bigIntMax(arrCopy[0], arrCopy[1]);
+  arrCopy[1] = tMax;
 
   for (let i = 2; i < total; i++) {
-    t_max = bigIntMax(arrCopy[i - 2] + arrCopy[i], t_max);
-    t_max = bigIntMax(arrCopy[i], t_max);
-    arrCopy[i] = t_max;
+    tMax = bigIntMax(arrCopy[i - 2] + arrCopy[i], tMax);
+    tMax = bigIntMax(arrCopy[i], tMax);
+    arrCopy[i] = tMax;
   }
 
-  return Number(t_max);
+  return Number(tMax);
 }
 
 export default { maxSubsetSum };

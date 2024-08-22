@@ -5,7 +5,7 @@
 import { logger as console } from '../../logger';
 
 export function minimumAbsoluteDifference(arr: number[]): number {
-  if (arr.length == 0) {
+  if (arr.length === 0) {
     throw new Error('Empty input');
   }
 
