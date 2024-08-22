@@ -27,7 +27,7 @@ describe('max_array_sum', () => {
     expect.assertions(1);
 
     const input: number[] = [];
-    const expected: number = 0;
+    const expected = 0;
 
     const answer = maxSubsetSum(input);
 
@@ -40,7 +40,7 @@ describe('max_array_sum', () => {
     expect.assertions(1);
 
     const input: number[] = [1];
-    const expected: number = 1;
+    const expected = 1;
 
     const answer = maxSubsetSum(input);
 

@@ -33,7 +33,7 @@ export function whatFlavorsCompute(cost: number[], money: number): number[] {
     }
   }
 
-  const result: Set<number> = new Set();
+  const result = new Set<number>();
   for (const key of Object.keys(cost)) {
     const x = parseInt(key, __RADIX__);
 

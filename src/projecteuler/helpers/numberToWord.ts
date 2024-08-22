@@ -4,9 +4,7 @@ import { bigNum } from './bigNumbers';
 const _CENTS_ = 'hundred';
 const _MILLS_ = 'thousand';
 
-interface StringDictionary {
-  [index: string]: string;
-}
+type StringDictionary = Record<string, string>;
 
 const dictionary: StringDictionary = {
   '1': 'one',

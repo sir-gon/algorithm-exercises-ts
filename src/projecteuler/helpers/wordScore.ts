@@ -1,6 +1,4 @@
-interface Score {
-  [name: string]: number;
-}
+type Score = Record<string, number>;
 
 export const _scoreLetter: Score = {
   A: 1,

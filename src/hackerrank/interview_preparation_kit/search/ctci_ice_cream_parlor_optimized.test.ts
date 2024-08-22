@@ -43,7 +43,7 @@ describe('ctci_ice_cream_parlor_optimized', () => {
     expect.assertions(1);
 
     const cost: number[] = [];
-    const money: number = 100;
+    const money = 100;
 
     expect(whatFlavors(cost, money)).toBeUndefined();
   });

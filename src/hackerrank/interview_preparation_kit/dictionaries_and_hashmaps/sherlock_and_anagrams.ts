@@ -36,7 +36,7 @@ export function sherlockAndAnagrams(s: string): number {
     }
   }
 
-  let total: bigint = BigInt(0);
+  let total = BigInt(0);
   let qCandidates = 0;
   // Final Anagram list
   for (const word of Object.keys(candidates)) {
