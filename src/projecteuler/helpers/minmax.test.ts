@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { minimum, maximum } from './';
+import { minimum, maximum } from '.';
 
 describe('maximum and minimum', () => {
   it('minimum', () => {

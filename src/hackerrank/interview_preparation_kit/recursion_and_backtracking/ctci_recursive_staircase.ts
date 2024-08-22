@@ -8,7 +8,9 @@ const STEPS_LIMIT = 3;
 
 export class StepPerms {
   TOP_LIMIT = 1;
+
   STEPS_LIMIT = 1;
+
   CACHE: Record<number, number> = {};
 
   constructor(top_limit: number, steps_limit: number) {
@@ -17,7 +19,7 @@ export class StepPerms {
   }
 
   step_perms_comput_with_cache(n_steps: number): number {
-    if (0 <= n_steps && n_steps <= 2) {
+    if (n_steps >= 0 && n_steps <= 2) {
       return n_steps;
     }
 

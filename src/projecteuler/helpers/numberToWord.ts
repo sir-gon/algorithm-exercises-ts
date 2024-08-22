@@ -1,4 +1,4 @@
-import { nullable } from './';
+import { nullable } from '.';
 import { bigNum } from './bigNumbers';
 
 const _CENTS_ = 'hundred';

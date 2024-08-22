@@ -2,8 +2,6 @@
  * @link Problem definition [[docs/hackerrank/warmup/compareTriplets.md]]
  */
 
-'use strict';
-
 export function compareTriplets(a: number[], b: number[]): number[] {
   const awards = [0, 0];
 
@@ -13,9 +11,9 @@ export function compareTriplets(a: number[], b: number[]): number[] {
 
   for (let i = 0; i < a.length; i++) {
     if (a[i] > b[i]) {
-      awards[0] = awards[0] + 1;
+      awards[0] += 1;
     } else if (a[i] < b[i]) {
-      awards[1] = awards[1] + 1;
+      awards[1] += 1;
     }
   }
 

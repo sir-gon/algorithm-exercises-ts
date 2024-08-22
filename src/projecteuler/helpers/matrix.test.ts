@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { matrix } from './';
+import { matrix } from '.';
 
 describe('matrix generator', () => {
   it('matrix 3 × 3 with initial value of 1', () => {

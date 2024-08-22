@@ -2,7 +2,9 @@ import { nullable } from '../helpers';
 
 export default class BNode<T> {
   value: nullable<T>;
+
   l: nullable<BNode<T>>;
+
   r: nullable<BNode<T>>;
 
   constructor(

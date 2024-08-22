@@ -1,8 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger';
 
 import { problem0005Simple } from './problem0005-simple';
-
-import { describe, expect, it } from '@jest/globals';
 
 describe('problem 0005 simple', () => {
   it('problem 0005 simple solution found by BRUTE FORCE FULL', async () => {

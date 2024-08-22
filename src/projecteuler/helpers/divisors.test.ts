@@ -8,7 +8,7 @@ import {
   primeFactors,
   properDivisors,
   ___DIVISORS_ABUNDANCE___
-} from './';
+} from '.';
 
 describe('divisors of a number', () => {
   it('divisors of one', () => {

@@ -2,8 +2,6 @@
  * @link Problem definition [[docs/hackerrank/warmup/solveMeFirst.md]]
  */
 
-'use strict';
-
 export function solveMeFirst(inputLines: string[]): number {
   let result = 0;
 

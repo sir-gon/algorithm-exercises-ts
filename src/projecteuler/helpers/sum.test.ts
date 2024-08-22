@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { sum } from './';
+import { sum } from '.';
 
 describe('sum all numbers in array', () => {
   it('sum of some consecutives positive integers', () => {

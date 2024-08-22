@@ -16,7 +16,7 @@ export function problem0019(
 
   for (let y = 1900; y <= _untilYear; y++) {
     const leap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0 ? 1 : 0;
-    daysInMonth['FEBRUARY'] = 28 + leap;
+    daysInMonth.FEBRUARY = 28 + leap;
 
     Object.entries(daysInMonth).forEach(([month, days], index) => {
       console.debug(`Month(${index}): ${month} | days: ${days}`);

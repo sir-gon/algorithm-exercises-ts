@@ -18,7 +18,7 @@ export function sum_ap(n: number, d: number): number {
 // Function to find the sum of all multiples of a and b below n
 export function euler001(a: number, b: number, n: number): number {
   // Since, we need the sum of multiples less than N
-  n = n - 1;
+  n -= 1;
   const lcm = Math.floor((a * b) / gcd(a, b));
 
   return sum_ap(n, a) + sum_ap(n, b) - sum_ap(n, lcm);

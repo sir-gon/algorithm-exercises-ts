@@ -4,6 +4,7 @@
 
 class GropingFriends {
   _friendship: Record<number, number> = {};
+
   _large_friendship: number = 0;
 
   constructor() {

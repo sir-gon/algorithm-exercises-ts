@@ -1,8 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../logger';
 
 import { problem0008 } from './problem0008';
-
-import { describe, expect, it } from '@jest/globals';
 
 describe('problem 0008', () => {
   it('problem 0008 solution found', () => {

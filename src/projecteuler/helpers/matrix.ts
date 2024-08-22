@@ -1,4 +1,4 @@
-import { nullable } from './';
+import { nullable } from '.';
 
 export const matrix = (
   m: number,
