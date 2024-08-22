@@ -1,7 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { Node } from '../../lib/Node';
-import { swapNodes, buildTree, flatTree } from './swap_nodes_algo';
+import { Tree, swapNodes } from './swap_nodes_algo';
 import BIG_TEST_CASES from './swap_nodes_algo.big.testcases.json';
 
 describe('swap_nodes_algo', () => {
@@ -9,10 +8,10 @@ describe('swap_nodes_algo', () => {
     expect.assertions(1);
 
     BIG_TEST_CASES.forEach((test) => {
-      const tToTest: Node<number> = buildTree(test.nodes);
-      const tResult: number[] = flatTree(tToTest);
+      const tree: Tree = new Tree(test.nodes);
+      const tresult: number[] = tree.flatTree();
 
-      expect(tResult).toStrictEqual(test.flattened);
+      expect(tresult).toStrictEqual(test.flattened);
     });
   });
 
@@ -20,7 +19,7 @@ describe('swap_nodes_algo', () => {
     expect.assertions(1);
 
     BIG_TEST_CASES.forEach((test) => {
-      const tResult: number[][] = swapNodes(test.nodes, test.queries);
+      const tResult = swapNodes(test.nodes, test.queries);
 
       expect(tResult).toStrictEqual(test.expected);
     });

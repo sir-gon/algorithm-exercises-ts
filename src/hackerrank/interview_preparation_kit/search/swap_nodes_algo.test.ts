@@ -1,37 +1,43 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { buildTree, flatTree, swapNodes } from './swap_nodes_algo';
+import { Node } from '../../lib/Node';
+import { Tree, swapNodes, __INITIAL_LEVEL__ } from './swap_nodes_algo';
 import TEST_CASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
   it('test_buildTree_empty', () => {
-    expect.assertions(1);
+    expect.assertions(4);
 
-    const tInput: number[][] = [];
-    const tToTest = buildTree(tInput);
-    const tResult = flatTree(tToTest);
-    const expected = [1];
+    const input: number[][] = [];
+    const tree: Tree = new Tree(input);
+    const expected: number[] = [1];
 
-    expect(tResult).toStrictEqual(expected);
+    expect(tree.flatTree()).toStrictEqual(expected);
+    expect(tree.getRoot()).not.toBeNull();
+    expect(tree.getRoot()).toBeInstanceOf(Node);
+    expect(tree.getRoot().data).toBe(__INITIAL_LEVEL__);
   });
 
   it('test_build_malformed_tree', () => {
-    expect.assertions(1);
+    expect.assertions(4);
 
-    const tInput: number[][] = [[], []];
-    const tToTest = buildTree(tInput);
-    const tResult = flatTree(tToTest);
-    const expected = [1];
+    const input: number[][] = [[], []];
+    const tree: Tree = new Tree(input);
+    const tresult: number[] = tree.flatTree();
+    const expected: number[] = [__INITIAL_LEVEL__];
 
-    expect(tResult).toStrictEqual(expected);
+    expect(tresult).toStrictEqual(expected);
+    expect(tree.getRoot()).not.toBeNull();
+    expect(tree.getRoot()).toBeInstanceOf(Node);
+    expect(tree.getRoot().data).toBe(__INITIAL_LEVEL__);
   });
 
   it('build tree and flattened tree test cases', () => {
     expect.assertions(4);
 
     TEST_CASES.forEach((test) => {
-      const tToTest = buildTree(test.nodes);
-      const tResult = flatTree(tToTest);
+      const tree = new Tree(test.nodes);
+      const tResult = tree.flatTree();
 
       expect(tResult).toStrictEqual(test.flattened);
     });
