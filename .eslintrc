@@ -40,10 +40,19 @@
     "no-restricted-syntax":           0,
     "no-console":                     "off",
     "no-underscore-dangle":           0,
-    "no-plusplus":                    ["error", { "allowForLoopAfterthoughts": true }]
-    // ,
-    // "import/no-unresolved":           [2, {"commonjs": true, "amd": true}],
-    // "import/extensions":              ["error", { "js": "always", "json": "always"}]
+    "no-plusplus":                    ["error", { "allowForLoopAfterthoughts": true }],
+    // Note: you must disable the base rule as it can report incorrect errors
+    // https://stackoverflow.com/a/63961972/6366150
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    // Note: you must disable the base rule as it can report incorrect errors
+    // https://github.com/typescript-eslint/typescript-eslint/issues/2621#issuecomment-701970389
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    // Note: you must disable the base rule as it can report incorrect errors
+    // https://stackoverflow.com/a/77212380/6366150
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "error"
   },
   "overrides": [
     {
