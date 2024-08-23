@@ -12,7 +12,9 @@ describe('angry_children', () => {
     TEST_CASES.forEach((test) => {
       const answer = maxMin(test.k, test.arr);
 
-      console.debug(`maxMin(${test.k}, ${test.arr}) solution found: ${answer}`);
+      console.debug(
+        `maxMin(${test.k}, ${test.arr.toString()}) solution found: ${answer}`
+      );
 
       expect(answer).toStrictEqual(test.expected);
     });

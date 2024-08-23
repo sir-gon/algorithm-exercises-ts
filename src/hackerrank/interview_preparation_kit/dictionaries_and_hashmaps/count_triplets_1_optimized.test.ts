@@ -26,7 +26,7 @@ describe('count_triplets_1 (optimized)', () => {
       const answer = countTriplets(test.input, test.r);
 
       console.debug(
-        `countTriplets(${test.input}, ${test.r}) solution found: ${answer}`
+        `countTriplets(${test.input.toString()}, ${test.r}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);
@@ -40,7 +40,7 @@ describe('count_triplets_1 (optimized)', () => {
       const answer = countTriplets(test.input, test.r);
 
       console.debug(
-        `countTriplets(${test.input}, ${test.r}) solution found: ${answer}`
+        `countTriplets(${test.input.toString()}, ${test.r}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);

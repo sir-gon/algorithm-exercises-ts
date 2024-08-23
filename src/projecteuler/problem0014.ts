@@ -21,7 +21,7 @@ function problem0014(bottom = 1, top = 10): nullable<number> {
       sequence.push(c);
     } while (c !== 1);
 
-    console.debug(`sequence of ${i}: ${sequence}`);
+    console.debug(`sequence of ${i}: ${sequence.toString()}`);
 
     if (sequence.length > maxSequence.length) {
       maxSequence = sequence;
@@ -29,7 +29,7 @@ function problem0014(bottom = 1, top = 10): nullable<number> {
   }
 
   console.debug(
-    `Large sequence found: ${maxSequence} has ${maxSequence.length} elements`
+    `Large sequence found: ${maxSequence.toString()} has ${maxSequence.length} elements`
   );
 
   // return firt element

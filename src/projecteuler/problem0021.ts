@@ -40,8 +40,8 @@ export function problem0021(_start: number, _limit: number): string {
     }
   });
 
-  console.log(`result: ${properDivisorsOf}`);
-  console.log(`amicableNumbers: ${amicableNumbers}`);
+  console.log(`result: ${properDivisorsOf.toString()}`);
+  console.log(`amicableNumbers: ${amicableNumbers.toString()}`);
 
   return bigSumMany(amicableNumbers);
 }

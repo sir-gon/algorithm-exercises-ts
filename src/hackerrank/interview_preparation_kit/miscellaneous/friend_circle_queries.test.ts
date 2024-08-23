@@ -11,7 +11,9 @@ describe('friend_circle_queries', () => {
     TEST_CASES.forEach((test) => {
       const answer = maxCircle(test.arr);
 
-      console.debug(`maxCircle(${test.arr}) solution found: ${answer}`);
+      console.debug(
+        `maxCircle(${test.arr.toString()}) solution found: ${answer.toString()}`
+      );
 
       expect(answer).toStrictEqual(test.expected);
     });

@@ -11,7 +11,9 @@ describe('frequency_queries_bruteforce', () => {
     SMALL_TEST_CASES.forEach((value) => {
       const answer = freqQuery(value.input);
 
-      console.debug(`freqQuery(${value.input}) solution found: ${answer}`);
+      console.debug(
+        `freqQuery(${value.input.toString()}) solution found: ${answer.toString()}`
+      );
 
       expect(answer).toStrictEqual(value.expected);
     });

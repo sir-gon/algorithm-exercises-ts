@@ -18,13 +18,15 @@ describe('compareTriplets', () => {
   it('problem compareTriplets Test case 0', () => {
     expect.assertions(1);
 
-    const a = [5, 6, 7];
+    const a: number[] = [5, 6, 7];
     const b = [3, 6, 10];
     const solutionFound = [1, 1];
 
     const calculated = compareTriplets(a, b);
 
-    console.log(`compareTriplets(${a}, ${b}) solution found: ${calculated}`);
+    console.log(
+      `compareTriplets(${a.toString()}, ${b.toString()}) solution found: ${calculated.toString()}`
+    );
 
     expect(calculated).toStrictEqual(solutionFound);
   });

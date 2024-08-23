@@ -17,7 +17,9 @@ describe('max_array_sum', () => {
     ALL_TEST_CASES.forEach((test) => {
       const answer = maxSubsetSum(test.input).toString(DECIMAL_RADIX);
 
-      console.debug(`maxSubsetSum(${test.input}) solution found: ${answer}`);
+      console.debug(
+        `maxSubsetSum(${test.input.toString()}) solution found: ${answer}`
+      );
 
       expect(answer).toStrictEqual(test.expected);
     });
@@ -31,7 +33,9 @@ describe('max_array_sum', () => {
 
     const answer = maxSubsetSum(input);
 
-    console.debug(`maxSubsetSum(${input}) solution found: ${answer}`);
+    console.debug(
+      `maxSubsetSum(${input.toString()}) solution found: ${answer}`
+    );
 
     expect(answer).toStrictEqual(expected);
   });
@@ -44,7 +48,9 @@ describe('max_array_sum', () => {
 
     const answer = maxSubsetSum(input);
 
-    console.debug(`maxSubsetSum(${input}) solution found: ${answer}`);
+    console.debug(
+      `maxSubsetSum(${input.toString()}) solution found: ${answer}`
+    );
 
     expect(answer).toStrictEqual(expected);
   });

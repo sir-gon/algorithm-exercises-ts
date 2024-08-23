@@ -30,7 +30,7 @@ export function migratoryBirds(arr: number[]): number {
       max = bird;
   }
 
-  console.debug(`map: ${map}`);
+  console.debug(`map: ${map.toString()}`);
 
   return max;
 }

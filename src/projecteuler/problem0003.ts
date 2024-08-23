@@ -17,7 +17,7 @@ function problem0003(_top: number): nullable<number> {
   // check half divisors, each is Prime? wich is largest?
   let maxPrimeFactor;
 
-  console.log(`Divisors of ${_top}: ${divs}`);
+  console.log(`Divisors of ${_top}: ${divs.toString()}`);
 
   i = middle;
   do {

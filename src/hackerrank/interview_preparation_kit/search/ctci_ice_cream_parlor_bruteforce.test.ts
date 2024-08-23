@@ -17,7 +17,7 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
         const answer = whatFlavorsBruteforceCompute(test.costs, test.money);
 
         console.debug(
-          `${testSet.title} ctci_ice_cream_parlor_bruteforce(${test.costs}, ${test.money}) solution found: ${answer}`
+          `${testSet.title} ctci_ice_cream_parlor_bruteforce(${test.costs.toString()}, ${test.money}) solution found: ${answer.toString()}`
         );
 
         expect(answer).toStrictEqual(test.expected);

@@ -22,7 +22,9 @@ describe('ctci_array_left_rotation', () => {
     ROT_LEFT_ONE_TEST_CASES.forEach((value) => {
       const answer = rotLeftOne(value.numbers);
 
-      console.debug(`rotLeftOne(${value.numbers}) solution found: ${answer}`);
+      console.debug(
+        `rotLeftOne(${value.numbers.toString()}) solution found: ${answer.toString()}`
+      );
 
       expect(answer).toStrictEqual(value.expected);
     });
@@ -34,7 +36,9 @@ describe('ctci_array_left_rotation', () => {
     ROT_LEFT_TEST_CASES.forEach((value) => {
       const answer = rotLeft(value.numbers, value.d_rotations);
 
-      console.debug(`rotLeft(${value.numbers}) solution found: ${answer}`);
+      console.debug(
+        `rotLeft(${value.numbers.toString()}) solution found: ${answer.toString()}`
+      );
 
       expect(answer).toStrictEqual(value.expected);
     });

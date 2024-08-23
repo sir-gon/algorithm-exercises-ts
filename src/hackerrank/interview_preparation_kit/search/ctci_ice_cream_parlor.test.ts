@@ -14,7 +14,7 @@ describe('ctci_ice_cream_parlor', () => {
         const answer = whatFlavorsCompute(test.costs, test.money);
 
         console.debug(
-          `whatFlavorsCompute(${test.costs}, ${test.money}) solution found: ${answer}`
+          `whatFlavorsCompute(${test.costs.toString()}, ${test.money}) solution found: ${answer?.toString()}`
         );
 
         expect(answer).toStrictEqual(test.expected);

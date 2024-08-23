@@ -9,7 +9,7 @@ const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
 
 export function problem0018(_triangle: number[][]): number {
-  console.debug(`_triangle: ${_triangle}`);
+  console.debug(`_triangle: ${_triangle.toString()}`);
   console.debug(
     `_triangle: ${JSON.stringify(
       BNodeBuilder.buildBNodeTree(_triangle, 0, 0),
@@ -29,7 +29,7 @@ export function problem0018(_triangle: number[][]): number {
 
   console.debug(`_triangle: ${JSON.stringify(weightsTree, null, 4)}`);
   console.debug(`leafs count: ${leafs.length}`);
-  console.debug(`leafs: ${leafs}`);
+  console.debug(`leafs: ${leafs.toString()}`);
 
   const __START_FROM__ = 0;
   const max = leafs.reduce((a, b) => (a > b ? a : b), __START_FROM__);

@@ -54,7 +54,7 @@ describe('luck-balance', () => {
       const answer = luckBalance(test.k, test.contests);
 
       console.debug(
-        `luckBalance(${test.k}, ${test.contests}) solution found: ${answer}`
+        `luckBalance(${test.k}, ${test.contests.toString()}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);
