@@ -3,26 +3,7 @@ import { logger as console } from '../../../logger';
 
 import { checkMagazine } from './ctci-ransom-note';
 
-const TEST_CASES = [
-  {
-    title: 'Sample Test Case 0',
-    magazine: ['give', 'me', 'one', 'grand', 'today', 'night'],
-    note: ['give', 'one', 'grand', 'today'],
-    expected: 'Yes'
-  },
-  {
-    title: 'Sample Test Case 1',
-    magazine: ['two', 'times', 'three', 'is', 'not', 'four'],
-    note: ['two', 'times', 'two', 'is', 'four'],
-    expected: 'No'
-  },
-  {
-    title: 'Sample Test',
-    magazine: ['two', 'two', 'times', 'three', 'is', 'not', 'four'],
-    note: ['two', 'times', 'two', 'is', 'four'],
-    expected: 'Yes'
-  }
-];
+import TEST_CASES from './ctci-ransom-note.testcases.json';
 
 describe('ctci_ransom_note', () => {
   it('checkMagazine test cases', () => {
