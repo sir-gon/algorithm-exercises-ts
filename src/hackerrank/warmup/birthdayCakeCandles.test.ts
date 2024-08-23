@@ -23,7 +23,7 @@ describe('birthdayCakeCandles', () => {
     for (const test of tests) {
       const calculated = birthdayCakeCandles(test.input);
       console.log(
-        `birthdayCakeCandles(${test.input}) Test case 0: ${calculated}`
+        `birthdayCakeCandles(${test.input.toString()}) Test case 0: ${calculated}`
       );
 
       expect(calculated).toBe(test.answer);

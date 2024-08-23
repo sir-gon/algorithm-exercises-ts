@@ -13,7 +13,7 @@ describe('greedy_florist', () => {
       const answer = getMinimumCost(test.k, test.contests);
 
       console.debug(
-        `getMinimumCost(${test.k}, ${test.contests}) solution found: ${answer}`
+        `getMinimumCost(${test.k}, ${test.contests.toString()}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);

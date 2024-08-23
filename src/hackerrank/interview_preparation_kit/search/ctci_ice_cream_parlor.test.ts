@@ -14,7 +14,7 @@ describe('ctci_ice_cream_parlor', () => {
         const answer = whatFlavorsCompute(test.costs, test.money);
 
         console.debug(
-          `whatFlavorsCompute(${test.costs}, ${test.money}) solution found: ${answer}`
+          `whatFlavorsCompute(${test.costs.toString()}, ${test.money}) solution found: ${answer?.toString()}`
         );
 
         expect(answer).toStrictEqual(test.expected);
@@ -40,7 +40,7 @@ describe('ctci_ice_cream_parlor', () => {
     expect.assertions(1);
 
     const cost: number[] = [];
-    const money: number = 100;
+    const money = 100;
 
     expect(whatFlavors(cost, money)).toBeUndefined();
   });

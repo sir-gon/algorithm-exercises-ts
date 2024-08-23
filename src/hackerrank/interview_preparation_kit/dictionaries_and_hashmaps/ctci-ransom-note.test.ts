@@ -32,7 +32,7 @@ describe('ctci_ransom_note', () => {
       const answer = checkMagazine(value.magazine, value.note);
 
       console.debug(
-        `checkMagazine(${value.magazine}, ${value.note}) solution found: ${answer}`
+        `checkMagazine(${value.magazine.toString()}, ${value.note.toString()}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(value.expected);

@@ -5,9 +5,9 @@
 import { Node } from '../../lib/Node';
 
 // CONSTANTS
-export const __INITIAL_LEVEL__: number = 1;
-export const __ROOT_VALUE__: number = 1;
-export const __LEAF_VALUE__: number = -1;
+export const __INITIAL_LEVEL__ = 1;
+export const __ROOT_VALUE__ = 1;
+export const __LEAF_VALUE__ = -1;
 const __RADIX__ = 10;
 
 export class Tree {

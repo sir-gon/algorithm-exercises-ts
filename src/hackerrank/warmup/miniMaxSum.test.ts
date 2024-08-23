@@ -22,7 +22,9 @@ describe('miniMaxSum', () => {
 
     for (const test of tests) {
       const solutionFound = miniMaxSum(test.input);
-      console.log(`miniMaxSum(${test.input}) solution found: ${solutionFound}`);
+      console.log(
+        `miniMaxSum(${test.input.toString()}) solution found: ${solutionFound}`
+      );
 
       expect(solutionFound).toBe(test.answer);
     }

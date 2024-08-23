@@ -18,9 +18,9 @@ export function superDigitCompute(n: string): number {
 }
 
 export function superDigit(n: string, k: number): number {
-  const accumulator: string = `${superDigitCompute(n)}`;
+  const accumulator = `${superDigitCompute(n)}`;
 
-  let result: string = '';
+  let result = '';
   for (let i = 0; i < k; i++) {
     result = `${result}${accumulator}`;
   }

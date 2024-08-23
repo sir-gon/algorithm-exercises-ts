@@ -7,9 +7,7 @@ import { logger as console } from '../../logger';
 export function sockMerchant(n: number, ar: number[]): number {
   let result = 0;
 
-  interface Matches {
-    [key: string]: number;
-  }
+  type Matches = Record<string, number>;
 
   const matches: Matches = {};
 

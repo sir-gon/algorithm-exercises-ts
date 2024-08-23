@@ -20,7 +20,9 @@ describe('breakingRecords', () => {
 
     const calculated = breakingRecords(input);
 
-    console.log(`breakingRecords(${input}) Test case 0: ${calculated}`);
+    console.log(
+      `breakingRecords(${input.toString()}) Test case 0: ${calculated.toString()}`
+    );
 
     expect(calculated).toStrictEqual(solutionFound);
   });
@@ -33,7 +35,9 @@ describe('breakingRecords', () => {
 
     const calculated = breakingRecords(input);
 
-    console.log(`breakingRecords(${input}) Test case 1: ${calculated}`);
+    console.log(
+      `breakingRecords(${input.toString()}) Test case 1: ${calculated.toString()}`
+    );
 
     expect(calculated).toStrictEqual(solutionFound);
   });

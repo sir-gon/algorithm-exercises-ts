@@ -12,7 +12,7 @@ describe('gradingStudents', () => {
 
     const calculated = gradingStudents(input);
 
-    console.log(`gradingStudents Test case 0: ${calculated}`);
+    console.log(`gradingStudents Test case 0: ${calculated.toString()}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

@@ -6,7 +6,7 @@
 import { logger as console } from '../../../logger';
 
 function extraLongFactorials(n: number): bigint {
-  const rs = [...Array(n)].reduce((a, b, i) => a * BigInt(i + 1), 1n);
+  const rs = [...Array<number>(n)].reduce((a, b, i) => a * BigInt(i + 1), 1n);
   return rs;
 }
 
@@ -36,7 +36,7 @@ export function sherlockAndAnagrams(s: string): number {
     }
   }
 
-  let total: bigint = BigInt(0);
+  let total = BigInt(0);
   let qCandidates = 0;
   // Final Anagram list
   for (const word of Object.keys(candidates)) {

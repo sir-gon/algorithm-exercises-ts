@@ -8,16 +8,16 @@ import { logger as console } from '../../../logger';
 export function arrayManipulation(n: number, queries: number[][]): number {
   const LENGTH = n + 1;
   const SURROGATE_VALUE = 0;
-  const result = Array(LENGTH).fill(SURROGATE_VALUE);
+  const result: number[] = Array<number>(LENGTH).fill(SURROGATE_VALUE);
   let maximum = 0;
 
   queries.forEach((query) => {
     const [aStart, bEnd, kValue] = query;
-    console.debug(`start -> ${result}`);
+    console.debug(`start -> ${result.toString()}`);
 
     for (let i = aStart; i <= bEnd; i++) {
       result[i] += kValue;
-      console.debug(`result -> ${result}`);
+      console.debug(`result -> ${result.toString()}`);
     }
   });
 

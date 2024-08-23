@@ -19,9 +19,7 @@ export const __OCTOBER__ = 9;
 export const __NOVEMBER__ = 10;
 export const __DECEMBER__ = 11;
 
-interface MonthNames {
-  [key: string]: number;
-}
+type MonthNames = Record<string, number>;
 
 export const daysInMonth: MonthNames = {
   JANUARY: 31,
@@ -38,9 +36,7 @@ export const daysInMonth: MonthNames = {
   DECEMBER: 31
 };
 
-export interface MonthNumbers {
-  [key: string]: number;
-}
+export type MonthNumbers = Record<string, number>;
 
 export const daysInMonthNumber: MonthNumbers = {
   1: 31,

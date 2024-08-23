@@ -4,7 +4,7 @@ import { logger as console } from '../logger';
 import { problem0005Simple } from './problem0005-simple';
 
 describe('problem 0005 simple', () => {
-  it('problem 0005 simple solution found by BRUTE FORCE BASIC', async () => {
+  it('problem 0005 simple solution found by BRUTE FORCE BASIC', () => {
     expect.assertions(1);
 
     const solutionFound = 2520;

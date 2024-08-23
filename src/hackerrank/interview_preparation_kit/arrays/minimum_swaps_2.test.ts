@@ -16,7 +16,9 @@ describe('minimum swaps 2', () => {
     TEST_CASES.forEach((test) => {
       const answer = minimumSwaps(test.input);
 
-      console.debug(`minimumSwaps(${test.input}) solution found: ${answer}`);
+      console.debug(
+        `minimumSwaps(${test.input.toString()}) solution found: ${answer}`
+      );
 
       expect(answer).toStrictEqual(test.expected);
     });

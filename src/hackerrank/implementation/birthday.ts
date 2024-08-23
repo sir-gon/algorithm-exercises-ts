@@ -6,7 +6,7 @@ import { logger as console } from '../../logger';
 
 export function birthday(s: number[], d: number, m: number): number {
   let result = 0;
-  console.debug(`s: ${s}`);
+  console.debug(`s: ${s.toString()}`);
 
   for (let i = 0; i <= s.length - m; i++) {
     let sum = 0;

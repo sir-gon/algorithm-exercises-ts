@@ -12,7 +12,7 @@ describe('plusMinus', () => {
 
     const calculated = plusMinus(input);
 
-    console.log(`plusMinus(${input}) solution found: ${calculated}`);
+    console.log(`plusMinus(${input.toString()}) solution found: ${calculated}`);
 
     expect(calculated).toStrictEqual(solutionFound);
   });

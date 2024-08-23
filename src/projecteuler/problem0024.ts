@@ -27,7 +27,7 @@ const permute = (symbols: string, target: number): string => {
       index += 1;
       min += combos;
     }
-    answer += choices.splice(index, 1);
+    answer += choices.splice(index, 1).toString();
     min -= combos;
   }
 

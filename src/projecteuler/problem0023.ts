@@ -18,7 +18,7 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
   }
 
   console.debug(
-    `abundant nums list: ${abundantNumberList.length} => ${abundantNumberList}`
+    `abundant nums list: ${abundantNumberList.length} => ${abundantNumberList.toString()}`
   );
 
   let sumsAbundantNums = [];
@@ -39,7 +39,7 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
   sumsAbundantNums = [...new Set(sumsAbundantNums)];
 
   console.debug(
-    `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums}`
+    `sumsAbundantNums size: ${sumsAbundantNums.length}. result => ${sumsAbundantNums.toString()}`
   );
 
   // All numbers below limit that not present in list of sums of pair of abundant numbers
@@ -51,7 +51,7 @@ export function problem0023(_underLimit: number, _superLimit: number): number {
     }
   }
 
-  console.debug(`found size: ${found.length}, found => ${found}`);
+  console.debug(`found size: ${found.length}, found => ${found.toString()}`);
 
   const result = sum(found);
 

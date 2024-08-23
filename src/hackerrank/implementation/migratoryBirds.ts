@@ -4,9 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-interface Birds {
-  [name: string]: number;
-}
+type Birds = Record<string, number>;
 
 export function migratoryBirds(arr: number[]): number {
   if (arr.length === 0) {
@@ -32,7 +30,7 @@ export function migratoryBirds(arr: number[]): number {
       max = bird;
   }
 
-  console.debug(`map: ${map}`);
+  console.debug(`map: ${JSON.stringify(map)}`);
 
   return max;
 }

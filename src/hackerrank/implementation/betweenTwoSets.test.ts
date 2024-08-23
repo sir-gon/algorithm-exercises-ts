@@ -11,12 +11,16 @@ describe('betweenTwoSets', () => {
     const solutionFound = 0;
 
     const calculatedA = getTotalX([], input);
-    console.log(`Between Two Sets getTotalX([], ${input}): ${calculatedA}`);
+    console.log(
+      `Between Two Sets getTotalX([], ${input.toString()}): ${calculatedA}`
+    );
 
     expect(calculatedA).toBe(solutionFound);
 
     const calculatedB = getTotalX(input, []);
-    console.log(`Between Two Sets getTotalX(${input}, []): ${calculatedB}`);
+    console.log(
+      `Between Two Sets getTotalX(${input.toString()}, []): ${calculatedB}`
+    );
 
     expect(calculatedB).toBe(solutionFound);
 

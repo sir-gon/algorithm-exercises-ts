@@ -13,7 +13,7 @@ describe('minimum_absolute_difference_in_an_array', () => {
       const answer = minimumAbsoluteDifference(test.input);
 
       console.debug(
-        `minimumAbsoluteDifference(${test.input}) solution found: ${answer}`
+        `minimumAbsoluteDifference(${test.input.toString()}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(test.expected);

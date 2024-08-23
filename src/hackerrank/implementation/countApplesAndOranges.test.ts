@@ -7,10 +7,10 @@ describe('countApplesAndOranges', () => {
   it('countApplesAndOranges test case 0', () => {
     expect.assertions(1);
 
-    const s: number = 7;
-    const t: number = 11;
-    const a: number = 5;
-    const b: number = 15;
+    const s = 7;
+    const t = 11;
+    const a = 5;
+    const b = 15;
     const apples: number[] = [-2, 2, 1];
     const oranges: number[] = [5, -6];
     const solutionFound = [1, 1].join('\n');

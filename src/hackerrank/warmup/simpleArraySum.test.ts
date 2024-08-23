@@ -12,7 +12,9 @@ describe('problem simpleArraySum', () => {
 
     const calculated = simpleArraySum(input);
 
-    console.log(`simpleArraySum(${input}) solution found: ${calculated}`);
+    console.log(
+      `simpleArraySum(${input.toString()}) solution found: ${calculated}`
+    );
 
     expect(calculated).toBe(solutionFound);
   });
