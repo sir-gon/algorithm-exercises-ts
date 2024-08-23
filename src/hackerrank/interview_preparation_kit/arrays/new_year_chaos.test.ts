@@ -27,7 +27,7 @@ describe('new_year_chaos', () => {
       const answer = minimumBribesTransform(value.input);
 
       console.debug(
-        `minimumBribesTransform(${value.input}) solution found: ${answer}`
+        `minimumBribesTransform(${value.input.toString()}) solution found: ${answer}`
       );
 
       expect(answer).toStrictEqual(value.expected);

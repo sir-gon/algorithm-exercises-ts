@@ -3,15 +3,15 @@
  */
 
 import { logger as console } from '../logger';
-import { matrix } from './helpers';
+import { matrix, nullable } from './helpers';
 
-function problem0015(gridSide = 20): number {
+function problem0015(gridSide = 20): nullable<number> {
   const vertexMatrix = matrix(gridSide + 1, gridSide + 1, 1);
 
   for (let i = 1; i <= gridSide; i++) {
     for (let j = 1; j <= gridSide; j++) {
-      const upperParent = vertexMatrix[i - 1][j];
-      const leftParent = vertexMatrix[i][j - 1];
+      const upperParent: number = vertexMatrix[i - 1][j]!;
+      const leftParent: number = vertexMatrix[i][j - 1]!;
 
       vertexMatrix[i][j] = upperParent + leftParent;
     }
