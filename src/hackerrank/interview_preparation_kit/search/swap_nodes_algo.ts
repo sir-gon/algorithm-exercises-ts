@@ -1,5 +1,5 @@
 /**
- * @link Problem export functioninition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
+ * @link Problem definition [[docs/hackerrank/interview_preparation_kit/search/swap-nodes-algo.md]]
  */
 
 import { Node } from '../../lib/Node';
