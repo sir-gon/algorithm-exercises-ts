@@ -9,7 +9,7 @@ import {
 } from './ctci_comparator_sorting';
 import TEST_CASES from './ctci_comparator_sorting.testcases.json';
 
-describe('countSwaps', () => {
+describe('comparatorSorting', () => {
   it('test_player', () => {
     expect.assertions(2);
 
