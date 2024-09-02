@@ -23,7 +23,7 @@ export class Tree {
     this.buildTree(indexes);
   }
 
-  buildTree(indexes: number[][]): Tree {
+  buildTree(indexes: number[][]): this {
     const indexesCopy = [...indexes];
     let currentLevel = __INITIAL_LEVEL__;
 
