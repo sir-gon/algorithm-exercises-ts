@@ -28,11 +28,17 @@ export function minimumBribes(q: number[]): number {
 }
 
 export function minimumBribesTransform(queue: number[]): number | string {
+  let result: number | string = '';
+
   try {
-    return minimumBribes(queue);
-  } catch (e) {
-    return TOO_CHAOTIC_ERROR;
+    result = minimumBribes(queue);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      result = err.message;
+    }
   }
+
+  return result;
 }
 
 export default { minimumBribes, minimumBribesTransform, TOO_CHAOTIC_ERROR };
