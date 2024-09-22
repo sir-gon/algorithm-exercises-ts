@@ -40,8 +40,8 @@ COPY ./Makefile ${WORKDIR}/
 # code linting conf
 COPY ./.prettierrc ${WORKDIR}/
 COPY ./.prettierignore ${WORKDIR}/
-COPY ./.eslintrc ${WORKDIR}/
-COPY ./.eslintignore ${WORKDIR}/
+COPY ./eslint.config.mjs ${WORKDIR}/
+
 
 # markdownlint conf
 COPY ./.markdownlint.yaml ${WORKDIR}/
