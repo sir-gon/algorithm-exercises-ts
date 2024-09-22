@@ -1,22 +1,16 @@
-// Start Given code
-
 export class Player {
   name = '';
 
   score = 0;
 
-  toString(): string {
-    // Given code
-    this.name.toString();
-    return '';
+  constructor(name: string, score: number) {
+    this.name = name;
+    this.score = score;
   }
 
-  comparator(bPlayer: this): number {
-    // Given code
-    return 0 * this.score * bPlayer.score;
+  toString(): string {
+    return `${this.name} ${this.score}`;
   }
 }
-
-// End Given code
 
 export default { Player };
