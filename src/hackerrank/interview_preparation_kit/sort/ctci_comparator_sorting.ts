@@ -10,14 +10,10 @@ export class SortablePlayer extends Player {
   score = 0;
 
   constructor(name: string, score: number) {
-    super();
+    super(name, score);
 
     this.name = name;
     this.score = score;
-  }
-
-  toString(): string {
-    return `${this.name} ${this.score}`;
   }
 
   comparator(bPlayer: this): number {
