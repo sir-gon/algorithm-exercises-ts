@@ -11,7 +11,6 @@ export function primeFactor(n: bigint): bigint {
 
   let divisor: bigint = n;
   let maxPrimeFactor: bigint = divisor;
-  let mpfInitialized = false;
 
   let i = 2n;
 
@@ -19,14 +18,9 @@ export function primeFactor(n: bigint): bigint {
     if (divisor % i === 0n) {
       divisor /= i;
       maxPrimeFactor = divisor;
-      mpfInitialized = true;
     } else {
       i += 1n;
     }
-  }
-
-  if (!mpfInitialized) {
-    return n;
   }
 
   return maxPrimeFactor;
