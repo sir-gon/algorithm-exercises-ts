@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@jest/globals": "^29.7.0",
-    "pino": "^9.0.0",
+    "pino": "^9.5.0",
     "pino-pretty": "^11.0.0"
   },
   "devDependencies": {
