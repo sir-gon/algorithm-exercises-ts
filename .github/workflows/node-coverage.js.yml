@@ -11,8 +11,9 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  coverage:
+    name: NodeJS CI Coverage
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -26,9 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --verbose
-
-      - name: Lint
-        run: npm run lint
 
       - name: Run the tests
         run: npm run jest:ci -- --coverage
