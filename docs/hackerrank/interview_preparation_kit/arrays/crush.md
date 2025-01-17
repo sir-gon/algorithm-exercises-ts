@@ -56,10 +56,10 @@ Each of the next `m` lines contains three space-separated integers
 
 ## Constraints
 
-- $ 3 \leq n \leq 10^7 $
-- $ 1 \leq m \leq 2*10^5 $
-- $ 1 \leq a \leq b \leq n $
-- $ 0 \leq k \leq 10^9 $
+- $3 \leq n \leq 10^7$
+- $1 \leq m \leq 2*10^5$
+- $1 \leq a \leq b \leq n$
+- $0 \leq k \leq 10^9$
 
 ## Sample Input
 
