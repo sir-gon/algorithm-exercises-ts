@@ -6,7 +6,7 @@ import TEST_CASES from './2d_array.testcases_test.json';
 
 describe('arrays: 2d Array hourglassSum', () => {
   it('hourglassSum Test Cases', () => {
-    expect.assertions(1);
+    expect.assertions(3);
 
     TEST_CASES.forEach((test) => {
       const answer = hourglassSum(test.input);
