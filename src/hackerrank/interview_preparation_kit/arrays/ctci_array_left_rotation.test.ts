@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger';
 
-import { rotLeft, rotLeftOne } from './ctci_array_left_rotation';
+import arrayLeftRotation from './ctci_array_left_rotation';
 
 import ROT_LEFT_ONE_TEST_CASES from './ctci_array_left_rotation.testcases.json';
 
@@ -11,7 +11,7 @@ describe('ctci_array_left_rotation', () => {
 
     ROT_LEFT_ONE_TEST_CASES.forEach((test) => {
       const input = test.numbers;
-      const answer = rotLeftOne(input);
+      const answer = arrayLeftRotation.rotLeftOne(input);
 
       console.debug(
         `rotLeftOne(${test.numbers.toString()}) solution found: ${answer.toString()}`
@@ -29,7 +29,10 @@ describe('ctci_array_left_rotation', () => {
     ];
 
     ROT_LEFT_TEST_CASES.forEach((value) => {
-      const answer = rotLeft(value.numbers, value.d_rotations);
+      const answer = arrayLeftRotation.rotLeft(
+        value.numbers,
+        value.d_rotations
+      );
 
       console.debug(
         `rotLeft(${value.numbers.toString()}) solution found: ${answer.toString()}`
