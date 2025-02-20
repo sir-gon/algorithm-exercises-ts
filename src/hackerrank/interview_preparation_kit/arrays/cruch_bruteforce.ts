@@ -5,7 +5,7 @@
 
 import { logger as console } from '../../../logger';
 
-export function arrayManipulation(n: number, queries: number[][]): number {
+function arrayManipulation(n: number, queries: number[][]): number {
   const LENGTH = n + 1;
   const SURROGATE_VALUE = 0;
   const result: number[] = Array<number>(LENGTH).fill(SURROGATE_VALUE);

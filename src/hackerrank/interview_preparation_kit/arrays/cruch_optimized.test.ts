@@ -3,14 +3,14 @@ import { logger as console } from '../../../logger';
 
 import TEST_CASES from './cruch_testcases_test.json';
 
-import { arrayManipulation } from './cruch_optimized';
+import crush from './cruch_optimized';
 
 describe('arrays: crush (optimized)', () => {
   it('arrayManipulation Test Cases', () => {
     expect.assertions(3);
 
     TEST_CASES.forEach((test) => {
-      const answer = arrayManipulation(test.n, test.queries);
+      const answer = crush.arrayManipulation(test.n, test.queries);
 
       console.debug(
         `arrayManipulation(${test.n}, ${test.queries.toString()}) solution found: ${answer}`
