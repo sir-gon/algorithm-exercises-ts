@@ -5,20 +5,27 @@ import arrayLeftRotation from './ctci_array_left_rotation';
 
 import ROT_LEFT_TEST_CASES from './ctci_array_left_rotation.testcases.json';
 
+interface RotLeftTestCase {
+  title: string;
+  input: number[];
+  d_rotations: number;
+  expected: number[];
+}
+
+const TEST_CASES: RotLeftTestCase[] = ROT_LEFT_TEST_CASES as RotLeftTestCase[];
+
 describe('ctci_array_left_rotation', () => {
   it('rotLeft Test cases', () => {
     expect.assertions(8);
 
-    ROT_LEFT_TEST_CASES.forEach((test) => {
-      const numbers = test.input;
-
+    TEST_CASES.forEach((test: RotLeftTestCase) => {
       const answer = arrayLeftRotation.rotLeft(
-        numbers,
+        test.input,
         Number(test.d_rotations)
       );
 
       console.debug(
-        `rotLeft(${numbers.toString()}) solution found: ${test.expected.toString()}`
+        `rotLeft(${test.input.toString()}) solution found: ${test.expected.toString()}`
       );
 
       expect(answer).toStrictEqual(test.expected);
