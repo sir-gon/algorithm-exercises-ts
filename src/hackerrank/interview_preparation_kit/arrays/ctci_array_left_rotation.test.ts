@@ -10,7 +10,7 @@ describe('ctci_array_left_rotation', () => {
     expect.assertions(8);
 
     ROT_LEFT_TEST_CASES.forEach((test) => {
-      const numbers = test.input as number[];
+      const numbers = test.input;
 
       const answer = arrayLeftRotation.rotLeft(
         numbers,
