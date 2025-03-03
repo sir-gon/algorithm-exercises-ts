@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/minimum_swaps_2.md]]
  */
 
-export function minimumSwaps(arr: number[]): number {
+function minimumSwaps(arr: number[]): number {
   const indexedGroup = arr.map((x) => x - 1);
   let swaps = 0;
   let index = 0;
