@@ -2,10 +2,10 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/new_year_chaos.md]]
  */
 
-export const TOO_CHAOTIC_ERROR = 'Too chaotic';
-export const NEW_YEAR_CHAOS_TOLERANCE = 2;
+const TOO_CHAOTIC_ERROR = 'Too chaotic';
+const NEW_YEAR_CHAOS_TOLERANCE = 2;
 
-export function minimumBribes(q: number[]): number {
+function minimumBribesCalculate(q: number[]): number {
   let bribes = 0;
   let i = 0;
 
@@ -15,7 +15,10 @@ export function minimumBribes(q: number[]): number {
       throw new Error(TOO_CHAOTIC_ERROR);
     }
 
-    const fragment = q.slice(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i);
+    const fragment = q.slice(
+      Math.min(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i),
+      i
+    );
 
     fragment.forEach((k) => {
       if (k > value) {
@@ -28,11 +31,11 @@ export function minimumBribes(q: number[]): number {
   return bribes;
 }
 
-export function minimumBribesTransform(queue: number[]): number | string {
-  let result: number | string = '';
+function minimumBribesText(queue: number[]): string {
+  let result = '';
 
   try {
-    result = minimumBribes(queue);
+    result = `${minimumBribesCalculate(queue)}`;
   } catch (err: unknown) {
     if (err instanceof Error) {
       result = err.message;
@@ -42,4 +45,8 @@ export function minimumBribesTransform(queue: number[]): number | string {
   return result;
 }
 
-export default { minimumBribes, minimumBribesTransform, TOO_CHAOTIC_ERROR };
+function minimumBribes(q: number[]): void {
+  console.log(minimumBribesText(q));
+}
+
+export default { minimumBribes, minimumBribesText, TOO_CHAOTIC_ERROR };
