@@ -45,10 +45,10 @@ env:
 	@echo "################################################################################"
 
 clean:
-	npm run jest:clean
-	rm -vfr ./coverage
-	rm -vfr ./dist
-	rm -vfr ./node_modules
+	${NPM} run jest:clean || true
+	rm -vfr ./dist || true
+	rm -vfr ./node_modules || true
+	rm -vfr ./coverage || true
 	mkdir -p ./coverage
 	touch ./coverage/.gitkeep
 
