@@ -4,7 +4,7 @@
  */
 
 // Complete the freqQuery function below.
-export function freqQuery(queries: number[][]): number[] {
+function freqQuery(queries: number[][]): number[] {
   const result: number[] = [];
   const dataMap: Record<number, number> = {};
 
