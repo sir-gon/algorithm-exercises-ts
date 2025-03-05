@@ -5,7 +5,7 @@
 const __YES__ = 'YES';
 const __NO__ = 'NO';
 
-export function twoStringsCompute(s1: string, s2: string): boolean {
+function twoStringsCompute(s1: string, s2: string): boolean {
   for (const char of s1) {
     if (s2.includes(char)) {
       return true;
@@ -14,7 +14,7 @@ export function twoStringsCompute(s1: string, s2: string): boolean {
   return false;
 }
 
-export function twoStrings(s1: string, s2: string): string {
+function twoStrings(s1: string, s2: string): string {
   return twoStringsCompute(s1, s2) ? __YES__ : __NO__;
 }
 
