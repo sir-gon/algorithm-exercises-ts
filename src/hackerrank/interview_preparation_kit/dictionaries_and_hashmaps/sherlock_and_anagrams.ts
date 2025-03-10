@@ -10,7 +10,7 @@ function extraLongFactorials(n: number): bigint {
   return rs;
 }
 
-export function sherlockAndAnagrams(s: string): number {
+function sherlockAndAnagrams(s: string): number {
   const candidates: Record<string, string[]> = {};
   const size = s.length;
 
@@ -66,3 +66,4 @@ export function sherlockAndAnagrams(s: string): number {
 }
 
 export default { sherlockAndAnagrams };
+export { sherlockAndAnagrams };
