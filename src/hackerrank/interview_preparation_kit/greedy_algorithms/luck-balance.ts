@@ -42,7 +42,7 @@ function dynamicSort<T>(array: T[], sortBy: SortBy<T>[]): T[] {
   );
 }
 
-export function luckBalance(k: number, contests: number[][]): number {
+function luckBalance(k: number, contests: number[][]): number {
   let importantContests: Contest[] = [];
   const nonimportantContests: Contest[] = [];
 
