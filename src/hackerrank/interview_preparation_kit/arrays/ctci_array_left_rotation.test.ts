@@ -1,41 +1,31 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger';
 
-import { rotLeft, rotLeftOne } from './ctci_array_left_rotation';
+import { rotLeft } from './ctci_array_left_rotation';
 
-import ROT_LEFT_ONE_TEST_CASES from './ctci_array_left_rotation.testcases.json';
+import ROT_LEFT_TEST_CASES from './ctci_array_left_rotation.testcases.json';
+
+interface RotLeftTestCase {
+  title: string;
+  input: number[];
+  d_rotations: number;
+  expected: number[];
+}
+
+const TEST_CASES: RotLeftTestCase[] = ROT_LEFT_TEST_CASES as RotLeftTestCase[];
 
 describe('ctci_array_left_rotation', () => {
-  it('rotLeftOne Test Cases', () => {
-    expect.assertions(5);
+  it('rotLeft Test cases', () => {
+    expect.assertions(8);
 
-    ROT_LEFT_ONE_TEST_CASES.forEach((test) => {
-      const input = test.numbers;
-      const answer = rotLeftOne(input);
+    TEST_CASES.forEach((test: RotLeftTestCase) => {
+      const answer = rotLeft(test.input, Number(test.d_rotations));
 
       console.debug(
-        `rotLeftOne(${test.numbers.toString()}) solution found: ${answer.toString()}`
+        `rotLeft(${test.input.toString()}) solution found: ${test.expected.toString()}`
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
-  });
-
-  it('rotLeft Test cases', () => {
-    expect.assertions(1);
-
-    const ROT_LEFT_TEST_CASES = [
-      { numbers: [1, 2, 3, 4, 5], d_rotations: 4, expected: [5, 1, 2, 3, 4] }
-    ];
-
-    ROT_LEFT_TEST_CASES.forEach((value) => {
-      const answer = rotLeft(value.numbers, value.d_rotations);
-
-      console.debug(
-        `rotLeft(${value.numbers.toString()}) solution found: ${answer.toString()}`
-      );
-
-      expect(answer).toStrictEqual(value.expected);
     });
   });
 });
