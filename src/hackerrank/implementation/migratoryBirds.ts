@@ -6,7 +6,7 @@ import { logger as console } from '../../logger';
 
 type Birds = Record<string, number>;
 
-export function migratoryBirds(arr: number[]): number {
+function migratoryBirds(arr: number[]): number {
   if (arr.length === 0) {
     throw new Error('Empty input');
   }
@@ -36,3 +36,4 @@ export function migratoryBirds(arr: number[]): number {
 }
 
 export default { migratoryBirds };
+export { migratoryBirds };

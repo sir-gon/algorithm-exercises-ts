@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-export function countAs(word: string): number {
+function countAs(word: string): number {
   let result = 0;
 
   const chars = word.split('');
@@ -18,7 +18,7 @@ export function countAs(word: string): number {
   return result;
 }
 
-export function repeatedString(s: string, n: number): number {
+function repeatedString(s: string, n: number): number {
   let result = 0;
 
   const blockSize = s.length;
@@ -32,4 +32,5 @@ export function repeatedString(s: string, n: number): number {
   return result;
 }
 
-export default { countAs };
+export default { countAs, repeatedString };
+export { countAs, repeatedString };

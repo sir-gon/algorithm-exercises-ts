@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/implementation/countApplesAndOranges.md]]
  */
 
-export function countApplesAndOranges(
+function countApplesAndOranges(
   s: number,
   t: number,
   a: number,
@@ -33,3 +33,4 @@ export function countApplesAndOranges(
 }
 
 export default { countApplesAndOranges };
+export { countApplesAndOranges };

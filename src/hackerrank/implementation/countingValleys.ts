@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-export function countingValleys(steps: number, path: string): number {
+function countingValleys(steps: number, path: string): number {
   const stepList = path.split('');
   let altitude = 0;
   let valleys = 0;
@@ -27,3 +27,4 @@ export function countingValleys(steps: number, path: string): number {
 }
 
 export default { countingValleys };
+export { countingValleys };
