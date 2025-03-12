@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/string_manipulation/alternating-characters.md]]
  */
 
-export function alternatingCharacters(s: string): number {
+function alternatingCharacters(s: string): number {
   let last = '';
   let newString = '';
 
@@ -18,3 +18,4 @@ export function alternatingCharacters(s: string): number {
 }
 
 export default { alternatingCharacters };
+export { alternatingCharacters };
