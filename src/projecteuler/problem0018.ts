@@ -8,7 +8,7 @@ import { logger as console } from '../logger';
 const rootCoordinateI = 0;
 const rootCoordinateJ = 0;
 
-export function problem0018(_triangle: number[][]): number {
+function problem0018(_triangle: number[][]): number {
   console.debug(`_triangle: ${_triangle.toString()}`);
   console.debug(
     `_triangle: ${JSON.stringify(
@@ -38,3 +38,4 @@ export function problem0018(_triangle: number[][]): number {
 }
 
 export default { problem0018 };
+export { problem0018 };

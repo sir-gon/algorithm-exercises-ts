@@ -19,7 +19,7 @@ import { logger as console } from '../logger';
 
 import { properDivisors, bigSumMany } from './helpers';
 
-export function problem0021(_start: number, _limit: number): string {
+function problem0021(_start: number, _limit: number): string {
   const properDivisorsOf: number[] = [];
 
   for (let i = _start; i <= _limit; i++) {
@@ -47,3 +47,4 @@ export function problem0021(_start: number, _limit: number): string {
 }
 
 export default { problem0021 };
+export { problem0021 };

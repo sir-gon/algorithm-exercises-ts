@@ -4,7 +4,7 @@
 
 import { logger as console } from '../logger';
 
-export function problem0002(_top: number): number {
+function problem0002(_top: number): number {
   let i = 0;
   let last1 = 1;
   let last2 = 0;
@@ -31,3 +31,4 @@ export function problem0002(_top: number): number {
 }
 
 export default { problem0002 };
+export { problem0002 };
