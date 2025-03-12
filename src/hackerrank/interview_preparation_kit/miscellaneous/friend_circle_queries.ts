@@ -56,7 +56,7 @@ class GropingFriends {
   }
 }
 
-export function maxCircle(queries: number[][]): number[] {
+function maxCircle(queries: number[][]): number[] {
   const result: number[] = [];
   const friends = new GropingFriends();
 
@@ -72,3 +72,4 @@ export function maxCircle(queries: number[][]): number[] {
 }
 
 export default { maxCircle };
+export { maxCircle };
