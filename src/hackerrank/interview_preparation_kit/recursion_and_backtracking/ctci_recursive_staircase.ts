@@ -6,7 +6,7 @@
 const TOP_LIMIT = 10 ** 10 + 7;
 const STEPS_LIMIT = 3;
 
-export class StepPerms {
+class StepPerms {
   TOP_LIMIT = 1;
 
   STEPS_LIMIT = 1;
@@ -39,10 +39,11 @@ export class StepPerms {
   }
 }
 
-export function stepPerms(n: number): number {
+function stepPerms(n: number): number {
   const stairs = new StepPerms(TOP_LIMIT, STEPS_LIMIT);
 
   return stairs.step_perms_comput_with_cache(n) % TOP_LIMIT;
 }
 
 export default { stepPerms, StepPerms };
+export { stepPerms, StepPerms };
