@@ -3,12 +3,12 @@
  */
 
 // Function to return gcd of a and b
-export function gcd(a: number, b: number): number {
+function gcd(a: number, b: number): number {
   if (a === 0) return b;
   return gcd(b % a, a);
 }
 
-export function sumAp(n: number, d: number): number {
+function sumAp(n: number, d: number): number {
   // Number of terms
   const _n = Math.floor(n / d);
 
@@ -16,10 +16,13 @@ export function sumAp(n: number, d: number): number {
 }
 
 // Function to find the sum of all multiples of a and b below n
-export function euler001(a: number, b: number, n: number): number {
+function euler001(a: number, b: number, n: number): number {
   // Since, we need the sum of multiples less than N
   const _n = n - 1;
   const lcm = Math.floor((a * b) / gcd(a, b));
 
   return sumAp(_n, a) + sumAp(_n, b) - sumAp(_n, lcm);
 }
+
+export default { euler001 };
+export { euler001 };

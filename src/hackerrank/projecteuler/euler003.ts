@@ -4,7 +4,7 @@
 
 import { BigIntMath } from '../lib/BigIntMath';
 
-export function primeFactor(n: bigint): bigint {
+function primeFactor(n: bigint): bigint {
   if (n < 2) {
     throw new Error('n must be greater than 2');
   }
@@ -26,8 +26,9 @@ export function primeFactor(n: bigint): bigint {
   return maxPrimeFactor;
 }
 
-export function euler003(n: number): bigint {
+function euler003(n: number): bigint {
   return primeFactor(BigInt(n));
 }
 
 export default { euler003 };
+export { euler003 };

@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/projecteuler/euler002.md]]
  */
 
-export function fiboEvenSum(n: bigint): bigint {
+function fiboEvenSum(n: bigint): bigint {
   let fibo1 = 1n;
   let fibo2 = 1n;
   let total = 0n;
@@ -20,8 +20,9 @@ export function fiboEvenSum(n: bigint): bigint {
   return total;
 }
 
-export function euler002(n: number): bigint {
+function euler002(n: number): bigint {
   return fiboEvenSum(BigInt(n));
 }
 
 export default { euler002 };
+export { euler002 };
