@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/birthdayCakeCandles.md]]
  */
 
-export function birthdayCakeCandles(ar: number[]): number {
+function birthdayCakeCandles(ar: number[]): number {
   if (ar.length === 0) {
     throw new Error('Empty input');
   }
@@ -23,3 +23,4 @@ export function birthdayCakeCandles(ar: number[]): number {
 }
 
 export default { birthdayCakeCandles };
+export { birthdayCakeCandles };

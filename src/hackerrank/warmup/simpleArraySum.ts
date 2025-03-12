@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/simpleArraySum.md]]
  */
 
-export function simpleArraySum(ar: number[]): number {
+function simpleArraySum(ar: number[]): number {
   let acum = 0;
 
   for (const num of ar) {
@@ -13,3 +13,4 @@ export function simpleArraySum(ar: number[]): number {
 }
 
 export default { simpleArraySum };
+export { simpleArraySum };

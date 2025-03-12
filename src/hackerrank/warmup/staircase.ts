@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/staircase.md]]
  */
 
-export function staircase(n: number): string {
+function staircase(n: number): string {
   const result: string[] = [];
 
   for (let i = 1; i <= n; i++) {
@@ -23,3 +23,4 @@ export function staircase(n: number): string {
 }
 
 export default { staircase };
+export { staircase };

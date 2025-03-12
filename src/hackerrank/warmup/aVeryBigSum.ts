@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/aVeryBigSum.md]]
  */
 
-export function aVeryBigSum(ar: number[]): number {
+function aVeryBigSum(ar: number[]): number {
   let result = 0;
 
   for (const num of ar) {
@@ -13,3 +13,4 @@ export function aVeryBigSum(ar: number[]): number {
 }
 
 export default { aVeryBigSum };
+export { aVeryBigSum };
