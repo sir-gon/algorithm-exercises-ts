@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/sort/mark-and-toys.md]]
  */
 
-export function maximumToys(prices: number[], k: number): number {
+function maximumToys(prices: number[], k: number): number {
   const group = [...prices];
   group.sort((a: number, b: number) => a - b);
 
@@ -21,3 +21,4 @@ export function maximumToys(prices: number[], k: number): number {
 }
 
 export default { maximumToys };
+export { maximumToys };
