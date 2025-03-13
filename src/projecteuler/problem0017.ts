@@ -5,7 +5,7 @@
 import { logger as console } from '../logger';
 import { numberToWord } from './helpers';
 
-export default function problem0017(init: number, last: number): number {
+function problem0017(init: number, last: number): number {
   let replaced;
   let word;
   let acum = 0;
@@ -24,4 +24,5 @@ export default function problem0017(init: number, last: number): number {
   return acum;
 }
 
+export default { problem0017 };
 export { problem0017 };

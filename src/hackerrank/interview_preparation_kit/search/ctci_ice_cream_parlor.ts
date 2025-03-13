@@ -4,10 +4,7 @@
 
 const __RADIX__ = 10;
 
-export function whatFlavorsCompute(
-  cost: number[],
-  money: number
-): number[] | null {
+function whatFlavorsCompute(cost: number[], money: number): number[] | null {
   const cache: Record<number, number> = {};
 
   for (const [key, price] of Object.entries(cost)) {
@@ -24,8 +21,9 @@ export function whatFlavorsCompute(
   return [];
 }
 
-export function whatFlavors(cost: number[], money: number): void {
+function whatFlavors(cost: number[], money: number): void {
   console.log(whatFlavorsCompute(cost, money)?.join(' '));
 }
 
 export default { whatFlavorsCompute, whatFlavors };
+export { whatFlavorsCompute, whatFlavors };

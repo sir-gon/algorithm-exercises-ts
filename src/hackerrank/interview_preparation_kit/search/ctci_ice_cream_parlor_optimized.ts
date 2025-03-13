@@ -4,7 +4,7 @@
 
 const __RADIX__ = 10;
 
-export function whatFlavorsCompute(cost: number[], money: number): number[] {
+function whatFlavorsCompute(cost: number[], money: number): number[] {
   let ans1: number | null = null;
   let ans2: number | null = null;
 
@@ -45,8 +45,9 @@ export function whatFlavorsCompute(cost: number[], money: number): number[] {
   return Array.from(result);
 }
 
-export function whatFlavors(cost: number[], money: number): void {
+function whatFlavors(cost: number[], money: number): void {
   console.log(whatFlavorsCompute(cost, money)?.join(' '));
 }
 
 export default { whatFlavorsCompute, whatFlavors };
+export { whatFlavorsCompute, whatFlavors };

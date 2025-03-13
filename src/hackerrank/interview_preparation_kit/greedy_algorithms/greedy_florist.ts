@@ -3,7 +3,7 @@
  * @see Solution Notes: [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/greedy-florist-solution-notes.md]]
  */
 
-export function getMinimumCost(k: number, c: number[]): number {
+function getMinimumCost(k: number, c: number[]): number {
   const flowers = c
     .map((x: number): number => x)
     .sort((a: number, b: number): number => b - a);
@@ -22,3 +22,4 @@ export function getMinimumCost(k: number, c: number[]): number {
 }
 
 export default { getMinimumCost };
+export { getMinimumCost };

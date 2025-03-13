@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-export function sockMerchant(n: number, ar: number[]): number {
+function sockMerchant(n: number, ar: number[]): number {
   let result = 0;
 
   type Matches = Record<string, number>;
@@ -27,3 +27,4 @@ export function sockMerchant(n: number, ar: number[]): number {
 }
 
 export default { sockMerchant };
+export { sockMerchant };

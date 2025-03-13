@@ -5,7 +5,7 @@
 import { logger as console } from '../logger';
 import { wordScore } from './helpers/wordScore';
 
-export function problem0022(listOfNames: string[]): number {
+function problem0022(listOfNames: string[]): number {
   listOfNames.sort((a, b) => a.localeCompare(b));
 
   let result = 0;
@@ -21,3 +21,4 @@ export function problem0022(listOfNames: string[]): number {
 }
 
 export default { problem0022 };
+export { problem0022 };

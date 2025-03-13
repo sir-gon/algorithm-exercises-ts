@@ -5,12 +5,12 @@
 import { Node } from '../../lib/Node';
 
 // CONSTANTS
-export const __INITIAL_LEVEL__ = 1;
-export const __ROOT_VALUE__ = 1;
-export const __LEAF_VALUE__ = -1;
+const __INITIAL_LEVEL__ = 1;
+const __ROOT_VALUE__ = 1;
+const __LEAF_VALUE__ = -1;
 const __RADIX__ = 10;
 
-export class Tree {
+class Tree {
   root: Node<number>;
 
   nodeCollector: Record<number, Node<number>[]>;
@@ -97,7 +97,7 @@ export class Tree {
   }
 }
 
-export function swapNodes(indexes: number[][], queries: number[]): number[][] {
+function swapNodes(indexes: number[][], queries: number[]): number[][] {
   const tree: Tree = new Tree(indexes);
   let nodeCollector: Record<number, Node<number>[]> = tree.getCollector();
   const output: number[][] = [];
@@ -126,4 +126,5 @@ export function swapNodes(indexes: number[][], queries: number[]): number[][] {
   return output;
 }
 
-export default { swapNodes, __INITIAL_LEVEL__ };
+export default { swapNodes, Tree, __INITIAL_LEVEL__ };
+export { swapNodes, Tree, __INITIAL_LEVEL__ };

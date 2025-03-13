@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-export function jumpingOnClouds(c: number[]): number {
+function jumpingOnClouds(c: number[]): number {
   let result = 0;
   let key = 0;
 
@@ -26,3 +26,4 @@ export function jumpingOnClouds(c: number[]): number {
 }
 
 export default { jumpingOnClouds };
+export { jumpingOnClouds };

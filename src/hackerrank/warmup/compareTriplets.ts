@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/compareTriplets.md]]
  */
 
-export function compareTriplets(a: number[], b: number[]): number[] {
+function compareTriplets(a: number[], b: number[]): number[] {
   const awards = [0, 0];
 
   if (a.length !== b.length) {
@@ -21,3 +21,4 @@ export function compareTriplets(a: number[], b: number[]): number[] {
 }
 
 export default { compareTriplets };
+export { compareTriplets };

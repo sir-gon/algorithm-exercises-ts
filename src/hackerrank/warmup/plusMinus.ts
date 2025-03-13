@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/warmup/plusMinus.md]]
  */
 
-export function plusMinus(arr: number[]): string {
+function plusMinus(arr: number[]): string {
   let positives = 0;
   let negatives = 0;
   let zeros = 0;
@@ -27,3 +27,4 @@ export function plusMinus(arr: number[]): string {
 }
 
 export default { plusMinus };
+export { plusMinus };

@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/crush.md]]
  */
 
-export function arrayManipulation(n: number, queries: number[][]): number {
+function arrayManipulation(n: number, queries: number[][]): number {
   // why adding 2?
   //   first slot to adjust 1-based index and
   //   last slot for storing accumSum result
@@ -29,3 +29,4 @@ export function arrayManipulation(n: number, queries: number[][]): number {
 }
 
 export default { arrayManipulation };
+export { arrayManipulation };

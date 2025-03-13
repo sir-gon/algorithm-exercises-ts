@@ -20,7 +20,7 @@ function sum(values: number[]): number {
   );
 }
 
-export function makeAnagram(a: string, b: string): number {
+function makeAnagram(a: string, b: string): number {
   const aMap = charToDicMap(a);
   const bMap = charToDicMap(b);
 
@@ -35,3 +35,4 @@ export function makeAnagram(a: string, b: string): number {
 }
 
 export default { makeAnagram };
+export { makeAnagram };

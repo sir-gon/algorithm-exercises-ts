@@ -4,7 +4,7 @@
 
 const __RADIX__ = 10;
 
-export function solveMeFirst(inputLines: string[]): number {
+function solveMeFirst(inputLines: string[]): number {
   let result = 0;
 
   inputLines.forEach((v) => {
@@ -15,3 +15,4 @@ export function solveMeFirst(inputLines: string[]): number {
 }
 
 export default { solveMeFirst };
+export { solveMeFirst };

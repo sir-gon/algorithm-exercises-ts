@@ -4,7 +4,7 @@
 
 import { logger as console } from '../../logger';
 
-export function diagonalDifference(arr: number[][]): number {
+function diagonalDifference(arr: number[][]): number {
   let diag1 = 0;
   let diag2 = 0;
   const last = arr.length - 1;
@@ -24,3 +24,4 @@ export function diagonalDifference(arr: number[][]): number {
 }
 
 export default { diagonalDifference };
+export { diagonalDifference };

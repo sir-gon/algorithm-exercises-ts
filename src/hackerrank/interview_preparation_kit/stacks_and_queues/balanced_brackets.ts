@@ -5,7 +5,7 @@
 const __YES__ = 'YES';
 const __NO__ = 'NO';
 
-export function isBalancedCompute(s: string): boolean {
+function isBalancedCompute(s: string): boolean {
   const pairs: Record<string, string> = { '{': '}', '(': ')', '[': ']' };
   const brackets: string[] = [];
 
@@ -27,8 +27,9 @@ export function isBalancedCompute(s: string): boolean {
   return brackets.length <= 0;
 }
 
-export function isBalanced(s: string): string {
+function isBalanced(s: string): string {
   return isBalancedCompute(s) ? __YES__ : __NO__;
 }
 
 export default { isBalanced };
+export { isBalanced };

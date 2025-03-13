@@ -34,7 +34,7 @@ const permute = (symbols: string, target: number): string => {
   return answer;
 };
 
-export function problem0024(
+function problem0024(
   inputElements: string,
   inputPermutationToFind: number
 ): string {
@@ -46,3 +46,4 @@ export function problem0024(
 }
 
 export default { problem0024 };
+export { problem0024 };
