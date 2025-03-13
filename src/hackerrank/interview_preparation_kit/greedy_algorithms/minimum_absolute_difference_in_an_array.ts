@@ -2,7 +2,7 @@
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/minimum-absolute-difference-in-an-array.md]]
  */
 
-export function minimumAbsoluteDifference(arr: number[]): number {
+function minimumAbsoluteDifference(arr: number[]): number {
   const sortedNums = arr
     .map((x: number): number => x)
     .sort((a: number, b: number): number => b - a);
@@ -22,3 +22,4 @@ export function minimumAbsoluteDifference(arr: number[]): number {
 }
 
 export default { minimumAbsoluteDifference };
+export { minimumAbsoluteDifference };
