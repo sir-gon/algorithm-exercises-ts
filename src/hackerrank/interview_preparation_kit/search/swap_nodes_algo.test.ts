@@ -33,7 +33,7 @@ describe('swap_nodes_algo', () => {
   });
 
   it('build tree and flattened tree test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
       const tree = new Tree(test.nodes);
@@ -41,15 +41,19 @@ describe('swap_nodes_algo', () => {
 
       expect(tResult).toStrictEqual(test.flattened);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 
   it('swapNodes test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
       const tResult: number[][] = swapNodes(test.nodes, test.queries);
 
       expect(tResult).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

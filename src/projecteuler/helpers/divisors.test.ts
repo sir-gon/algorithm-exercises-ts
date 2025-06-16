@@ -10,7 +10,7 @@ import {
   ___DIVISORS_ABUNDANCE___
 } from '.';
 
-describe('divisors of a number', () => {
+describe('divisors and prime numbers', () => {
   it('divisors of one', () => {
     expect.assertions(1);
 
@@ -110,7 +110,7 @@ describe('divisors of a number', () => {
     expect(isPrime(3000)).toBe(false);
   });
 
-  it('abundance of a integer number compared to constants', () => {
+  it('abundance of a integer number', () => {
     expect.assertions(3);
 
     expect(abundance(10)).toStrictEqual(
@@ -122,16 +122,6 @@ describe('divisors of a number', () => {
     expect(abundance(28)).toStrictEqual(
       ___DIVISORS_ABUNDANCE___.DIVISORS_PERFECT
     );
-  });
-
-  it('abundance of first 12 numbers', () => {
-    expect.assertions(11);
-
-    for (let i = 1; i < 12; i++) {
-      expect(abundance(28)).not.toStrictEqual(
-        ___DIVISORS_ABUNDANCE___.DIVISORS_ABUNDANT
-      );
-    }
   });
 
   it('conflict abundance', () => {
