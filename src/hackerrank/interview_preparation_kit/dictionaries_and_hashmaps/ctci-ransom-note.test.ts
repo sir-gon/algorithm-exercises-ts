@@ -7,7 +7,7 @@ import TEST_CASES from './ctci-ransom-note.testcases.json';
 
 describe('ctci_ransom_note', () => {
   it('checkMagazine test cases', () => {
-    expect.assertions(3);
+    expect.assertions(4);
 
     TEST_CASES.forEach((value) => {
       const answer = checkMagazine(value.magazine, value.note);
@@ -18,5 +18,7 @@ describe('ctci_ransom_note', () => {
 
       expect(answer).toStrictEqual(value.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(3);
   });
 });

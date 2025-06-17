@@ -6,7 +6,7 @@ import TEST_CASES from './friend_circle_queries.testcases.json';
 
 describe('friend_circle_queries', () => {
   it('maxCircle test cases', () => {
-    expect.assertions(4);
+    expect.assertions(5);
 
     TEST_CASES.forEach((test) => {
       const answer = maxCircle(test.arr);
@@ -17,5 +17,7 @@ describe('friend_circle_queries', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(4);
   });
 });

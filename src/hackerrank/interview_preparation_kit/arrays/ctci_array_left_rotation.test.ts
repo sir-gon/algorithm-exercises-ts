@@ -16,7 +16,7 @@ const TEST_CASES: RotLeftTestCase[] = ROT_LEFT_TEST_CASES as RotLeftTestCase[];
 
 describe('ctci_array_left_rotation', () => {
   it('rotLeft Test cases', () => {
-    expect.assertions(8);
+    expect.assertions(9);
 
     TEST_CASES.forEach((test: RotLeftTestCase) => {
       const answer = rotLeft(test.input, Number(test.d_rotations));
@@ -27,5 +27,7 @@ describe('ctci_array_left_rotation', () => {
 
       expect(answer).toStrictEqual(test.expected);
     });
+
+    expect(TEST_CASES).toHaveLength(8);
   });
 });
