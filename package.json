@@ -39,7 +39,7 @@
     "start": "npm run test",
     "lint": "npx eslint --env-info; npx eslint . --color --max-warnings=0 && echo '✔  Your code looks good.'",
     "jest:ci": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
-    "jest:clean": "npx jest --clearCache && npx watchman watch-del-all",
+    "jest:clean": "npx --yes jest --clearCache && npx watchman watch-del-all",
     "jest:bruteforce": "cross-env BRUTEFORCE=true NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug",
     "jest:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --no-cache --ci --color --detectOpenHandles --forceExit --runInBand --debug --watchAll",
     "style:format": "npx prettier --write 'src/**/*.ts'",
