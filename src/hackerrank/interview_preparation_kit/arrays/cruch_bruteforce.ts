@@ -11,7 +11,7 @@ function arrayManipulation(n: number, queries: number[][]): number {
   const result: number[] = new Array<number>(LENGTH).fill(SURROGATE_VALUE);
   let maximum = 0;
 
-  queries.forEach((query) => {
+  for (const query of queries) {
     const [aStart, bEnd, kValue] = query;
     console.debug(`start -> ${result.toString()}`);
 
@@ -19,11 +19,11 @@ function arrayManipulation(n: number, queries: number[][]): number {
       result[i] += kValue;
       console.debug(`result -> ${result.toString()}`);
     }
-  });
+  }
 
-  result.forEach((value) => {
+  for (const value of result) {
     maximum = Math.max(value, maximum);
-  });
+  }
 
   return maximum;
 }

@@ -9,7 +9,7 @@ describe('angry_children', () => {
   it('maxMin test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = maxMin(test.k, test.arr);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('angry_children', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });

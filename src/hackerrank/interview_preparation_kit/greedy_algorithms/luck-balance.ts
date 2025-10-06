@@ -46,7 +46,7 @@ function luckBalance(k: number, contests: number[][]): number {
   let importantContests: Contest[] = [];
   const nonimportantContests: Contest[] = [];
 
-  contests.forEach((contest) => {
+  for (const contest of contests) {
     const [luck, important] = [...contest];
     const theContest = new Contest(luck, important);
 
@@ -55,7 +55,7 @@ function luckBalance(k: number, contests: number[][]): number {
     } else {
       nonimportantContests.push(theContest);
     }
-  });
+  }
 
   importantContests = dynamicSort(importantContests, [
     { property: 'important', order: 'desc' },
@@ -74,9 +74,9 @@ function luckBalance(k: number, contests: number[][]): number {
     total -= importantContests[i].luck;
   }
 
-  nonimportantContests.forEach((contest) => {
+  for (const contest of nonimportantContests) {
     total += contest.luck;
-  });
+  }
 
   return total;
 }

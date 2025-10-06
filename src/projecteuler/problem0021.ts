@@ -28,7 +28,9 @@ function problem0021(_start: number, _limit: number): string {
 
   const amicableNumbers: string[] = [];
 
-  Object.entries(properDivisorsOf).forEach((value, index) => {
+  for (const [key, value] of Object.entries(properDivisorsOf)) {
+    const index = Number.parseInt(key, 10);
+
     if (
       value &&
       properDivisorsOf[index] &&
@@ -38,7 +40,7 @@ function problem0021(_start: number, _limit: number): string {
     ) {
       amicableNumbers.push(`${index}`);
     }
-  });
+  }
 
   console.log(`result: ${properDivisorsOf.toString()}`);
   console.log(`amicableNumbers: ${amicableNumbers.toString()}`);

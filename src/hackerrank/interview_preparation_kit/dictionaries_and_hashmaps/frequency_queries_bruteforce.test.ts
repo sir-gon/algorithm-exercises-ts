@@ -8,7 +8,7 @@ describe('frequency_queries_bruteforce', () => {
   it('freqQuery test cases', () => {
     expect.assertions(5);
 
-    SMALL_TEST_CASES.forEach((value) => {
+    for (const value of SMALL_TEST_CASES) {
       const answer = freqQuery(value.input);
 
       console.debug(
@@ -16,7 +16,7 @@ describe('frequency_queries_bruteforce', () => {
       );
 
       expect(answer).toStrictEqual(value.expected);
-    });
+    }
 
     expect(SMALL_TEST_CASES).toHaveLength(4);
   });

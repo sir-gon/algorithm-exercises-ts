@@ -44,9 +44,9 @@ function _replaceMaximum(
 function _primeFactorsCollection(_factors: number[]): Map<number, number> {
   let collection = new Map<number, number>();
 
-  _factors.forEach((factor) => {
+  for (const factor of _factors) {
     collection = _increase(factor, collection);
-  });
+  }
 
   return collection;
 }

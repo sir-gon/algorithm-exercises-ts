@@ -35,12 +35,12 @@ describe('swap_nodes_algo', () => {
   it('build tree and flattened tree test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const tree = new Tree(test.nodes);
       const tResult = tree.flatTree();
 
       expect(tResult).toStrictEqual(test.flattened);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });
@@ -48,11 +48,11 @@ describe('swap_nodes_algo', () => {
   it('swapNodes test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const tResult: number[][] = swapNodes(test.nodes, test.queries);
 
       expect(tResult).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });

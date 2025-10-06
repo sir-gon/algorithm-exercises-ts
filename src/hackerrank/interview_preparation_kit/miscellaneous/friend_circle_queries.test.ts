@@ -8,7 +8,7 @@ describe('friend_circle_queries', () => {
   it('maxCircle test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = maxCircle(test.arr);
 
       console.debug(
@@ -16,7 +16,7 @@ describe('friend_circle_queries', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });
