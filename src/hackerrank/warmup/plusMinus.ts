@@ -17,11 +17,11 @@ function plusMinus(arr: number[]): string {
     }
   }
 
-  const result: string[] = [];
-
-  result.push((positives / arr.length).toFixed(6));
-  result.push((negatives / arr.length).toFixed(6));
-  result.push((zeros / arr.length).toFixed(6));
+  const result: string[] = [
+    (positives / arr.length).toFixed(6),
+    (negatives / arr.length).toFixed(6),
+    (zeros / arr.length).toFixed(6)
+  ];
 
   return result.join(`\n`);
 }
