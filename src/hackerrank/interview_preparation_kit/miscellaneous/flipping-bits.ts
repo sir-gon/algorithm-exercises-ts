@@ -19,7 +19,7 @@ function flippingBits(n: number): number {
     }
   });
 
-  return parseInt(resultBinStr, __BINARY_BASE__);
+  return Number.parseInt(resultBinStr, __BINARY_BASE__);
 }
 
 export default { flippingBits };

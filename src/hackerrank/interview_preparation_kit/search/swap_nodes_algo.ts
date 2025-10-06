@@ -104,13 +104,14 @@ function swapNodes(indexes: number[][], queries: number[]): number[][] {
 
   nodeCollector = Object.fromEntries(
     Object.entries(nodeCollector).sort(
-      ([a], [b]) => parseInt(a, __RADIX__) - parseInt(b, __RADIX__)
+      ([a], [b]) =>
+        Number.parseInt(a, __RADIX__) - Number.parseInt(b, __RADIX__)
     )
   );
 
   for (const query of queries) {
     for (const [level, nodeList] of Object.entries(nodeCollector)) {
-      const tLevel: number = parseInt(level, __RADIX__);
+      const tLevel: number = Number.parseInt(level, __RADIX__);
 
       if (tLevel % query === 0) {
         for (const node of nodeList) {

@@ -35,7 +35,7 @@ function problem0016alt(base: string, exponent: number): string {
 
   let result = 0;
   digits.forEach((num: string) => {
-    result += parseInt(num, __RADIX__);
+    result += Number.parseInt(num, __RADIX__);
   });
 
   console.log(`Sum of Digits: (${result})`);
