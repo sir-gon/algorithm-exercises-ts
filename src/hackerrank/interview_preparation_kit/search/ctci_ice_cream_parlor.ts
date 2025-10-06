@@ -8,7 +8,7 @@ function whatFlavorsCompute(cost: number[], money: number): number[] | null {
   const cache: Record<number, number> = {};
 
   for (const [key, price] of Object.entries(cost)) {
-    const i = parseInt(key, __RADIX__);
+    const i = Number.parseInt(key, __RADIX__);
     const diff = money - price;
 
     if (Number.isInteger(cache?.[diff])) {

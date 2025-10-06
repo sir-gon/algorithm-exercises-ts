@@ -6,7 +6,7 @@ function whatFlavorsBruteforceCompute(cost: number[], money: number): number[] {
   const RADIX = 10;
 
   for (const key of Object.keys(cost)) {
-    const i: number = parseInt(key, RADIX);
+    const i: number = Number.parseInt(key, RADIX);
     const x: number = cost[i];
 
     const budget = money - x;

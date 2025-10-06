@@ -15,7 +15,7 @@ function whatFlavorsCompute(cost: number[], money: number): number[] {
   }
 
   for (const key of Object.keys(cost)) {
-    const i = parseInt(key, __RADIX__);
+    const i = Number.parseInt(key, __RADIX__);
 
     const v1 = cost[i];
     const v2 = money - v1;
@@ -35,7 +35,7 @@ function whatFlavorsCompute(cost: number[], money: number): number[] {
 
   const result = new Set<number>();
   for (const key of Object.keys(cost)) {
-    const x = parseInt(key, __RADIX__);
+    const x = Number.parseInt(key, __RADIX__);
 
     if (cost[x] === ans1 || cost[x] === ans2) {
       result.add(x + 1);

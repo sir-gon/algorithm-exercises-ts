@@ -6,7 +6,9 @@
 import { logger as console } from '../../../logger';
 
 function extraLongFactorials(n: number): bigint {
-  const rs = [...Array<number>(n)].reduce((a, b, i) => a * BigInt(i + 1), 1n);
+  const rs = new Array<bigint>(n)
+    .fill(1n)
+    .reduce((a, _b, i) => a * BigInt(i + 1), 1n);
   return rs;
 }
 

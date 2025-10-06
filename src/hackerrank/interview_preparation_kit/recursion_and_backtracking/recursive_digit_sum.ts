@@ -6,12 +6,12 @@ const __RADIX__ = 10;
 
 function superDigitCompute(n: string): number {
   if (n.length === 1) {
-    return parseInt(n, __RADIX__);
+    return Number.parseInt(n, __RADIX__);
   }
 
   let partial = 0;
   for (const digit of n) {
-    partial += parseInt(digit, __RADIX__);
+    partial += Number.parseInt(digit, __RADIX__);
   }
 
   return superDigitCompute(`${partial}`);
