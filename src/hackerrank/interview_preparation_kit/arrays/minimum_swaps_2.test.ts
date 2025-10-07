@@ -9,7 +9,7 @@ describe('minimum swaps 2', () => {
   it('minimumSwaps', () => {
     expect.assertions(4);
 
-    TEST_CASES.forEach((test) => {
+    for (const test of TEST_CASES) {
       const answer = minimumSwaps(test.input);
 
       console.debug(
@@ -17,7 +17,7 @@ describe('minimum swaps 2', () => {
       );
 
       expect(answer).toStrictEqual(test.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(3);
   });

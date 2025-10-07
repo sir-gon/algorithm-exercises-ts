@@ -8,7 +8,7 @@ describe('frequency_queries_optimized', () => {
   it('freqQuery test cases', () => {
     expect.assertions(5);
 
-    TEST_CASES.forEach((value) => {
+    for (const value of TEST_CASES) {
       const answer = freqQuery(value.input);
 
       console.debug(
@@ -16,7 +16,7 @@ describe('frequency_queries_optimized', () => {
       );
 
       expect(answer).toStrictEqual(value.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(4);
   });

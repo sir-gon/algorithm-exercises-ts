@@ -89,9 +89,10 @@ class Tree {
     traverseInOrderFlat(this.root);
 
     const output: number[] = [];
-    flatTreeCollector.forEach((node) => {
+
+    for (const node of flatTreeCollector) {
       output.push(node.data);
-    });
+    }
 
     return output;
   }

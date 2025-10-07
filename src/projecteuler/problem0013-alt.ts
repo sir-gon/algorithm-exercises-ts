@@ -12,9 +12,9 @@ function problem0013alt(
 
   let sum = BigInt(0);
 
-  arrayOfNumbers.forEach((num: string) => {
+  for (const num of arrayOfNumbers) {
     sum += BigInt(num);
-  });
+  }
 
   console.debug(`Sum: ${sum}`);
 

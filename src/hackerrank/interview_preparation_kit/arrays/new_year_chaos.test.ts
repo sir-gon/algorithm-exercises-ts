@@ -9,7 +9,7 @@ describe('new_year_chaos', () => {
   it('minimumBribes Test Cases', () => {
     expect.assertions(6);
 
-    TEST_CASES.forEach((value) => {
+    for (const value of TEST_CASES) {
       const answer = minimumBribesText(value.input);
       minimumBribes(value.input);
 
@@ -18,7 +18,7 @@ describe('new_year_chaos', () => {
       );
 
       expect(answer).toStrictEqual(value.expected);
-    });
+    }
 
     expect(TEST_CASES).toHaveLength(5);
   });

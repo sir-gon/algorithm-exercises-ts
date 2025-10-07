@@ -25,9 +25,7 @@ function countApplesAndOranges(
     }
   }
 
-  const result: number[] = [];
-  result.push(cApples);
-  result.push(cOranges);
+  const result: number[] = [cApples, cOranges];
 
   return result.join('\n');
 }

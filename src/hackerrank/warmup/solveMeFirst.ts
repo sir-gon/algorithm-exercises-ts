@@ -7,9 +7,9 @@ const __RADIX__ = 10;
 function solveMeFirst(inputLines: string[]): number {
   let result = 0;
 
-  inputLines.forEach((v) => {
+  for (const v of inputLines) {
     result += Number.parseInt(v, __RADIX__);
-  });
+  }
 
   return result;
 }

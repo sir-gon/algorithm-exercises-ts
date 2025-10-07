@@ -11,7 +11,7 @@ function countingValleys(steps: number, path: string): number {
 
   console.debug(stepList);
 
-  stepList.forEach((step) => {
+  for (const step of stepList) {
     if (step === 'D') {
       if (altitude === 0) {
         valleys += 1;
@@ -21,7 +21,7 @@ function countingValleys(steps: number, path: string): number {
     if (step === 'U') {
       altitude += 1;
     }
-  });
+  }
 
   return valleys;
 }

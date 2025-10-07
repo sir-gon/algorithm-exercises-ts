@@ -3,7 +3,7 @@ export const bigNum = (strNumber: string, base = 10): number[] => {
   let i;
 
   for (i = 0; i < strNumber.length; i++) {
-    result.push(parseInt(strNumber.charAt(i), base));
+    result.push(Number.parseInt(strNumber.charAt(i), base));
   }
 
   return result;
