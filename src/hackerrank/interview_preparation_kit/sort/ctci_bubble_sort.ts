@@ -7,10 +7,9 @@ const SEPARATOR = '\n';
 class SortableGroup {
   group: number[];
 
-  count: number;
+  count = 0;
 
   constructor(group: number[]) {
-    this.count = 0;
     this.group = group;
   }
 
