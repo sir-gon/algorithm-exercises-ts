@@ -1,7 +1,7 @@
 import { describe, expect, it } from '@jest/globals';
 import { logger as console } from '../../../logger';
 
-import { maxSubsetSum } from './max_array_sum';
+import { maxSubsetSum, bigIntMax } from './max_array_sum';
 
 import TEST_CASES from './max_array_sum.testcases.json';
 import TEST_CASE3 from './max_array_sum.testcase3.json';
@@ -9,6 +9,29 @@ import TEST_CASE3 from './max_array_sum.testcase3.json';
 const ALL_TEST_CASES = [...TEST_CASES, TEST_CASE3];
 
 const DECIMAL_RADIX = 10;
+
+describe('bigIntMax', () => {
+  it('bigIntMax test cases', () => {
+    expect.assertions(1);
+
+    const inputs = [1n, 3n, 2n, 5n, 4n];
+    const expected = 5n;
+
+    const answer = bigIntMax(...inputs);
+
+    console.debug(`bigIntMax(${inputs.toString()}) solution found: ${answer}`);
+
+    expect(answer).toStrictEqual(expected);
+  });
+
+  it('bigIntMax edge case', () => {
+    expect.assertions(1);
+
+    expect(() => {
+      bigIntMax();
+    }).toThrow('bigIntMax requires at least one argument.');
+  });
+});
 
 describe('max_array_sum', () => {
   it('maxSubsetSum test cases', () => {
