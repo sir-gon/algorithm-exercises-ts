@@ -33,7 +33,7 @@ function _replaceMaximum(
   const element = _group.get(_element);
 
   if (element) {
-    _group.set(_element, count > element ? count : element);
+    _group.set(_element, Math.max(count, element));
   } else {
     _group.set(_element, count);
   }
