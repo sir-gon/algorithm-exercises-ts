@@ -7,7 +7,7 @@ function maxMin(k: number, arr: number[]): number {
     .map((x: number): number => x)
     .sort((a: number, b: number): number => a - b);
 
-  let result = sortedlist[sortedlist.length - 1] - sortedlist[0];
+  let result = (sortedlist.at(-1) ?? 0) - sortedlist[0];
 
   for (let i = 0; i < sortedlist.length - k + 1; i++) {
     const tmin = sortedlist[i];
