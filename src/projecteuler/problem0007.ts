@@ -22,7 +22,7 @@ function problem0007(_top: number): number {
 
   console.log(`primes count: ${primes.length}`);
 
-  const answer = primes[primes.length - 1];
+  const answer = primes.at(-1) ?? 0;
 
   const cycles = i;
   console.log(`${_top} prime number is: ${answer} in ${cycles} cycles`);

@@ -53,4 +53,5 @@ export default {
   comparatorSortingPrint
 };
 
-export { Player, SortablePlayer, comparatorSorting, comparatorSortingPrint };
+export { Player } from './ctci_comparator_sorting.Player';
+export { SortablePlayer, comparatorSorting, comparatorSortingPrint };
