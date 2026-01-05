@@ -3,8 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-const BRUTEFORCE =
-  process.env.BRUTEFORCE && process.env.BRUTEFORCE.toUpperCase() === 'TRUE';
+const BRUTEFORCE = process.env.BRUTEFORCE?.toUpperCase() === 'TRUE';
 
 const jestConfig = {
   // All imported modules in your tests should be mocked automatically
