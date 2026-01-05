@@ -10,7 +10,7 @@ import TEST_CASES_BORDER_CASES from './ctci_ice_cream_parlor.border_testcases.js
 
 describe('ctci_ice_cream_parlor_bruteforce', () => {
   it('whatFlavors test cases', () => {
-    expect.assertions(12);
+    expect.assertions(7);
 
     let totalTestsCount = 0;
 
@@ -23,7 +23,8 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
         );
 
         expect(answer).toStrictEqual(test.expected);
-        expect(whatFlavors(test.costs, test.money)).toBeUndefined();
+
+        whatFlavors(test.costs, test.money);
 
         totalTestsCount += 1;
       }
@@ -34,7 +35,7 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
   });
 
   it('whatFlavors border test cases', () => {
-    expect.assertions(4);
+    expect.assertions(3);
 
     let totalTestsCount = 0;
 
@@ -43,7 +44,8 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
         expect(
           whatFlavorsBruteforceCompute(test.costs, test.money)
         ).toStrictEqual(test.expected);
-        expect(whatFlavors(test.costs, test.money)).toBeUndefined();
+
+        whatFlavors(test.costs, test.money);
 
         totalTestsCount += 1;
       }
@@ -59,6 +61,6 @@ describe('ctci_ice_cream_parlor_bruteforce', () => {
     const cost: number[] = [];
     const money = 100;
 
-    expect(whatFlavors(cost, money)).toBeUndefined();
+    expect(() => whatFlavors(cost, money)).not.toThrow();
   });
 });
