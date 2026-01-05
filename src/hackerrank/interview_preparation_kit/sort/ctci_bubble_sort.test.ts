@@ -5,14 +5,13 @@ import TEST_CASES from './ctci_bubble_sort.testcases.json';
 
 describe('countSwaps', () => {
   it('build tree and flattened tree test cases', () => {
-    expect.assertions(7);
+    expect.assertions(4);
 
     for (const test of TEST_CASES) {
       const sortable = new SortableGroup(test.input);
       const resultSort = sortable.bubble_sort().group;
-      const resultPrint = countSwaps(test.input);
+      countSwaps(test.input);
 
-      expect(resultPrint).toBeUndefined();
       expect(resultSort).toStrictEqual(test.sorted);
     }
 

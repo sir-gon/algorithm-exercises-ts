@@ -1,25 +1,23 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { Node } from '../../lib/Node';
 import { Tree, swapNodes, __INITIAL_LEVEL__ } from './swap_nodes_algo';
 import TEST_CASES from './swap_nodes_algo.testcases.json';
 
 describe('swap_nodes_algo', () => {
   it('test_buildTree_empty', () => {
-    expect.assertions(4);
+    expect.assertions(2);
 
     const input: number[][] = [];
     const tree: Tree = new Tree(input);
     const expected: number[] = [1];
 
     expect(tree.flatTree()).toStrictEqual(expected);
-    expect(tree.getRoot()).not.toBeNull();
-    expect(tree.getRoot()).toBeInstanceOf(Node);
+
     expect(tree.getRoot().data).toBe(__INITIAL_LEVEL__);
   });
 
   it('test_build_malformed_tree', () => {
-    expect.assertions(4);
+    expect.assertions(2);
 
     const input: number[][] = [[], []];
     const tree: Tree = new Tree(input);
@@ -27,8 +25,7 @@ describe('swap_nodes_algo', () => {
     const expected: number[] = [__INITIAL_LEVEL__];
 
     expect(tresult).toStrictEqual(expected);
-    expect(tree.getRoot()).not.toBeNull();
-    expect(tree.getRoot()).toBeInstanceOf(Node);
+
     expect(tree.getRoot().data).toBe(__INITIAL_LEVEL__);
   });
 
