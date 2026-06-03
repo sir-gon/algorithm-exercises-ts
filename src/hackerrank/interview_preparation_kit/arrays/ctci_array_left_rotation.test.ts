@@ -12,7 +12,7 @@ interface RotLeftTestCase {
   expected: number[];
 }
 
-const TEST_CASES: RotLeftTestCase[] = ROT_LEFT_TEST_CASES as RotLeftTestCase[];
+const TEST_CASES: RotLeftTestCase[] = ROT_LEFT_TEST_CASES;
 
 describe('ctci_array_left_rotation', () => {
   it('rotLeft Test cases', () => {
