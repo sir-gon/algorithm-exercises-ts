@@ -94,7 +94,13 @@ test: env dependencies
 coverage: test
 
 coverage/html: coverage
-	open coverage/lcov-report/index.html
+	@if [ "$$(uname)" = "Darwin" ]; then \
+		open ./coverage/lcov-report/index.htmll; \
+	elif [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw32" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw64" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "cygwin" ]; then \
+		cmd /c start ./coverage/lcov-report/index.htmll; \
+	else \
+		echo "Coverage HTML generated: ./coverage/lcov-report/index.htmll"; \
+	fi
 
 outdated:
 	-npm outdated
