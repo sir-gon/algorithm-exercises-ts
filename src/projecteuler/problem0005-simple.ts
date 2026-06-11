@@ -24,13 +24,12 @@ function problem0005Simple(
 ): number {
   let found;
 
-  let fail;
+  let fail: boolean;
   let i;
   let test = _startFrom;
 
   do {
     i = 2;
-    fail = false;
     do {
       fail = test % i !== 0;
 
