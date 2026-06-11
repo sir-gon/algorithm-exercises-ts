@@ -95,7 +95,7 @@ coverage: test
 
 coverage/html: coverage
 	@if [ "$$(uname)" = "Darwin" ]; then \
-		open ./coverage/lcov-report/index.htmll; \
+		open ./coverage/lcov-report/index.html; \
 	elif [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw32" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw64" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "cygwin" ]; then \
 		cmd /c start ./coverage/lcov-report/index.htmll; \
 	else \
