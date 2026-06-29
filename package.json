@@ -16,7 +16,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@types/jest": "^30.0.0",
     "cross-env": "^10.1.0",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jest": "^29.15.2",
     "eslint-plugin-prettier": "^5.5.6",
