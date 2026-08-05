@@ -72,7 +72,7 @@ dependencies:
 	@echo "################################################################################"
 
 lint/markdown:
-	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
+	markdownlint --config .markdownlint.json '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
 
 lint/yaml:
 	yamllint --stric . && echo '✔  Your code looks good.'
