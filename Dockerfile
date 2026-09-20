@@ -15,22 +15,8 @@ FROM base AS lint
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN  apk add --update --no-cache make nodejs npm \
-  && apk add --update --no-cache yamllint \
-  && npm install -g --ignore-scripts markdownlint-cli@0.49.1
-
 # [!TIP] Use a bind-mount to "/app" to override following "copys"
 # for lint and test against "current" sources in this stage
-
-# YAML sources
-COPY ./.github ${WORKDIR}/
-COPY ./compose.yaml ${WORKDIR}/
-
-# Markdown sources
-COPY ./docs ${WORKDIR}/
-COPY ./README.md ${WORKDIR}/
-COPY ./LICENSE.md ${WORKDIR}/
-COPY ./CODE_OF_CONDUCT.md ${WORKDIR}/
 
 # Code source
 COPY ./src ${WORKDIR}/src
@@ -38,20 +24,6 @@ COPY ./package.json ${WORKDIR}/package.json
 COPY ./package-lock.json ${WORKDIR}/package-lock.json
 COPY ./tsconfig.json ${WORKDIR}/
 COPY ./Makefile ${WORKDIR}/
-
-# code linting conf
-COPY ./.prettierrc ${WORKDIR}/
-COPY ./.prettierignore ${WORKDIR}/
-COPY ./eslint.config.mjs ${WORKDIR}/
-
-
-# markdownlint conf
-COPY ./.markdownlint.json ${WORKDIR}/
-
-# yamllint conf
-COPY ./.yamllint ${WORKDIR}/
-COPY ./.yamlignore ${WORKDIR}/
-COPY ./.gitignore ${WORKDIR}/
 
 # Dependencies
 RUN npm ci --verbose --ignore-scripts
