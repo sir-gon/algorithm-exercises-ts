@@ -11,6 +11,7 @@
 
 name: ESLint Code Scanning
 
+# yamllint disable rule:line-length
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -19,6 +20,20 @@ on: # yamllint disable-line rule:truthy
     # The branches below must be a subset of the branches above
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
+    - cron: '23 15 * * 2'
+
+permissions:
+  contents: read
 
 jobs:
   eslint:
@@ -41,15 +56,16 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm install
+          npm install --ignore-scripts --include=dev eslint@10.4.1
+          npm install --ignore-scripts --include=dev @microsoft/eslint-formatter-sarif@3.0.0
 
       - name: Test ESLint
         run: |
-          npx --yes eslint --env-info
+          ./node_modules/.bin/eslint --env-info
 
       - name: Run ESLint
         run: >
-          npx eslint .
+          ./node_modules/.bin/eslint .
           --color
           --max-warnings=0
           --format @microsoft/eslint-formatter-sarif
