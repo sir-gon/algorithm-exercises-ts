@@ -11,6 +11,9 @@ env:
   IMAGE_NAME: algorithm-exercises-ts
   ARTIFACT_NAME: algorithm-exercises-ts_${{ github.sha }}
 
+permissions:
+  contents: read
+
 jobs:
   build-lint:
     name: 'Build Docker LINT image'
