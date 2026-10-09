@@ -10,13 +10,15 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-ts)
 [![CodeFactor](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-ts/badge)](https://www.codefactor.io/repository/github/sir-gon/algorithm-exercises-ts)
 [![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-ts/branch/main/graph/badge.svg?token=7NBP9SQAY0)](https://codecov.io/gh/sir-gon/algorithm-exercises-ts)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-ts&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-ts)
+
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9285/badge)](https://www.bestpractices.dev/projects/9285)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-ts?ref=badge_shield)
 
 ## TL;DR
 
