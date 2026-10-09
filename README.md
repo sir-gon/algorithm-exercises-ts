@@ -1,6 +1,6 @@
 # Algorithm Exercises (Typescript)
 
-[![Node.js CI](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node-test.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/node-test.js.yml)
 [![ESLint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
 [![YAML lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml)
