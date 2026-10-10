@@ -4,6 +4,7 @@
 [![ESLint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/eslint.yml)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/markdown-lint.yml)
 [![YAML lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/yamllint.yml)
+[![JSON Prettier lint](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/prettier-json.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-ts/actions/workflows/prettier-json.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-ts)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-ts)
