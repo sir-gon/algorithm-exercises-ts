@@ -55,7 +55,7 @@ depending on the chosen programming language:
 
 - For academic purposes, it is an backup of some algorithm exercises
 (with their solutions), proposed by various sources:
-[leetcode, hackerrank, projecteuler](#algorithm-excersices-sources), ...
+[leetcode, hackerrank, projecteuler](#algorithm-exersices-sources), ...
 
 - The solutions must be written on "vanilla code", that is,
 avoiding as much as possible the use of external libraries (in runtime).
@@ -251,10 +251,10 @@ Developed with runtime:
 
 ```text
 node --version
-v22.2.0
+v26.7.0
 ```
 
-## Algorithm excersices sources
+## Algorithm exersices sources
 
 - [Leetcode](https://leetcode.com/) online platform for
 coding interview preparation.
