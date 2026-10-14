@@ -3,11 +3,17 @@
  */
 
 function maxMin(k: number, arr: number[]): number {
+  if (k <= 0 || arr.length === 0) {
+    throw new Error(
+      'Invalid input: k must be greater than 0 and arr must not be empty'
+    );
+  }
+
   const sortedlist = arr
     .map((x: number): number => x)
     .sort((a: number, b: number): number => a - b);
 
-  let result = (sortedlist.at(-1) ?? 0) - sortedlist[0];
+  let result = sortedlist.at(-1)! - sortedlist[0]!;
 
   for (let i = 0; i < sortedlist.length - k + 1; i++) {
     const tmin = sortedlist[i];
