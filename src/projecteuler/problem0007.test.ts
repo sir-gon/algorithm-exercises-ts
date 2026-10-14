@@ -16,4 +16,14 @@ describe('problem 0007 basic', () => {
 
     expect(calculated).toBe(solutionFound);
   });
+
+  it('problem 0007 edge cases', () => {
+    expect.assertions(1);
+
+    const k = 0;
+    const solutionFound = 0;
+    const calculated = problem0007(k);
+
+    expect(calculated).toBe(solutionFound);
+  });
 });
