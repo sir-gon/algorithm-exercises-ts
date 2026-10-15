@@ -3,11 +3,15 @@
  */
 
 function minimumAbsoluteDifference(arr: number[]): number {
+  if (arr.length === 0) {
+    throw new Error('Invalid input: arr must not be empty');
+  }
+
   const sortedNums = arr
     .map((x: number): number => x)
     .sort((a: number, b: number): number => b - a);
 
-  let result = Math.abs((sortedNums.at(-1) ?? 0) - sortedNums[0]);
+  let result = Math.abs(sortedNums.at(-1)! - sortedNums[0]!);
 
   for (let i = 0; i < sortedNums.length - 1; i++) {
     const aValue = sortedNums[i];

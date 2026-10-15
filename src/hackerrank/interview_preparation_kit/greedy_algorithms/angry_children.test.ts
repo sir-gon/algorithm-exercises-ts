@@ -21,4 +21,17 @@ describe('angry_children', () => {
 
     expect(TEST_CASES).toHaveLength(4);
   });
+
+  it('maxMin edge cases', () => {
+    expect.assertions(1);
+
+    expect(() => {
+      const k = 0;
+      const arr: number[] = [];
+
+      maxMin(k, arr);
+    }).toThrow(
+      'Invalid input: k must be greater than 0 and arr must not be empty'
+    );
+  });
 });

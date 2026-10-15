@@ -3,11 +3,12 @@ import { describe, expect, it } from '@jest/globals';
 import { isBalanced } from './balanced_brackets';
 import TEST_CASES from './balanced_brackets.testcases.json';
 
-describe('isBalanced', () => {
-  it('isBalanced test cases', () => {
-    expect.assertions(10);
+const __YES__ = 'YES';
+const __NO__ = 'NO';
 
-    const __YES__ = 'YES';
+describe('isBalanced', () => {
+  it('test cases', () => {
+    expect.assertions(10);
 
     let totalTestsCount = 0;
 
@@ -23,5 +24,13 @@ describe('isBalanced', () => {
 
     expect(TEST_CASES).toHaveLength(3);
     expect(totalTestsCount).toBe(8);
+  });
+
+  it('wrong case', () => {
+    expect.assertions(1);
+
+    const result = isBalanced(')]}{[(');
+
+    expect(result).toStrictEqual(__NO__);
   });
 });

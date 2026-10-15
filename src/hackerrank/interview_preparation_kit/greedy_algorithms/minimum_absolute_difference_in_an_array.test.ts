@@ -21,4 +21,14 @@ describe('minimum_absolute_difference_in_an_array', () => {
 
     expect(TEST_CASES).toHaveLength(3);
   });
+
+  it('minimumAbsoluteDifference edge cases', () => {
+    expect.assertions(1);
+
+    expect(() => {
+      const arr: number[] = [];
+
+      minimumAbsoluteDifference(arr);
+    }).toThrow('Invalid input: arr must not be empty');
+  });
 });
